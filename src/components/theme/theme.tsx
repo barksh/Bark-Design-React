@@ -19,7 +19,9 @@ export type ThemeProps =
 
 export const Theme: React.FC<ThemeProps> = (props: ThemeProps) => {
 
-    return (<ThemeProvider theme={defaultTheme}>
+    return (<ThemeProvider
+        theme={defaultTheme}
+    >
         {props.children}
     </ThemeProvider>);
 };

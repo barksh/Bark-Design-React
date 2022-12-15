@@ -10,7 +10,9 @@ import { BarkThemeProps } from "../../theme/declare";
 import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";
 
 const StyledButton: StyledComponent<"button", any> = styled.button`
-    background-color: ${(props: BarkThemeProps) => props.theme.global.backColor.primary};
+    background-color: ${(props: BarkThemeProps) => {
+        return props.theme.global.backColor.primary;
+    }};
 `;
 
 export type ButtonProps =

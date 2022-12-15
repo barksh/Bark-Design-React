@@ -4,18 +4,27 @@
  * @description Declare
  */
 
-export type BarkThemeRole = {
+export enum BARK_THEME_VARIANT {
 
-    readonly primary: string;
-};
+    PRIMARY = "primary",
+}
+
+export type BarkThemeVariantObject = Record<BARK_THEME_VARIANT, string>;
 
 export type BarkTheme = {
 
     readonly global: {
-        readonly foreColor: BarkThemeRole;
-        readonly backColor: BarkThemeRole;
+        readonly foreColor: BarkThemeVariantObject;
+        readonly backColor: BarkThemeVariantObject;
+    };
+    readonly button?: {
+        readonly foreColor?: BarkThemeVariantObject;
+        readonly backColor?: BarkThemeVariantObject;
     };
 };
+
+export type BarkThemeObject<Type extends keyof Omit<BarkTheme, "global">> =
+    Record<keyof Required<BarkTheme[Type]>, string>;
 
 export type BarkThemeProps<Rest extends Record<string, any> = {}> = {
 
