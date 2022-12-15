@@ -26,3 +26,9 @@ storybook-static
 
 # Lock
 yarn.lock
+
+# NYC
+.nyc_output
+
+# Coverage directory used by tools like istanbul
+coverage
