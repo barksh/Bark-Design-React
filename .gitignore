@@ -21,5 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Storybook
+storybook-static
+
 # Lock
 yarn.lock
