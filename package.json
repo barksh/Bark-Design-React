@@ -6,6 +6,9 @@
     "dev": "start-storybook -p 6006",
     "build": "build-storybook"
   },
+  "dependencies": {
+    "styled-components": "^5.3.6"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@storybook/addon-actions": "^6.5.14",
@@ -20,6 +23,7 @@
     "@sudoo/triforce": "^3.10.1",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.0.0",
     "babel-loader": "^9.1.0",
     "ts-node": "^10.9.1",
@@ -42,8 +46,5 @@
     ],
     "report-dir": "coverage",
     "sourceMap": true
-  },
-  "dependencies": {
-    "@carbon/react": "^1.19.0"
   }
 }

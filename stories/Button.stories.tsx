@@ -6,7 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Button } from "../src";
+import { Button, Theme } from "../src";
 
 export default {
   title: "Button",
@@ -15,9 +15,12 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args: any) => {
 
-  return (<Button
-    {...args}
-  />);
+  return (
+    <Theme>
+      <Button
+        {...args}
+      />
+    </Theme>);
 };
 
 export const Primary = Template.bind({});
