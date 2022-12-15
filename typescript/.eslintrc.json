@@ -3,5 +3,9 @@
         "@sudoo/eslint-config",
         "@sudoo/eslint-config-react",
         "@sudoo/eslint-config-react-a11y"
-    ]
+    ],
+    "rules": {
+        "@typescript-eslint/ban-types": "off",
+        "react/react-in-jsx-scope": "off"
+    }
 }
