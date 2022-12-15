@@ -42,5 +42,8 @@
     ],
     "report-dir": "coverage",
     "sourceMap": true
+  },
+  "dependencies": {
+    "@carbon/react": "^1.19.0"
   }
 }
