@@ -15,7 +15,7 @@
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-interactions": "^6.5.14",
     "@storybook/addon-links": "^6.5.14",
-    "@storybook/builder-vite": "^0.2.5",
+    "@storybook/builder-vite": "^0.3.0",
     "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "@sudoo/react-force": "^2.0.0",
