@@ -1,6 +1,5 @@
 {
   "name": "@barksh/bark-design-react",
-  "private": true,
   "version": "1.0.0",
   "scripts": {
     "dev": "start-storybook -p 6006",
