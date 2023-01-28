@@ -8,6 +8,8 @@
 
 Bark Design for React
 
+Visit https://react.design.bark.sh for live storybook
+
 ## Install
 
 ```sh
