@@ -4,7 +4,7 @@
  * @description Button
  */
 
-import React from "react";
+import * as React from "react";
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../theme/declare";
 import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";

@@ -4,7 +4,7 @@
  * @description Theme
  */
 
-import React from "react";
+import * as React from "react";
 import { ThemeProvider } from "styled-components";
 import { BarkTheme } from "../../theme/declare";
 import { combineBarkDefaultTheme } from "../../theme/default";

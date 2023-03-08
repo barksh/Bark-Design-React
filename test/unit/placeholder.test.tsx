@@ -20,8 +20,6 @@ describe("Placeholder", (): void => {
             123
         </div>);
 
-
-        console.log(screen.getByText("123"));
         expect(screen.getByText("123"));
 
         expect(chance.string()).to.be.not.equal(chance.string());
