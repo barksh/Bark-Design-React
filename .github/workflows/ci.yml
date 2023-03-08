@@ -17,13 +17,13 @@ jobs:
           - ubuntu-latest
           - windows-latest
         node-version:
-          - 16
+          - 18
         architecture:
           - x64
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           architecture: ${{ matrix.architecture }}
@@ -34,9 +34,12 @@ jobs:
       - name: Lint
         run: |
           sudoo-build --type typescript-react lint
-      - name: Build
+      - name: Build Storybook
         run: |
           yarn run build
+      - name: Build
+        run: |
+          sudoo-build --type typescript-react build
       - name: Test
         run: |
           sudoo-build --type typescript-react coverage
