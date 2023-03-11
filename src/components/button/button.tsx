@@ -7,13 +7,25 @@
 import * as React from "react";
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../theme/declare";
-import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";
+import { fixSizeProps, PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
 
 const StyledButton: StyledComponent<"button", any> = styled.button`
-    border: 2px solid ${(props: BarkThemeProps) => {
+    border: ${(props: BarkThemeProps<ButtonProps>) => {
+        const fixedSize = fixSizeProps(props.size);
+        if (fixedSize === 'large') {
+            return '2px';
+        }
+        return '1px';
+    }} solid ${(props: BarkThemeProps) => {
         return props.theme.global.borderColor.primary;
     }};
-    border-bottom: 5px solid ${(props: BarkThemeProps) => {
+    border-bottom: ${(props: BarkThemeProps<ButtonProps>) => {
+        const fixedSize = fixSizeProps(props.size);
+        if (fixedSize === 'large') {
+            return '5px';
+        }
+        return '2px';
+    }} solid ${(props: BarkThemeProps) => {
         return props.theme.global.borderColor.primary;
     }};
     background-color: ${(props: BarkThemeProps) => {
@@ -26,7 +38,8 @@ export type ButtonProps =
         readonly onClick?: () => any;
     }
     & PropsChildrenAddOn
-    & PropsClassNameAddOn;
+    & PropsClassNameAddOn
+    & PropsSizeAddon;
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
