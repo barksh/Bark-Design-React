@@ -10,17 +10,18 @@ import { BarkTheme } from "../../theme/declare";
 import { combineBarkDefaultTheme } from "../../theme/default";
 import { PropsChildrenAddOn } from "../../util/props";
 
-const defaultTheme: BarkTheme = combineBarkDefaultTheme();
-
 export type ThemeProps =
     & {
+        readonly theme?: BarkTheme;
     }
     & PropsChildrenAddOn;
 
 export const Theme: React.FC<ThemeProps> = (props: ThemeProps) => {
 
+    const theme: BarkTheme = combineBarkDefaultTheme(props.theme);
+
     return (<ThemeProvider
-        theme={defaultTheme}
+        theme={theme}
     >
         {props.children}
     </ThemeProvider>);

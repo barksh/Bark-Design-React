@@ -17,13 +17,16 @@ const StyledButton: StyledComponent<"button", any> = styled.button`
 
 export type ButtonProps =
     & {
+        readonly onClick?: () => any;
     }
     & PropsChildrenAddOn
     & PropsClassNameAddOn;
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
-    return (<StyledButton>
+    return (<StyledButton
+        onClick={props.onClick}
+    >
         {props.children}
     </StyledButton>);
 };
