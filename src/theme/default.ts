@@ -20,6 +20,12 @@ export const combineBarkDefaultTheme = (theme?: BarkTheme): BarkTheme => {
             backColor: {
                 primary: '#FFFFFF',
             },
+            borderColor: {
+                primary: '#4444BB',
+            },
+            textColor: {
+                primary: '#000000',
+            },
         },
     };
 };

@@ -16,10 +16,14 @@ export type BarkTheme = {
     readonly global: {
         readonly foreColor: BarkThemeVariantObject;
         readonly backColor: BarkThemeVariantObject;
+        readonly borderColor: BarkThemeVariantObject;
+        readonly textColor: BarkThemeVariantObject;
     };
     readonly button?: {
         readonly foreColor?: BarkThemeVariantObject;
         readonly backColor?: BarkThemeVariantObject;
+        readonly borderColor?: BarkThemeVariantObject;
+        readonly textColor?: BarkThemeVariantObject;
     };
 };
 
