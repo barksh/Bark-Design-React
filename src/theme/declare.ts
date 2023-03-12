@@ -12,7 +12,7 @@ export enum BARK_THEME_VARIANT {
 
 export type BarkThemeVariantObject = Record<BARK_THEME_VARIANT, string>;
 
-export type ThemeObject = {
+export type ThemeProfile = {
 
     readonly foreColor: BarkThemeVariantObject;
     readonly backColor: BarkThemeVariantObject;
@@ -22,8 +22,8 @@ export type ThemeObject = {
 
 export type BarkTheme = {
 
-    readonly global: ThemeObject;
-    readonly button?: Partial<ThemeObject>;
+    readonly global: ThemeProfile;
+    readonly button?: Partial<ThemeProfile>;
 };
 
 export type BarkThemeObject<Type extends keyof Omit<BarkTheme, "global">> =

@@ -10,11 +10,9 @@ import { ButtonStyledButton } from "./styles/styled-button";
 import { ButtonStyledDescription } from "./styles/styled-description";
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-
-    console.log(props);
-
     return (<ButtonStyledButton
         onClick={props.onClick}
+        size={props.size}
     >
         <div>{props.children}</div>
         {props.description ? <ButtonStyledDescription>

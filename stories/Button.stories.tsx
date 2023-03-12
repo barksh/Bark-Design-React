@@ -32,4 +32,5 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   children: "Button",
+  description: "I am a button",
 };

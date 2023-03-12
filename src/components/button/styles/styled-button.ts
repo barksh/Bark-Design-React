@@ -9,13 +9,12 @@ import { BarkThemeProps } from "../../../theme/declare";
 import { fixSizeProps } from "../../../util/props";
 import { ButtonProps } from "../declare";
 
-export const ButtonStyledButton: StyledComponent<"button", any> = styled.button`
+export const ButtonStyledButton: StyledComponent<"button", any, ButtonProps> = styled.button`
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: ${(props: BarkThemeProps<ButtonProps>) => {
-        console.log(props);
         const fixedSize = fixSizeProps(props.size);
         switch (fixedSize) {
             case 'small': return "2px";
