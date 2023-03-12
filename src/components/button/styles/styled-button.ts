@@ -15,6 +15,18 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.flex) {
+                return "100%";
+            }
+            return "fit-content";
+        }};
+        height: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.flex) {
+                return "100%";
+            }
+            return "fit-content";
+        }};
         padding: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

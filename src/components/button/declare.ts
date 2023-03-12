@@ -10,6 +10,7 @@ export type ButtonProps =
     & {
         readonly description?: string;
         readonly onClick?: () => any;
+        readonly flex?: boolean;
     }
     & PropsChildrenAddOn
     & PropsClassNameAddOn

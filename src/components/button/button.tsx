@@ -23,6 +23,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
             setHovering(false);
         }}
         size={props.size}
+        flex={props.flex}
     >
         <ButtonStyledTitle
             size={props.size}
