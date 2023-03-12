@@ -18,7 +18,8 @@ const defaultLightThemeProfile: BarkThemeProfile = {
     },
     textColor: {
         primary: '#000000',
-        secondary: '#AAAAAA',
+        secondary: '#888888',
+        action: '#2a7ae2',
     },
 };
 
