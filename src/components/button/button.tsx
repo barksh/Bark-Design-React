@@ -5,47 +5,20 @@
  */
 
 import * as React from "react";
-import styled, { StyledComponent } from "styled-components";
-import { BarkThemeProps } from "../../theme/declare";
-import { fixSizeProps, PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
-
-const StyledButton: StyledComponent<"button", any> = styled.button`
-    border: ${(props: BarkThemeProps<ButtonProps>) => {
-        const fixedSize = fixSizeProps(props.size);
-        if (fixedSize === 'large') {
-            return '2px';
-        }
-        return '1px';
-    }} solid ${(props: BarkThemeProps) => {
-        return props.theme.global.borderColor.primary;
-    }};
-    border-bottom: ${(props: BarkThemeProps<ButtonProps>) => {
-        const fixedSize = fixSizeProps(props.size);
-        if (fixedSize === 'large') {
-            return '5px';
-        }
-        return '2px';
-    }} solid ${(props: BarkThemeProps) => {
-        return props.theme.global.borderColor.primary;
-    }};
-    background-color: ${(props: BarkThemeProps) => {
-        return props.theme.global.backColor.primary;
-    }};
-`;
-
-export type ButtonProps =
-    & {
-        readonly onClick?: () => any;
-    }
-    & PropsChildrenAddOn
-    & PropsClassNameAddOn
-    & PropsSizeAddon;
+import { ButtonProps } from "./declare";
+import { ButtonStyledButton } from "./styles/styled-button";
+import { ButtonStyledDescription } from "./styles/styled-description";
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
-    return (<StyledButton
+    console.log(props);
+
+    return (<ButtonStyledButton
         onClick={props.onClick}
     >
-        {props.children}
-    </StyledButton>);
+        <div>{props.children}</div>
+        {props.description ? <ButtonStyledDescription>
+            {props.description}
+        </ButtonStyledDescription> : null}
+    </ButtonStyledButton>);
 };
