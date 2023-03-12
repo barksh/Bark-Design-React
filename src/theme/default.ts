@@ -4,28 +4,34 @@
  * @description Default
  */
 
-import { BarkTheme } from "./declare";
+import { BarkTheme, BarkThemeProfile } from "./declare";
 
-export const combineBarkDefaultTheme = (theme?: BarkTheme): BarkTheme => {
+const defaultLightThemeProfile: BarkThemeProfile = {
+    foreColor: {
+        primary: '#000000',
+    },
+    backColor: {
+        primary: '#FFFFFF',
+    },
+    borderColor: {
+        primary: '#4444BB',
+    },
+    textColor: {
+        primary: '#000000',
+        secondary: '#AAAAAA',
+    },
+};
+
+export const getBarkThemeProfile = (theme?: Partial<BarkTheme>): BarkThemeProfile => {
 
     if (theme) {
-        return theme;
-    }
 
-    return {
-        global: {
-            foreColor: {
-                primary: '#000000',
-            },
-            backColor: {
-                primary: '#FFFFFF',
-            },
-            borderColor: {
-                primary: '#4444BB',
-            },
-            textColor: {
-                primary: '#000000',
-            },
-        },
-    };
+        if (theme.light) {
+            return theme.light;
+        }
+        if (theme.dark) {
+            return theme.dark;
+        }
+    }
+    return defaultLightThemeProfile;
 };

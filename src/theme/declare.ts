@@ -7,23 +7,32 @@
 export enum BARK_THEME_VARIANT {
 
     PRIMARY = "primary",
-    SECONDARY = "SECONDARY",
+    SECONDARY = "secondary",
 }
 
 export type BarkThemeVariantObject = Record<BARK_THEME_VARIANT, string>;
 
-export type ThemeProfile = {
+export type BarkThemeProfile = {
 
-    readonly foreColor: BarkThemeVariantObject;
-    readonly backColor: BarkThemeVariantObject;
-    readonly borderColor: BarkThemeVariantObject;
-    readonly textColor: BarkThemeVariantObject;
+    readonly foreColor: {
+        readonly primary: string;
+    };
+    readonly backColor: {
+        readonly primary: string;
+    };
+    readonly borderColor: {
+        readonly primary: string;
+    };
+    readonly textColor: {
+        readonly primary: string;
+        readonly secondary: string;
+    };
 };
 
 export type BarkTheme = {
 
-    readonly global: ThemeProfile;
-    readonly button?: Partial<ThemeProfile>;
+    readonly light: BarkThemeProfile;
+    readonly dark: BarkThemeProfile;
 };
 
 export type BarkThemeObject<Type extends keyof Omit<BarkTheme, "global">> =
@@ -31,5 +40,5 @@ export type BarkThemeObject<Type extends keyof Omit<BarkTheme, "global">> =
 
 export type BarkThemeProps<Rest extends Record<string, any> = {}> = {
 
-    readonly theme: BarkTheme;
+    readonly theme: BarkThemeProfile;
 } & Rest;
