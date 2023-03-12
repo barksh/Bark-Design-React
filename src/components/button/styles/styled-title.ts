@@ -14,7 +14,7 @@ export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
         font-size: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
-                case 'small': return "1px";
+                case 'small': return "16px";
                 case 'regular': return "16px";
                 case 'large': return "24px";
             }
