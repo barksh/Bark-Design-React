@@ -15,17 +15,18 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         width: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.flex) {
                 return "100%";
             }
-            return "fit-content";
+            return "inherit";
         }};
         height: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.flex) {
                 return "100%";
             }
-            return "fit-content";
+            return "auto";
         }};
         padding: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
@@ -36,6 +37,9 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
             }
         }};
         border: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.noBorder) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '2px';
@@ -45,6 +49,9 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
             return props.theme.borderColor.primary;
         }};
         border-bottom: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.noBorder) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '5px';

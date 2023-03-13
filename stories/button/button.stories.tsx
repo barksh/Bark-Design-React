@@ -20,6 +20,13 @@ const Template: ComponentStory<typeof Button> = (args: any) => {
       <Button
         {...args}
       />
+      <div>
+        Without description
+      </div>
+      <Button
+        {...args}
+        description={undefined}
+      />
     </Theme>);
 };
 

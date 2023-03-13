@@ -24,6 +24,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         onClick={enrichedProps.onClick}
         size={enrichedProps.size}
         flex={enrichedProps.flex}
+        noBorder={enrichedProps.noBorder}
     >
         <ButtonStyledTitle
             size={enrichedProps.size}
