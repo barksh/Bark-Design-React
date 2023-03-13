@@ -25,6 +25,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         onClick={enrichedProps.onClick}
         size={enrichedProps.size}
         flex={enrichedProps.flex}
+        maximize={enrichedProps.maximize}
         noBorder={enrichedProps.noBorder}
     >
         <ButtonStyledContainer

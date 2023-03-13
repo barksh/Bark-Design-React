@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
         <Button
           description="This is Button 1"
         >
-          Button 1
+          Button 1321321312
         </Button>
         <Button>
           Button 2

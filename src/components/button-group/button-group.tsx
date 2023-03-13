@@ -13,12 +13,13 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps)
 
     return (<ButtonGroupStyledContainer
         size={props.size}
-        flex={props.flex}
+        maximize={props.maximize}
     >
         <ButtonContext.Provider
             value={{
                 noBorder: true,
                 size: props.size,
+                flex: 1,
             }}
         >
             {props.children}

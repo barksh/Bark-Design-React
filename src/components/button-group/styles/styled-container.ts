@@ -14,13 +14,13 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
     styled.div`
         display: flex;
         width: ${(props: BarkThemeProps<ButtonGroupProps>) => {
-            if (props.flex) {
+            if (props.maximize) {
                 return "100%";
             }
             return "fit-content";
         }};
         height: ${(props: BarkThemeProps<ButtonGroupProps>) => {
-            if (props.flex) {
+            if (props.maximize) {
                 return "100%";
             }
             return "fit-content";

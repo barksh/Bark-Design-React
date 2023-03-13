@@ -8,7 +8,7 @@ import { PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../u
 
 export type ButtonGroupProps =
     & {
-        readonly flex?: boolean;
+        readonly maximize?: boolean;
     }
     & PropsChildrenAddOn
     & PropsClassNameAddOn
