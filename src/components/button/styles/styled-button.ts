@@ -11,6 +11,7 @@ import { ButtonProps } from "../declare";
 
 export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, ButtonProps> =
     styled.button`
+        transition: all 0.2s ease-in-out;
         box-sizing: border-box;
         cursor: pointer;
         width: ${(props: BarkThemeProps<ButtonProps>) => {
@@ -56,4 +57,9 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         color: ${(props: BarkThemeProps) => {
             return props.theme.textColor.primary;
         }};
+        &:active {
+            background-color: ${(props: BarkThemeProps) => {
+            return props.theme.backColor.active;
+        }}; 
+        }
 `;

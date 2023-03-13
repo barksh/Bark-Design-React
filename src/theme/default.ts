@@ -12,6 +12,7 @@ const defaultLightThemeProfile: BarkThemeProfile = {
     },
     backColor: {
         primary: '#FFFFFF',
+        active: '#a9c0de',
     },
     borderColor: {
         primary: '#4444BB',
