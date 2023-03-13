@@ -6,10 +6,11 @@
 
 import * as React from "react";
 import { ButtonGroupProps } from "./declare";
+import { ButtonGroupStyledContainer } from "./styles/styled-container";
 
 export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps) => {
 
-    return (<div>
-        132
-    </div>);
+    return (<ButtonGroupStyledContainer>
+        {props.children}
+    </ButtonGroupStyledContainer>);
 };

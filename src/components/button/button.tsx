@@ -13,6 +13,7 @@ import { ButtonStyledTitle } from "./styles/styled-title";
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
     return (<ButtonStyledButton
+        className={props.className}
         onClick={props.onClick}
         size={props.size}
         flex={props.flex}

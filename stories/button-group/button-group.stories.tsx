@@ -6,14 +6,17 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ButtonGroup, Theme } from "../../src";
+import { Button, ButtonGroup, Theme } from "../../src";
 
 export default {
   title: "Button Group",
   component: ButtonGroup,
-  parameters: {
-    actions: {
-      argTypesRegex: '^on.*',
+  argTypes: {
+    size: {
+      control: {
+        type: 'radio',
+        options: ['regular', 'small', 'large'],
+      },
     },
   },
 } as ComponentMeta<typeof ButtonGroup>;
@@ -24,12 +27,29 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
     <Theme>
       <ButtonGroup
         {...args}
-      />
+      >
+        <Button
+          size={args.size}
+          description="This is Button 1"
+        >
+          Button 1
+        </Button>
+        <Button
+          size={args.size}
+        >
+          Button 2
+        </Button>
+        <Button
+          size={args.size}
+        >
+          Button 3
+        </Button>
+      </ButtonGroup>
     </Theme>);
 };
 
 export const Primary = Template.bind({});
 
 Primary.args = {
-  children: "Button",
-};
+  size: "regular",
+} as any;

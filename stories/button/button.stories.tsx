@@ -11,11 +11,6 @@ import { Button, Theme } from "../../src";
 export default {
   title: "Button",
   component: Button,
-  parameters: {
-    actions: {
-      argTypesRegex: '^on.*',
-    },
-  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args: any) => {
