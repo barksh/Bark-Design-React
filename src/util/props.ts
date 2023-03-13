@@ -14,7 +14,7 @@ export type PropsClassNameAddOn = {
     readonly className?: string | undefined;
 };
 
-type SizePropertyValue = 'small' | 'regular' | 'large';
+export type SizePropertyValue = 'small' | 'regular' | 'large';
 export type PropsSizeAddon = {
     readonly size?: SizePropertyValue;
 };

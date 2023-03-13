@@ -5,6 +5,7 @@
  */
 
 import * as React from "react";
+import { ButtonContext } from "./context";
 import { ButtonProps } from "./declare";
 import { ButtonStyledButton } from "./styles/styled-button";
 import { ButtonStyledDescription } from "./styles/styled-description";
@@ -12,19 +13,25 @@ import { ButtonStyledTitle } from "./styles/styled-title";
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
+    const context: Partial<ButtonProps> = React.useContext(ButtonContext);
+    const enrichedProps: ButtonProps = {
+        ...context,
+        ...props,
+    };
+
     return (<ButtonStyledButton
-        className={props.className}
-        onClick={props.onClick}
-        size={props.size}
-        flex={props.flex}
+        className={enrichedProps.className}
+        onClick={enrichedProps.onClick}
+        size={enrichedProps.size}
+        flex={enrichedProps.flex}
     >
         <ButtonStyledTitle
-            size={props.size}
+            size={enrichedProps.size}
         >
-            {props.children}
+            {enrichedProps.children}
         </ButtonStyledTitle>
-        {props.description ? <ButtonStyledDescription>
-            {props.description}
+        {enrichedProps.description ? <ButtonStyledDescription>
+            {enrichedProps.description}
         </ButtonStyledDescription> : null}
     </ButtonStyledButton>);
 };

@@ -4,10 +4,12 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
 
 export type ButtonGroupProps =
     & {
+        readonly flex?: boolean;
     }
     & PropsChildrenAddOn
-    & PropsClassNameAddOn;
+    & PropsClassNameAddOn
+    & PropsSizeAddon;

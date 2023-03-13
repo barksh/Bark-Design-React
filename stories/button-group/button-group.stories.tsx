@@ -11,14 +11,6 @@ import { Button, ButtonGroup, Theme } from "../../src";
 export default {
   title: "Button Group",
   component: ButtonGroup,
-  argTypes: {
-    size: {
-      control: {
-        type: 'radio',
-        options: ['regular', 'small', 'large'],
-      },
-    },
-  },
 } as ComponentMeta<typeof ButtonGroup>;
 
 const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
@@ -29,19 +21,14 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
         {...args}
       >
         <Button
-          size={args.size}
           description="This is Button 1"
         >
           Button 1
         </Button>
-        <Button
-          size={args.size}
-        >
+        <Button>
           Button 2
         </Button>
-        <Button
-          size={args.size}
-        >
+        <Button>
           Button 3
         </Button>
       </ButtonGroup>
@@ -51,5 +38,4 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  size: "regular",
-} as any;
+};
