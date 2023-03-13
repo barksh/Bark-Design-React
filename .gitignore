@@ -26,6 +26,7 @@ storybook-static
 
 # Lock
 yarn.lock
+package-lock.json
 
 # NYC
 .nyc_output
