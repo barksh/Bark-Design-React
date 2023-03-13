@@ -34,13 +34,10 @@ jobs:
       - name: Lint
         run: |
           sudoo-build --type typescript-react lint
-      - name: Build Storybook
-        run: |
-          yarn run build
       - name: Build
         run: |
           sudoo-build --type typescript-react build
-      - name: Test
+      - name: Coverage
         run: |
           sudoo-build --type typescript-react coverage
       - name: Codecov
