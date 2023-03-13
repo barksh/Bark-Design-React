@@ -6,7 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Button, Theme } from "../src";
+import { Button, Theme } from "../../src";
 
 export default {
   title: "Button",
