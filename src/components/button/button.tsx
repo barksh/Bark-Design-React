@@ -12,22 +12,13 @@ import { ButtonStyledTitle } from "./styles/styled-title";
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
-    const [hovering, setHovering] = React.useState(false);
-
     return (<ButtonStyledButton
         onClick={props.onClick}
-        onMouseEnter={() => {
-            setHovering(true);
-        }}
-        onMouseLeave={() => {
-            setHovering(false);
-        }}
         size={props.size}
         flex={props.flex}
     >
         <ButtonStyledTitle
             size={props.size}
-            hover={hovering}
         >
             {props.children}
         </ButtonStyledTitle>

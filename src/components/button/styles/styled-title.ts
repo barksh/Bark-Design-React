@@ -8,6 +8,7 @@ import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { fixSizeProps } from "../../../util/props";
 import { ButtonProps } from "../declare";
+import { ButtonStyledButton } from "./styled-button";
 
 export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
@@ -22,12 +23,7 @@ export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
         color: ${(props: BarkThemeProps<ButtonProps>) => {
             return props.theme.textColor.action;
         }};
-        text-decoration: ${(props: BarkThemeProps<ButtonProps, {
-            readonly hover: boolean;
-        }>) => {
-            if (props.hover) {
-                return "underline";
-            }
-            return "none";
-        }};
+        ${ButtonStyledButton as any}:hover & {
+            text-decoration: underline;
+        }
 `;
