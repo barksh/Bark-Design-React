@@ -12,6 +12,7 @@ import { ButtonStyledButton } from "./styled-button";
 
 export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        transition: all 0.3s ease-in-out;
         font-size: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

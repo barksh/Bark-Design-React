@@ -8,6 +8,7 @@ import * as React from "react";
 import { ButtonContext } from "./context";
 import { ButtonProps } from "./declare";
 import { ButtonStyledButton } from "./styles/styled-button";
+import { ButtonStyledContainer } from "./styles/styled-container";
 import { ButtonStyledDescription } from "./styles/styled-description";
 import { ButtonStyledTitle } from "./styles/styled-title";
 
@@ -26,13 +27,17 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         flex={enrichedProps.flex}
         noBorder={enrichedProps.noBorder}
     >
-        <ButtonStyledTitle
+        <ButtonStyledContainer
             size={enrichedProps.size}
         >
-            {enrichedProps.children}
-        </ButtonStyledTitle>
-        {enrichedProps.description ? <ButtonStyledDescription>
-            {enrichedProps.description}
-        </ButtonStyledDescription> : null}
+            <ButtonStyledTitle
+                size={enrichedProps.size}
+            >
+                {enrichedProps.children}
+            </ButtonStyledTitle>
+            {enrichedProps.description ? <ButtonStyledDescription>
+                {enrichedProps.description}
+            </ButtonStyledDescription> : null}
+        </ButtonStyledContainer>
     </ButtonStyledButton>);
 };
