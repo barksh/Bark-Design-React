@@ -9,6 +9,7 @@ import { ThemeProvider } from "styled-components";
 import { BarkTheme, BarkThemeProfile } from "../../theme/declare";
 import { getBarkThemeProfile } from "../../theme/default";
 import { PropsChildrenAddOn } from "../../util/props";
+import { GlobalStyle } from "../global-style/global-style";
 
 export type ThemeProps =
     & {
@@ -23,6 +24,7 @@ export const Theme: React.FC<ThemeProps> = (props: ThemeProps) => {
     return (<ThemeProvider
         theme={theme}
     >
+        <GlobalStyle />
         {props.children}
     </ThemeProvider>);
 };
