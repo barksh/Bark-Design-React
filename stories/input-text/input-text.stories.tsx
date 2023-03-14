@@ -7,8 +7,7 @@
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import * as React from "react";
-import { Theme } from "../../src";
-import { InputText } from "../../src/components/input-text/input-text";
+import { InputText, Theme } from "../../src";
 
 export default {
     title: "Input Text",

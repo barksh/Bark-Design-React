@@ -7,9 +7,7 @@
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import * as React from "react";
-import { Theme } from "../../src";
-import { TitleProps } from "../../src/components/title/declare";
-import { Title } from "../../src/components/title/title";
+import { Theme, Title, TitleProps } from "../../src";
 
 export default {
     title: "Title",

@@ -6,9 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Button, ButtonGroup, Theme } from "../../src";
-import { Form, useForm } from "../../src/components/form/form";
-import { InputText } from "../../src/components/input-text/input-text";
+import { Button, ButtonGroup, Form, InputText, Theme, useForm } from "../../src";
 
 export default {
     title: "Form",
