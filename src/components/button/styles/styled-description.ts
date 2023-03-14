@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Components_Button
+ * @namespace Components_Button_Styles
  * @description Styled Description
  */
 
@@ -12,4 +12,7 @@ export const ButtonStyledDescription: StyledComponent<"div", BarkThemeProps, any
         color: ${(props: BarkThemeProps) => {
             return props.theme.textColor.secondary;
         }};
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
 `;

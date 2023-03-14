@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { ButtonContext } from "./context";
+import { useButtonContext } from "./context";
 import { ButtonProps } from "./declare";
 import { ButtonStyledButton } from "./styles/styled-button";
 import { ButtonStyledContainer } from "./styles/styled-container";
@@ -14,11 +14,7 @@ import { ButtonStyledTitle } from "./styles/styled-title";
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
-    const context: Partial<ButtonProps> = React.useContext(ButtonContext);
-    const enrichedProps: ButtonProps = {
-        ...context,
-        ...props,
-    };
+    const enrichedProps: ButtonProps = useButtonContext(props);
 
     return (<ButtonStyledButton
         className={enrichedProps.className}

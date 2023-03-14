@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Components_Button
+ * @namespace Components_Button_Styles
  * @description Styled Container
  */
 

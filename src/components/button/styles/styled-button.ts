@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Components_Button
+ * @namespace Components_Button_Styles
  * @description Styled Button
  */
 
@@ -11,6 +11,7 @@ import { ButtonProps } from "../declare";
 
 export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, ButtonProps> =
     styled.button`
+        outline: none;
         flex: ${(props: BarkThemeProps<ButtonProps>) => {
             if (typeof props.flex === 'number') {
                 return props.flex;
@@ -69,4 +70,7 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
             return props.theme.backColor.active;
         }}; 
         }
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
 `;

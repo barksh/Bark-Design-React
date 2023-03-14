@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Components_Button
+ * @namespace Components_Button_Styles
  * @description Styled Title
  */
 
@@ -27,4 +27,7 @@ export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
         ${ButtonStyledButton as any}:hover & {
             text-decoration: underline;
         }
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
 `;
