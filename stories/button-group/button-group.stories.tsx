@@ -15,24 +15,23 @@ export default {
 
 const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
 
-  return (
-    <Theme>
-      <ButtonGroup
-        {...args}
+  return (<Theme>
+    <ButtonGroup
+      {...args}
+    >
+      <Button
+        description="This is Button 1"
       >
-        <Button
-          description="This is Button 1"
-        >
-          Button 1321321312
-        </Button>
-        <Button>
-          Button 2
-        </Button>
-        <Button>
-          Button 3
-        </Button>
-      </ButtonGroup>
-    </Theme>);
+        Button
+      </Button>
+      <Button>
+        Button 2
+      </Button>
+      <Button>
+        Button 3
+      </Button>
+    </ButtonGroup>
+  </Theme>);
 };
 
 export const Primary = Template.bind({});

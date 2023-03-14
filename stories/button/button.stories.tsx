@@ -15,19 +15,18 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args: any) => {
 
-  return (
-    <Theme>
-      <Button
-        {...args}
-      />
-      <div>
-        Without description
-      </div>
-      <Button
-        {...args}
-        description={undefined}
-      />
-    </Theme>);
+  return (<Theme>
+    <Button
+      {...args}
+    />
+    <div>
+      Without description
+    </div>
+    <Button
+      {...args}
+      description={undefined}
+    />
+  </Theme>);
 };
 
 export const Primary = Template.bind({});
