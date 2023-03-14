@@ -23,11 +23,14 @@ export type BarkThemeProfile = {
     };
     readonly borderColor: {
         readonly primary: string;
+        readonly focus: string;
         readonly active: string;
     };
     readonly textColor: {
         readonly primary: string;
         readonly secondary: string;
+        readonly warning: string;
+        readonly error: string;
         readonly action: string;
     };
 };

@@ -6,6 +6,7 @@
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook"
   },
   "dependencies": {
+    "@sudoo/random": "^2.2.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
