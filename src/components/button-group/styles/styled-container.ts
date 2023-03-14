@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Components_ButtonGroup
+ * @namespace Components_ButtonGroup_Styles
  * @description Styled Container
  */
 
@@ -19,6 +19,7 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
             }
             return "fit-content";
         }};
+        max-width: 100%;
         height: ${(props: BarkThemeProps<ButtonGroupProps>) => {
             if (props.maximize) {
                 return "100%";
