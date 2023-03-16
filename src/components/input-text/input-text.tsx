@@ -13,9 +13,10 @@ import { InputTextStyledInput } from "./styles/styled-input";
 
 export const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
 
-    const enrichedProps: InputTextProps = useFormContext(props, {
-        value: props.defaultValue ?? '',
-    });
+    const enrichedProps: InputTextProps =
+        useFormContext(props, {
+            value: props.defaultValue ?? '',
+        });
 
     return (<InputContainer
         title={enrichedProps.title}

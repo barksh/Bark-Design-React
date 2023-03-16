@@ -14,6 +14,14 @@ export type PropsClassNameAddOn = {
     readonly className?: string | undefined;
 };
 
+export type PropsPrefixAddOn = {
+    readonly prefix?: ReactNode;
+};
+
+export type PropsSuffixAddOn = {
+    readonly suffix?: ReactNode;
+};
+
 export type SizePropertyValue = 'small' | 'regular' | 'large';
 export type PropsSizeAddon = {
     readonly size?: SizePropertyValue;

@@ -4,14 +4,13 @@
  * @description Declare
  */
 
-import * as React from "react";
+import { PropsPrefixAddOn, PropsSuffixAddOn } from "../../util/props";
 import { CommonInputProps } from "../input/declare";
 
 export type InputTextProps =
     & {
-        readonly prefix?: React.ReactNode;
-        readonly suffix?: React.ReactNode;
-
         readonly placeholder?: string;
     }
+    & PropsPrefixAddOn
+    & PropsSuffixAddOn
     & CommonInputProps<string>;
