@@ -4,11 +4,13 @@
  * @description Declare
  */
 
-import { PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsClassNameAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
 
 export type AppBarProps =
     & {
         readonly title: string;
     }
+    & PropsPrefixAddOn
+    & PropsSuffixAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;
