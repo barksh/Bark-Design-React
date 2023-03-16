@@ -14,6 +14,9 @@ export type ButtonProps =
         readonly flex?: number;
         readonly maximize?: boolean;
         readonly noBorder?: boolean;
+
+        readonly actionPrefix?: boolean;
+        readonly actionSuffix?: boolean;
     }
     & PropsPrefixAddOn
     & PropsSuffixAddOn

@@ -11,6 +11,7 @@ import { ButtonProps } from "../declare";
 
 export const ButtonStyledContentContainer: StyledComponent<"div", BarkThemeProps, ButtonProps> =
     styled.div`
+        flex: 1;
         text-align: start;
         display: flex;
         flex-direction: column;

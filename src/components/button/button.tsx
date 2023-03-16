@@ -18,7 +18,10 @@ import { ButtonStyledTitle } from "./styles/styled-title";
 const ButtonPrefix: React.FC<ButtonProps> = (props: ButtonProps) => {
 
     if (props.prefix) {
-        return (<ButtonStyledPrefixContainer>
+        return (<ButtonStyledPrefixContainer
+            size={props.size}
+            actionPrefix={props.actionPrefix}
+        >
             {props.prefix}
         </ButtonStyledPrefixContainer>);
     }
@@ -28,7 +31,10 @@ const ButtonPrefix: React.FC<ButtonProps> = (props: ButtonProps) => {
 const ButtonSuffix: React.FC<ButtonProps> = (props: ButtonProps) => {
 
     if (props.suffix) {
-        return (<ButtonStyledSuffixContainer>
+        return (<ButtonStyledSuffixContainer
+            size={props.size}
+            actionSuffix={props.actionSuffix}
+        >
             {props.suffix}
         </ButtonStyledSuffixContainer>);
     }
