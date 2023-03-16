@@ -10,7 +10,29 @@ import { ButtonProps } from "./declare";
 import { ButtonStyledButton } from "./styles/styled-button";
 import { ButtonStyledContainer } from "./styles/styled-container";
 import { ButtonStyledDescription } from "./styles/styled-description";
+import { ButtonStyledPrefixContainer } from "./styles/styled-prefix-container";
+import { ButtonStyledSuffixContainer } from "./styles/styled-suffix-container";
 import { ButtonStyledTitle } from "./styles/styled-title";
+
+const ButtonPrefix: React.FC<ButtonProps> = (props: ButtonProps) => {
+
+    if (props.prefix) {
+        return (<ButtonStyledPrefixContainer>
+            {props.prefix}
+        </ButtonStyledPrefixContainer>);
+    }
+    return null;
+};
+
+const ButtonSuffix: React.FC<ButtonProps> = (props: ButtonProps) => {
+
+    if (props.suffix) {
+        return (<ButtonStyledSuffixContainer>
+            {props.suffix}
+        </ButtonStyledSuffixContainer>);
+    }
+    return null;
+};
 
 export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
@@ -24,6 +46,9 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         maximize={enrichedProps.maximize}
         noBorder={enrichedProps.noBorder}
     >
+        <ButtonPrefix
+            {...props}
+        />
         <ButtonStyledContainer
             size={enrichedProps.size}
         >
@@ -36,5 +61,8 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
                 {enrichedProps.description}
             </ButtonStyledDescription> : null}
         </ButtonStyledContainer>
+        <ButtonSuffix
+            {...props}
+        />
     </ButtonStyledButton>);
 };

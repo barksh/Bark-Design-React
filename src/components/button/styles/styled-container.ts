@@ -19,7 +19,7 @@ export const ButtonStyledContainer: StyledComponent<"div", BarkThemeProps, Butto
             return props.theme.borderColor.active;
         }};
         }
-        box-sizing: border-box;
+        text-align: start;
         display: flex;
         flex-direction: column;
         align-items: flex-start;

@@ -26,6 +26,13 @@ const Template: ComponentStory<typeof Button> = (args: any) => {
       {...args}
       description={undefined}
     />
+    <div>
+      With Prefix
+    </div>
+    <Button
+      {...args}
+      prefix={<div>Prefix</div>}
+    />
   </Theme>);
 };
 

@@ -12,15 +12,14 @@ import { ButtonProps } from "../declare";
 export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, ButtonProps> =
     styled.button`
         outline: none;
+        display: flex;
         flex: ${(props: BarkThemeProps<ButtonProps>) => {
             if (typeof props.flex === 'number') {
                 return props.flex;
             }
             return "auto";
         }};
-        text-align: start;
         transition: all 0.2s ease-in-out;
-        box-sizing: border-box;
         cursor: pointer;
         width: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.maximize) {
