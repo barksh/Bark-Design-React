@@ -4,6 +4,8 @@
  * @description Index
  */
 
+export * from "./app-bar/app-bar";
+export * from "./app-bar/declare";
 export * from "./button-group/button-group";
 export * from "./button-group/declare";
 export * from "./button/button";
