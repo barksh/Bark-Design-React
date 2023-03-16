@@ -10,7 +10,9 @@ import { AppBarStyledAppBar } from "./styles/styled-app-bar";
 
 export const AppBar: React.FC<AppBarProps> = (props: AppBarProps) => {
 
-    return (<AppBarStyledAppBar>
+    return (<AppBarStyledAppBar
+        size={props.size}
+    >
         {props.title}
     </AppBarStyledAppBar>);
 };
