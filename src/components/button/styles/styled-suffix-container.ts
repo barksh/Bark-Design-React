@@ -12,7 +12,4 @@ export const ButtonStyledSuffixContainer: StyledComponent<"div", BarkThemeProps,
         color: ${(props: BarkThemeProps) => {
             return props.theme.textColor.secondary;
         }};
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
 `;

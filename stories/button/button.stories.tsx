@@ -6,6 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { FaAngleRight } from "react-icons/fa";
 import { Button, Theme } from "../../src";
 
 export default {
@@ -32,6 +33,21 @@ const Template: ComponentStory<typeof Button> = (args: any) => {
     <Button
       {...args}
       prefix={<div>Prefix</div>}
+    />
+    <div>
+      With Suffix
+    </div>
+    <Button
+      {...args}
+      suffix={<div>Suffix</div>}
+    />
+    <div>
+      With Prefix and Suffix
+    </div>
+    <Button
+      {...args}
+      prefix={<div>Prefix</div>}
+      suffix={<FaAngleRight />}
     />
   </Theme>);
 };

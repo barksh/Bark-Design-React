@@ -12,7 +12,6 @@ import { ButtonProps } from "../declare";
 export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, ButtonProps> =
     styled.button`
         outline: none;
-        display: flex;
         flex: ${(props: BarkThemeProps<ButtonProps>) => {
             if (typeof props.flex === 'number') {
                 return props.flex;
