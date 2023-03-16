@@ -42,4 +42,9 @@ export const ButtonStyledSuffixContainer: StyledComponent<"div", BarkThemeProps,
                 return props.theme.textColor.primary;
             }
         }};
+        &:hover {
+            color: ${(props: BarkThemeProps<ButtonProps>) => {
+            return props.theme.textColor.primary;
+        }};
+        }
 `;

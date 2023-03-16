@@ -12,7 +12,6 @@ import { ButtonStyledButton } from "./styled-button";
 
 export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        transition: all 0.3s ease-in-out;
         font-size: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
@@ -26,6 +25,11 @@ export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
         }};
         ${ButtonStyledButton as any}:hover & {
             text-decoration: underline;
+        }
+        &:hover {
+            color: ${(props: BarkThemeProps<ButtonProps>) => {
+            return props.theme.textColor.primary;
+        }};
         }
         text-overflow: ellipsis;
         white-space: nowrap;
