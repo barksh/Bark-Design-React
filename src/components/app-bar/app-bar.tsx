@@ -7,6 +7,7 @@
 import * as React from "react";
 import { AppBarProps } from "./declare";
 import { AppBarStyledAppBar } from "./styles/styled-app-bar";
+import { AppBarStyledHeader } from "./styles/styled-header";
 import { AppBarStyledPrefixContainer } from "./styles/styled-prefix-container";
 import { AppBarStyledSuffixContainer } from "./styles/styled-suffix-container";
 
@@ -42,7 +43,11 @@ export const AppBar: React.FC<AppBarProps> = (props: AppBarProps) => {
         <AppBarPrefix
             {...props}
         />
-        {props.title}
+        <AppBarStyledHeader
+            size={props.size}
+        >
+            {props.title}
+        </AppBarStyledHeader>
         <AppBarSuffix
             {...props}
         />

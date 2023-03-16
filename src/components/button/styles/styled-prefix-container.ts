@@ -27,7 +27,7 @@ export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
                 case 'large': return "4px";
             }
         }};
-        padding-left: ${(props: BarkThemeProps<ButtonProps>) => {
+        padding-right: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";

@@ -11,6 +11,9 @@ import { AppBarProps } from "../declare";
 
 export const AppBarStyledAppBar: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: ${(props: BarkThemeProps<AppBarProps>) => {
             const fixedSize = fixSizeProps(props.size);
@@ -30,12 +33,14 @@ export const AppBarStyledAppBar: StyledComponent<"div", BarkThemeProps, any> =
         }} solid ${(props: BarkThemeProps<AppBarProps>) => {
             return props.theme.borderColor.primary;
         }};
-        font-size: ${(props: BarkThemeProps<AppBarProps>) => {
+        border-bottom: ${(props: BarkThemeProps<AppBarProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
-                case 'small': return "16px";
-                case 'regular': return "24px";
-                case 'large': return "32px";
+                case 'small': return "1px";
+                case 'regular': return "1px";
+                case 'large': return "2px";
             }
+        }} solid ${(props: BarkThemeProps<AppBarProps>) => {
+            return props.theme.borderColor.primary;
         }};
 `;
