@@ -7,7 +7,7 @@
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { FaAngleRight, FaBaseballBall } from "react-icons/fa";
-import { AppBar, Theme } from "../../src";
+import { AppBar, Button, Theme } from "../../src";
 
 export default {
     title: "App Bar",
@@ -39,9 +39,13 @@ const Template: ComponentStory<typeof AppBar> = (args: any) => {
         </div>
         <AppBar
             {...args}
-            prefix={<FaBaseballBall
-                size={24}
-            />}
+            prefix={<Button
+                noBorder
+            >
+                <FaBaseballBall
+                    size={24}
+                />
+            </Button>}
             suffix={<FaAngleRight
                 size={30}
             />}
