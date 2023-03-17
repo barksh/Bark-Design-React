@@ -12,12 +12,28 @@ import { InputTextareaProps } from "../declare";
 export const InputTextareaStyledTextarea: StyledComponent<"textarea", BarkThemeProps, any> =
     styled.textarea`
         width: 100%;
+        height: ${(props: BarkThemeProps<InputTextareaProps>) => {
+            if (typeof props.rows === 'number') {
+                return `${props.rows}em`;
+            }
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "4em";
+                case 'regular': return "6em";
+                case 'large': return "8em";
+            }
+        }};
         outline: none;
         border: none;
         border-radius: 0px;
-        resize: vertical;
+        resize: ${(props: BarkThemeProps<InputTextareaProps>) => {
+            if (props.resizable) {
+                return 'vertical';
+            }
+            return 'none';
+        }};
         margin: 0px;
-        padding:  ${(props: BarkThemeProps<InputTextareaProps>) => {
+        padding: ${(props: BarkThemeProps<InputTextareaProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "1px";

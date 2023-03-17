@@ -32,6 +32,7 @@ export const InputTextarea: React.FC<InputTextareaProps> = (props: InputTextarea
                 size={enrichedProps.size}
                 placeholder={enrichedProps.placeholder}
                 value={enrichedProps.value}
+                resizable={enrichedProps.resizable}
                 onChange={(event: any) => {
                     if (typeof enrichedProps.onChange === 'function') {
                         enrichedProps.onChange(event.target.value);

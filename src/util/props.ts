@@ -38,3 +38,7 @@ export type PropsSuffixAddOn = {
 export type PropsSizeAddon = {
     readonly size?: SizePropertyValue;
 };
+
+export type PropsPlaceholderAddOn = {
+    readonly placeholder?: string;
+};
