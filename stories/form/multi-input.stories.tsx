@@ -11,6 +11,10 @@ import { Button, ButtonGroup, Form, InputText, InputTextarea, Theme, useForm } f
 export default {
     title: "Form",
     component: Form,
+    subcomponents: {
+        InputText,
+        InputTextarea,
+    },
 } as ComponentMeta<typeof Form>;
 
 const Template: ComponentStory<typeof Form> = (_args: any) => {
@@ -23,7 +27,6 @@ const Template: ComponentStory<typeof Form> = (_args: any) => {
         >
             <InputText
                 title="First Input"
-                size="small"
                 information="Value must be 123"
                 onValidate={(value: string) => {
                     if (value !== '123') {
@@ -34,7 +37,6 @@ const Template: ComponentStory<typeof Form> = (_args: any) => {
             />
             <InputTextarea
                 title="Second Input"
-                size="regular"
                 onValidate={(value: string) => {
                     if (!value) {
                         return 'Error! Oh No! This is long and, Value must be not empty';
