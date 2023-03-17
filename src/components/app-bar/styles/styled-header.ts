@@ -6,7 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { AppBarProps } from "../declare";
 
 export const AppBarStyledHeader: StyledComponent<"div", BarkThemeProps, any> =

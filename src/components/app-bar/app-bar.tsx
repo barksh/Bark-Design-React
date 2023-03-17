@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Components_AppBar
- * @description AppBar
+ * @description App Bar
  */
 
 import * as React from "react";
