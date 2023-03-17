@@ -6,7 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { CommonInputProps } from "../declare";
 
 export const InputStyledInputContainer: StyledComponent<"div", BarkThemeProps, any> =

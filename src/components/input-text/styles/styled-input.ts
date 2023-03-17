@@ -6,7 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { InputTextProps } from "../declare";
 
 export const InputTextStyledInput: StyledComponent<"input", BarkThemeProps, any> =
@@ -14,6 +14,7 @@ export const InputTextStyledInput: StyledComponent<"input", BarkThemeProps, any>
         width: 100%;
         outline: none;
         border: none;
+        border-radius: 0px;
         padding:  ${(props: BarkThemeProps<InputTextProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

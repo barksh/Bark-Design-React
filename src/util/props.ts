@@ -1,10 +1,11 @@
 /**
  * @author WMXPY
  * @namespace Util
- * @description Button
+ * @description Props
  */
 
 import { ReactNode } from "react";
+import { SizePropertyValue } from "./size";
 
 export type PropsChildrenAddOn = {
     readonly children?: ReactNode | undefined;
@@ -12,6 +13,18 @@ export type PropsChildrenAddOn = {
 
 export type PropsClassNameAddOn = {
     readonly className?: string | undefined;
+};
+
+export type PropsNoBorderAddOn = {
+    readonly noBorder?: boolean;
+};
+
+export type PropsNoSeparatorAddOn = {
+    readonly noSeparator?: boolean;
+};
+
+export type PropsMaximizeAddOn = {
+    readonly maximize?: boolean;
 };
 
 export type PropsPrefixAddOn = {
@@ -22,15 +35,6 @@ export type PropsSuffixAddOn = {
     readonly suffix?: ReactNode;
 };
 
-export type SizePropertyValue = 'small' | 'regular' | 'large';
 export type PropsSizeAddon = {
     readonly size?: SizePropertyValue;
-};
-
-export const fixSizeProps = (size?: SizePropertyValue): SizePropertyValue => {
-
-    if (typeof size !== 'string') {
-        return 'regular';
-    }
-    return size;
 };
