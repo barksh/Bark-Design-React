@@ -15,6 +15,8 @@ export const InputTextareaStyledTextarea: StyledComponent<"textarea", BarkThemeP
         outline: none;
         border: none;
         border-radius: 0px;
+        resize: vertical;
+        margin: 0px;
         padding:  ${(props: BarkThemeProps<InputTextareaProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
@@ -26,9 +28,9 @@ export const InputTextareaStyledTextarea: StyledComponent<"textarea", BarkThemeP
         font-size: ${(props: BarkThemeProps<InputTextareaProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
-                case 'small': return "16px";
-                case 'regular': return "20px";
-                case 'large': return "24px";
+                case 'small': return "14px";
+                case 'regular': return "16px";
+                case 'large': return "20px";
             }
         }};
         border: 1px dashed transparent;

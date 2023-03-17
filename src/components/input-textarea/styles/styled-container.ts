@@ -11,7 +11,6 @@ import { InputTextareaProps } from "../declare";
 
 export const InputTextareaStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: 100%;
         height: fit-content;
         border: ${(props: BarkThemeProps<InputTextareaProps>) => {
             const fixedSize = fixSizeProps(props.size);

@@ -19,6 +19,8 @@ export * from "./form/form";
 export * from "./global-style/global-style";
 export * from "./input-text/declare";
 export * from "./input-text/input-text";
+export * from "./input-textarea/declare";
+export * from "./input-textarea/input-textarea";
 export * from "./input/declare";
 export * from "./input/input-container";
 export * from "./theme/theme";
