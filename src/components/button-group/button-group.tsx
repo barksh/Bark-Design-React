@@ -6,23 +6,29 @@
 
 import * as React from "react";
 import { ButtonContext } from "../button/context";
+import { useButtonGroupContext } from "./context";
 import { ButtonGroupProps } from "./declare";
 import { ButtonGroupStyledContainer } from "./styles/styled-container";
 
 export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps) => {
 
+    const enrichedProps: ButtonGroupProps = useButtonGroupContext(props);
+
     return (<ButtonGroupStyledContainer
-        size={props.size}
-        maximize={props.maximize}
+        size={enrichedProps.size}
+        noBorder={enrichedProps.noBorder}
+        noSeparator={enrichedProps.noSeparator}
+        maximize={enrichedProps.maximize}
     >
         <ButtonContext.Provider
             value={{
                 noBorder: true,
-                size: props.size,
+                size: enrichedProps.size,
+                keepVisible: enrichedProps.keepVisible,
                 flex: 1,
             }}
         >
-            {props.children}
+            {enrichedProps.children}
         </ButtonContext.Provider>
     </ButtonGroupStyledContainer>);
 };

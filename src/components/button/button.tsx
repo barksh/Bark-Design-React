@@ -52,6 +52,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         flex={enrichedProps.flex}
         maximize={enrichedProps.maximize}
         noBorder={enrichedProps.noBorder}
+        keepVisible={enrichedProps.keepVisible}
     >
         <ButtonStyledContainer>
             <ButtonPrefix

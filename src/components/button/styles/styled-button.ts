@@ -6,7 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { ButtonProps } from "../declare";
 
 export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, ButtonProps> =
@@ -68,7 +68,22 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
             return props.theme.backColor.active;
         }}; 
         }
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        text-overflow: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.keepVisible) {
+                return "inherit";
+            }
+            return "ellipsis";
+        }};
+        white-space: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.keepVisible) {
+                return "inherit";
+            }
+            return "nowrap";
+        }};
+        overflow: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.keepVisible) {
+                return "inherit";
+            }
+            return "hidden";
+        }};
 `;

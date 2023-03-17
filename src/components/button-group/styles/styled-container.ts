@@ -6,7 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { ButtonStyledButton } from "../../button/styles/styled-button";
 import { ButtonGroupProps } from "../declare";
 
@@ -27,6 +27,9 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
             return "fit-content";
         }};
         border: ${(props: BarkThemeProps<ButtonGroupProps>) => {
+            if (props.noBorder) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '2px';
@@ -36,6 +39,9 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
             return props.theme.borderColor.primary;
         }};
         border-bottom: ${(props: BarkThemeProps<ButtonGroupProps>) => {
+            if (props.noBorder) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '5px';
@@ -46,6 +52,9 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
         }};
         ${ButtonStyledButton} + ${ButtonStyledButton} {
             border-left: ${(props: BarkThemeProps<ButtonGroupProps>) => {
+            if (props.noSeparator) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '2px';

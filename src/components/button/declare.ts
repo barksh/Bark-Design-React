@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
 
 export type ButtonProps =
     & {
@@ -12,12 +12,14 @@ export type ButtonProps =
         readonly onClick?: () => any;
 
         readonly flex?: number;
-        readonly maximize?: boolean;
-        readonly noBorder?: boolean;
 
         readonly actionPrefix?: boolean;
         readonly actionSuffix?: boolean;
+
+        readonly keepVisible?: boolean;
     }
+    & PropsNoBorderAddOn
+    & PropsMaximizeAddOn
     & PropsPrefixAddOn
     & PropsSuffixAddOn
     & PropsChildrenAddOn

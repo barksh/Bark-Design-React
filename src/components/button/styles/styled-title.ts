@@ -6,12 +6,15 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { ButtonProps } from "../declare";
 import { ButtonStyledButton } from "./styled-button";
 
 export const ButtonStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

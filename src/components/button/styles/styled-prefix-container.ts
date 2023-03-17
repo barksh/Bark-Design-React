@@ -6,7 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { fixSizeProps } from "../../../util/props";
+import { fixSizeProps } from "../../../util/size";
 import { ButtonProps } from "../declare";
 
 export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps, any> =
@@ -27,7 +27,7 @@ export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
                 case 'large': return "4px";
             }
         }};
-        padding-right: ${(props: BarkThemeProps<ButtonProps>) => {
+        padding-left: ${(props: BarkThemeProps<ButtonProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";
