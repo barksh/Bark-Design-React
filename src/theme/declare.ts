@@ -20,6 +20,7 @@ export type BarkThemeProfile = {
     readonly backColor: {
         readonly primary: string;
         readonly active: string;
+        readonly palette: string[];
     };
     readonly borderColor: {
         readonly primary: string;
