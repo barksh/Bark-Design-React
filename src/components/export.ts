@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
- * @namespace BarkDesignReact
- * @description Index
+ * @namespace Components
+ * @description Export
  */
 
 export * from "./app-bar/app-bar";
