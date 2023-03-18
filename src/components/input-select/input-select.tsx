@@ -7,7 +7,7 @@
 import * as React from "react";
 import { useFormContext } from "../form/context/context";
 import { InputContainer } from "../input/input-container";
-import { InputSelectProps } from "./declare";
+import { InputSelectOption, InputSelectProps } from "./declare";
 import { InputSelectStyledContainer } from "./styles/styled-container";
 import { InputSelectStyledSelect } from "./styles/styled-select";
 
@@ -17,6 +17,8 @@ export const InputSelect: React.FC<InputSelectProps> = (props: InputSelectProps)
         useFormContext(props, {
             value: props.defaultValue ?? '',
         });
+
+    const options: InputSelectOption[] = enrichedProps.options ?? [];
 
     return (<InputContainer
         title={enrichedProps.title}
@@ -37,6 +39,14 @@ export const InputSelect: React.FC<InputSelectProps> = (props: InputSelectProps)
                     }
                 }}
             >
+                {options.map((option: InputSelectOption) => {
+                    return (<option
+                        key={option.value}
+                        value={option.value}
+                    >
+                        {option.label}
+                    </option>);
+                })}
             </InputSelectStyledSelect>
         </InputSelectStyledContainer>
     </InputContainer>);

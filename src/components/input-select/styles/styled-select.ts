@@ -17,16 +17,31 @@ export const InputSelectStyledSelect: StyledComponent<"select", BarkThemeProps, 
         height: ${(props: BarkThemeProps<InputSelectProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
-                case 'small': return "24px";
-                case 'regular': return "26px";
-                case 'large': return "32px";
+                case 'small': return "26px";
+                case 'regular': return "32px";
+                case 'large': return "42px";
             }
         }};
         border: 1px solid transparent;
         background-color: transparent;
         border-radius: 0px;
         margin: 0px;
-        padding: 0px;
+        font-size: ${(props: BarkThemeProps<InputSelectProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "16px";
+                case 'regular': return "20px";
+                case 'large': return "24px";
+            }
+        }};
+        padding-left: ${(props: BarkThemeProps<InputSelectProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "2px";
+                case 'regular': return "4px";
+                case 'large': return "6px";
+            }
+        }};
 
         &:focus-within {
             border: 1px dashed ${(props: BarkThemeProps) => {
