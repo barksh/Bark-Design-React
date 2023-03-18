@@ -7,7 +7,7 @@
 import * as React from "react";
 import { useFormContext } from "../form/context/context";
 import { InputContainer } from "../input/input-container";
-import { InputSelectOption, InputSelectProps } from "./declare";
+import { InputSelectOptionElement, InputSelectOptionGroup, InputSelectOptionSubElement, InputSelectProps } from "./declare";
 import { InputSelectStyledContainer } from "./styles/styled-container";
 import { InputSelectStyledSelect } from "./styles/styled-select";
 
@@ -18,7 +18,8 @@ export const InputSelect: React.FC<InputSelectProps> = (props: InputSelectProps)
             value: props.defaultValue ?? '',
         });
 
-    const options: InputSelectOption[] = enrichedProps.options ?? [];
+    const options: Array<InputSelectOptionGroup | InputSelectOptionElement> =
+        enrichedProps.options ?? [];
 
     return (<InputContainer
         title={enrichedProps.title}
@@ -39,7 +40,28 @@ export const InputSelect: React.FC<InputSelectProps> = (props: InputSelectProps)
                     }
                 }}
             >
-                {options.map((option: InputSelectOption) => {
+                {options.map((
+                    option: InputSelectOptionGroup | InputSelectOptionElement,
+                ) => {
+                    if (option.type === 'group') {
+                        const group: InputSelectOptionGroup = option;
+                        return (<optgroup
+                            key={group.label}
+                            label={group.label}
+                        >
+                            {group.children.map((
+                                child: InputSelectOptionSubElement,
+                            ) => {
+                                return (<option
+                                    key={child.value}
+                                    value={child.value}
+                                >
+                                    {child.label}
+                                </option>);
+                            })}
+                        </optgroup>);
+                    }
+
                     return (<option
                         key={option.value}
                         value={option.value}

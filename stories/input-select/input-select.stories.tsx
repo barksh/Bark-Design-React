@@ -31,13 +31,32 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     options: [{
+        type: 'group',
         label: 'Option 1',
-        value: 'option-1',
+        children: [{
+            label: 'Option 1.1',
+            value: 'option-1.1',
+        }, {
+            label: 'Option 1.2',
+            value: 'option-1.2',
+        }],
     }, {
+        type: 'element',
         label: 'Option 2',
         value: 'option-2',
     }, {
+        type: 'group',
         label: 'Option 3',
-        value: 'option-3',
+        children: [{
+            label: 'Option 3.1',
+            value: 'option-3.1',
+        }, {
+            label: 'Option 3.2',
+            value: 'option-3.2',
+        }],
+    }, {
+        type: 'element',
+        label: 'Option 4',
+        value: 'option-4',
     }],
 };

@@ -9,11 +9,27 @@ import { CommonInputProps } from "../input/declare";
 export type InputSelectOption = {
 
     readonly label: string;
-    readonly value: string;
 };
+
+export type InputSelectOptionSubElement = {
+
+    readonly value: string;
+} & InputSelectOption;
+
+export type InputSelectOptionGroup = {
+
+    readonly type: 'group';
+    readonly children: InputSelectOptionSubElement[];
+} & InputSelectOption;
+
+export type InputSelectOptionElement = {
+
+    readonly type: 'element';
+    readonly value: string;
+} & InputSelectOption;
 
 export type InputSelectProps =
     & {
-        readonly options?: InputSelectOption[];
+        readonly options?: Array<InputSelectOptionGroup | InputSelectOptionElement>;
     }
     & CommonInputProps<string>;

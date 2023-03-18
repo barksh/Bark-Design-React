@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { ButtonContext } from "../button/context";
-import { ContentBlock } from "../export";
+import { ContentBlock } from "../content-block/content-block";
 import { CardActions } from "./card-actions";
 import { CardHeader } from "./card-header";
 import { useCardContext } from "./context";
