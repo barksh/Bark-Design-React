@@ -7,7 +7,7 @@
 import { createGlobalStyle } from "styled-components";
 
 // spell-checker: disable
-export const GlobalStyleBark = createGlobalStyle`
+export const GlobalStyleCommon = createGlobalStyle`
   * {
     box-sizing: border-box;
     outline: none;

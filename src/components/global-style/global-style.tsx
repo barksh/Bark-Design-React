@@ -5,9 +5,13 @@
  */
 
 import * as React from "react";
-import { GlobalStyleBark } from "./styles/style";
+import { GlobalStyleCode } from "./styles/code";
+import { GlobalStyleCommon } from "./styles/common";
 
 export const GlobalStyle: React.FC = () => {
 
-    return (<GlobalStyleBark />);
+    return (<React.Fragment>
+        <GlobalStyleCommon />
+        <GlobalStyleCode />
+    </React.Fragment>);
 };

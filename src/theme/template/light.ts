@@ -14,6 +14,7 @@ export const defaultLightThemeProfile: BarkThemeProfile = {
     backColor: {
         primary: '#ffffff',
         active: '#a9c0de',
+        emphasize: '#eeeeff',
         palette: [
             '#4d455d',
             '#e96479',
