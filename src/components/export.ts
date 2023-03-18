@@ -19,6 +19,8 @@ export * from "./content-block/declare";
 export * from "./form/declare";
 export * from "./form/form";
 export * from "./global-style/global-style";
+export * from "./input-select/declare";
+export * from "./input-select/input-select";
 export * from "./input-text/declare";
 export * from "./input-text/input-text";
 export * from "./input-textarea/declare";
