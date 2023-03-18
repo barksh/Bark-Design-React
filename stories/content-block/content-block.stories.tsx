@@ -9,7 +9,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ContentBlock, Theme } from "../../src";
 
 export default {
-    title: "ContentBlock",
+    title: "Content Block",
     component: ContentBlock,
 } as ComponentMeta<typeof ContentBlock>;
 
