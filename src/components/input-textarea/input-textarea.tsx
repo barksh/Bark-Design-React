@@ -29,6 +29,7 @@ export const InputTextarea: React.FC<InputTextareaProps> = (props: InputTextarea
             size={enrichedProps.size}
         >
             <InputTextareaStyledTextarea
+                disabled={enrichedProps.disabled}
                 size={enrichedProps.size}
                 placeholder={enrichedProps.placeholder}
                 value={enrichedProps.value}

@@ -22,6 +22,12 @@ export const InputSelectStyledSelect: StyledComponent<"select", BarkThemeProps, 
                 case 'large': return "42px";
             }
         }};
+        cursor: ${(props: BarkThemeProps<InputSelectProps>) => {
+            if (props.disabled) {
+                return "not-allowed";
+            }
+            return "pointer";
+        }};
         border: 1px solid transparent;
         background-color: transparent;
         border-radius: 0px;

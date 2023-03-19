@@ -26,6 +26,12 @@ export const InputTextareaStyledTextarea: StyledComponent<"textarea", BarkThemeP
         outline: none;
         border: none;
         border-radius: 0px;
+        cursor: ${(props: BarkThemeProps<InputTextareaProps>) => {
+            if (props.disabled) {
+                return "not-allowed";
+            }
+            return "text";
+        }};
         resize: ${(props: BarkThemeProps<InputTextareaProps>) => {
             if (props.resizable) {
                 return 'vertical';

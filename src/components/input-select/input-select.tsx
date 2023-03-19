@@ -32,6 +32,7 @@ export const InputSelect: React.FC<InputSelectProps> = (props: InputSelectProps)
             size={enrichedProps.size}
         >
             <InputSelectStyledSelect
+                disabled={enrichedProps.disabled}
                 size={enrichedProps.size}
                 value={enrichedProps.value}
                 onChange={(event: any) => {

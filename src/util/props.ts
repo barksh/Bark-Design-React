@@ -40,6 +40,10 @@ export type PropsSuffixAddOn = {
     readonly suffix?: ReactNode;
 };
 
+export type PropsDisabledAddOn = {
+    readonly disabled?: boolean;
+};
+
 export type PropsSizeAddon = {
     readonly size?: SizePropertyValue;
 };

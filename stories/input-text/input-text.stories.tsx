@@ -37,4 +37,5 @@ const Template: ComponentStory<typeof InputText> = (args: any) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
+    value: 'Hello World',
 };
