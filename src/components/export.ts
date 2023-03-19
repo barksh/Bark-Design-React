@@ -29,6 +29,8 @@ export * from "./input-textarea/declare";
 export * from "./input-textarea/input-textarea";
 export * from "./input/declare";
 export * from "./input/input-container";
+export * from "./statistic/declare";
+export * from "./statistic/statistic";
 export * from "./tabs/declare";
 export * from "./tabs/tab";
 export * from "./tabs/tabs";
