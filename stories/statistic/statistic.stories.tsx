@@ -9,7 +9,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Statistic, Theme } from "../../src";
 
 export default {
-    title: "Content Block",
+    title: "Statistic",
     component: Statistic,
 } as ComponentMeta<typeof Statistic>;
 
@@ -25,5 +25,7 @@ const Template: ComponentStory<typeof Statistic> = (args: any) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-    children: "Content Block Content",
+    title: "Title",
+    description: "Description",
+    children: "Content",
 };

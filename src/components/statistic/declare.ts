@@ -8,6 +8,8 @@ import { PropsChildrenAddOn, PropsClassNameAddOn, PropsNoBorderAddOn, PropsSizeA
 
 export type StatisticProps =
     & {
+        readonly title?: string;
+        readonly description?: string;
     }
     & PropsNoBorderAddOn
     & PropsClassNameAddOn
