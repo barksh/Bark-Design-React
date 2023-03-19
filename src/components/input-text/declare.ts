@@ -9,6 +9,7 @@ import { CommonInputProps } from "../input/declare";
 
 export type InputTextProps =
     & {
+        readonly disabled?: boolean;
         readonly type?:
         | "text"
         | "password"

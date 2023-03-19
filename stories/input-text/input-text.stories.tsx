@@ -24,6 +24,13 @@ const Template: ComponentStory<typeof InputText> = (args: any) => {
             value={value}
             onChange={(newValue) => setValue(newValue)}
         />
+        <div>Disabled</div>
+        <InputText
+            {...args}
+            disabled
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
     </Theme>);
 };
 

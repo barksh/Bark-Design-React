@@ -29,6 +29,7 @@ export const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
             size={enrichedProps.size}
         >
             <InputTextStyledInput
+                disabled={enrichedProps.disabled}
                 type={enrichedProps.type}
                 size={enrichedProps.size}
                 placeholder={enrichedProps.placeholder}

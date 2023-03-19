@@ -15,6 +15,12 @@ export const InputTextStyledInput: StyledComponent<"input", BarkThemeProps, any>
         outline: none;
         border: none;
         border-radius: 0px;
+        cursor: ${(props: BarkThemeProps<InputTextProps>) => {
+            if (props.disabled) {
+                return "not-allowed";
+            }
+            return "text";
+        }};
         padding:  ${(props: BarkThemeProps<InputTextProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
