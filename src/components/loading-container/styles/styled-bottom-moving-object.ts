@@ -59,7 +59,14 @@ export const LoadingContainerBottomMovingObject: StyledComponent<"div", BarkThem
     styled.div`
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "-8px";
+                case 'regular': return "-12px";
+                case 'large': return "-24px";
+            }
+        }};
         width: ${(props: BarkThemeProps<LoadingContainerProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
@@ -88,7 +95,6 @@ export const LoadingContainerBottomMovingObject: StyledComponent<"div", BarkThem
             }
         }};
         animation-duration: 2s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
-        animation-easing: ease-in-out;
 `;

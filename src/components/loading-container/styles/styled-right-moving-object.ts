@@ -9,9 +9,45 @@ import { BarkThemeProps } from "../../../theme/declare";
 import { fixSizeProps } from "../../../util/size";
 import { LoadingContainerProps } from "../declare";
 
-const rightMovingObjectKeyframes = keyframes`
+const smallRightMovingObjectKeyframes = keyframes`
     0% {
         top: -8px;
+    }
+    5% {
+        top: -8px;
+    }
+    95% {
+        top: 100%;
+    }
+    100% {
+        top: 100%;
+    }
+`;
+
+const regularRightMovingObjectKeyframes = keyframes`
+    0% {
+        top: -12px;
+    }
+    5% {
+        top: -12px;
+    }
+    95% {
+        top: 100%;
+    }
+    100% {
+        top: 100%;
+    }
+`;
+
+const largeRightMovingObjectKeyframes = keyframes`
+    0% {
+        top: -24px;
+    }
+    5% {
+        top: -24px;
+    }
+    95% {
+        top: 100%;
     }
     100% {
         top: 100%;
@@ -49,8 +85,15 @@ export const LoadingContainerRightMovingObject: StyledComponent<"div", BarkTheme
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        animation-name: ${rightMovingObjectKeyframes};
+        animation-name: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return smallRightMovingObjectKeyframes;
+                case 'regular': return regularRightMovingObjectKeyframes;
+                case 'large': return largeRightMovingObjectKeyframes;
+            }
+        }};
         animation-duration: 2s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
 `;

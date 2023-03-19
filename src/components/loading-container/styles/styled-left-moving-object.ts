@@ -26,10 +26,10 @@ const smallLeftMovingObjectKeyframes = keyframes`
 
 const regularLeftMovingObjectKeyframes = keyframes`
     0% {
-        bottom: -8px;
+        bottom: -12px;
     }
     5% {
-        bottom: -8px;
+        bottom: -12px;
     }
     95% {
         bottom: 100%;
@@ -41,10 +41,10 @@ const regularLeftMovingObjectKeyframes = keyframes`
 
 const largeLeftMovingObjectKeyframes = keyframes`
     0% {
-        bottom: -8px;
+        bottom: -24px;
     }
     5% {
-        bottom: -8px;
+        bottom: -24px;
     }
     95% {
         bottom: 100%;
@@ -94,6 +94,6 @@ export const LoadingContainerLeftMovingObject: StyledComponent<"div", BarkThemeP
             }
         }};
         animation-duration: 2s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
 `;
