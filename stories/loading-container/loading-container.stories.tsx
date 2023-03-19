@@ -16,9 +16,16 @@ export default {
 const Template: ComponentStory<typeof LoadingContainer> = (args: any) => {
 
     return (<Theme>
-        <LoadingContainer
-            {...args}
-        />
+        <div style={{
+            width: '256px',
+            height: '256px',
+            border: '1px solid black',
+        }}>
+            <LoadingContainer
+                {...args}
+            />
+        </div>
+
     </Theme>);
 };
 

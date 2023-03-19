@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
 
 export type LoadingContainerProps =
     & {
@@ -13,4 +13,5 @@ export type LoadingContainerProps =
         readonly placeholder?: React.ReactNode;
     }
     & PropsClassNameAddOn
-    & PropsChildrenAddOn;
+    & PropsChildrenAddOn
+    & PropsSizeAddon;
