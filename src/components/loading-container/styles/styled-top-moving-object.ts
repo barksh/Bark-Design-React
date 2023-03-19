@@ -56,6 +56,7 @@ const largeTopMovingObjectKeyframes = keyframes`
 
 export const LoadingContainerTopMovingObject: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        transition: all 0.2s ease-in-out;
         position: absolute;
         top: 0;
         left: ${(props: BarkThemeProps<LoadingContainerProps>) => {
@@ -75,6 +76,9 @@ export const LoadingContainerTopMovingObject: StyledComponent<"div", BarkThemePr
             }
         }};
         height: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+            if (!props.loading) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";

@@ -32,15 +32,19 @@ export const LoadingContainer: React.FC<LoadingContainerProps> = (props: Loading
         size={props.size}
     >
         <LoadingContainerTopMovingObject
+            loading={props.loading}
             size={props.size}
         />
         <LoadingContainerRightMovingObject
+            loading={props.loading}
             size={props.size}
         />
         <LoadingContainerBottomMovingObject
+            loading={props.loading}
             size={props.size}
         />
         <LoadingContainerLeftMovingObject
+            loading={props.loading}
             size={props.size}
         />
         <LoadingContainerChildren

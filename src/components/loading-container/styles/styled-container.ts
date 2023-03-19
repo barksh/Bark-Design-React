@@ -17,6 +17,9 @@ export const LoadingContainerStyledContainer: StyledComponent<"div", BarkThemePr
         overflow: hidden;
         transition: all 0.2s ease-in-out;
         padding: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+            if (!props.loading) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";

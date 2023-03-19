@@ -41,7 +41,7 @@ const regularBottomMovingObjectKeyframes = keyframes`
 
 const largeBottomMovingObjectKeyframes = keyframes`
     0% {
-        right: -12px;
+        right: -24px;
     }
     5% {
         right: -24px;
@@ -57,6 +57,7 @@ const largeBottomMovingObjectKeyframes = keyframes`
 
 export const LoadingContainerBottomMovingObject: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        transition: all 0.2s ease-in-out;
         position: absolute;
         bottom: 0;
         right: ${(props: BarkThemeProps<LoadingContainerProps>) => {
@@ -76,6 +77,9 @@ export const LoadingContainerBottomMovingObject: StyledComponent<"div", BarkThem
             }
         }};
         height: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+            if (!props.loading) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";
@@ -84,7 +88,7 @@ export const LoadingContainerBottomMovingObject: StyledComponent<"div", BarkThem
             }
         }};
         background-color: ${(props: BarkThemeProps) => {
-            return props.theme.borderColor.primary;
+            return props.theme.borderColor.active;
         }};
         animation-name: ${(props: BarkThemeProps<LoadingContainerProps>) => {
             const fixedSize = fixSizeProps(props.size);
