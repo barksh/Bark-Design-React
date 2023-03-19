@@ -4,14 +4,12 @@
  * @description Declare
  */
 
-import * as React from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsSizeAddon } from "../../util/props";
 
 export type LoadingContainerProps =
     & {
-        readonly loading?: boolean;
-        readonly placeholder?: React.ReactNode;
     }
+    & PropsLoadingAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;

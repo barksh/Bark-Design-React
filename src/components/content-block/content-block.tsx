@@ -5,6 +5,7 @@
  */
 
 import * as React from "react";
+import { LoadingContainer } from "../export";
 import { ContentBlockProps } from "./declare";
 import { ContentBlockStyledContainer } from "./styles/styled-container";
 
@@ -17,6 +18,12 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props: ContentBlockPro
         maximize={props.maximize}
         noBorder={props.noBorder}
     >
-        {props.children}
+        <LoadingContainer
+            size={props.size}
+            loading={props.loading}
+            placeholder={props.placeholder}
+        >
+            {props.children}
+        </LoadingContainer>
     </ContentBlockStyledContainer>);
 };
