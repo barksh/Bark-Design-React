@@ -88,7 +88,7 @@ export const LoadingContainerBottomMovingObject: StyledComponent<"div", BarkThem
             }
         }};
         background-color: ${(props: BarkThemeProps) => {
-            return props.theme.borderColor.active;
+            return props.theme.borderColor.primary;
         }};
         animation-name: ${(props: BarkThemeProps<LoadingContainerProps>) => {
             const fixedSize = fixSizeProps(props.size);

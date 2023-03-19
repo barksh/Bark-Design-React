@@ -9,6 +9,7 @@ import { LoadingContainerProps } from "./declare";
 import { LoadingContainerBottomMovingObject } from "./styles/styled-bottom-moving-object";
 import { LoadingContainerStyledContainer } from "./styles/styled-container";
 import { LoadingContainerLeftMovingObject } from "./styles/styled-left-moving-object";
+import { LoadingContainerStyledPlaceholderContainer } from "./styles/styled-placeholder-container";
 import { LoadingContainerRightMovingObject } from "./styles/styled-right-moving-object";
 import { LoadingContainerTopMovingObject } from "./styles/styled-top-moving-object";
 
@@ -16,7 +17,25 @@ const LoadingContainerChildren: React.FC<LoadingContainerProps> = (props: Loadin
 
     if (props.loading) {
         return (<React.Fragment>
-            {props.placeholder}
+            <LoadingContainerTopMovingObject
+                loading={props.loading}
+                size={props.size}
+            />
+            <LoadingContainerRightMovingObject
+                loading={props.loading}
+                size={props.size}
+            />
+            <LoadingContainerBottomMovingObject
+                loading={props.loading}
+                size={props.size}
+            />
+            <LoadingContainerLeftMovingObject
+                loading={props.loading}
+                size={props.size}
+            />
+            <LoadingContainerStyledPlaceholderContainer>
+                {props.placeholder}
+            </LoadingContainerStyledPlaceholderContainer>
         </React.Fragment>);
     }
 
@@ -31,22 +50,6 @@ export const LoadingContainer: React.FC<LoadingContainerProps> = (props: Loading
         loading={props.loading}
         size={props.size}
     >
-        <LoadingContainerTopMovingObject
-            loading={props.loading}
-            size={props.size}
-        />
-        <LoadingContainerRightMovingObject
-            loading={props.loading}
-            size={props.size}
-        />
-        <LoadingContainerBottomMovingObject
-            loading={props.loading}
-            size={props.size}
-        />
-        <LoadingContainerLeftMovingObject
-            loading={props.loading}
-            size={props.size}
-        />
         <LoadingContainerChildren
             {...props}
         />
