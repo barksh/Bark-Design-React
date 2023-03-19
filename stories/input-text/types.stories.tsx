@@ -35,8 +35,29 @@ const Template: ComponentStory<typeof InputText> = (args: any) => {
         />
         <InputText
             {...args}
+            title="Email"
+            type="email"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
             title="Number"
             type="number"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Telephone"
+            type="telephone"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Url"
+            type="url"
             value={value}
             onChange={(newValue) => setValue(newValue)}
         />
