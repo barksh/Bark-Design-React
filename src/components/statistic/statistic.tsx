@@ -19,7 +19,10 @@ const StatisticTitle: React.FC<StatisticProps> = (props: StatisticProps) => {
         return null;
     }
 
-    return (<StatisticStyledTitle>
+    return (<StatisticStyledTitle
+        size={props.size}
+        align={props.align}
+    >
         {props.title}
     </StatisticStyledTitle>);
 };
@@ -31,7 +34,10 @@ const StatisticDescription: React.FC<StatisticProps> = (props: StatisticProps) =
         return null;
     }
 
-    return (<StatisticStyledDescription>
+    return (<StatisticStyledDescription
+        size={props.size}
+        align={props.align}
+    >
         {props.description}
     </StatisticStyledDescription>);
 };
@@ -48,7 +54,10 @@ export const Statistic: React.FC<StatisticProps> = (props: StatisticProps) => {
             <StatisticTitle
                 {...props}
             />
-            <StatisticStyledBody>
+            <StatisticStyledBody
+                size={props.size}
+                align={props.align}
+            >
                 {props.children}
             </StatisticStyledBody>
             <StatisticDescription
