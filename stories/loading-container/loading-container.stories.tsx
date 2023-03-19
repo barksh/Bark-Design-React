@@ -42,5 +42,5 @@ export const Primary = Template.bind({});
 Primary.args = {
     children: "Loading Container Content",
     loading: true,
-    placeholder: "Loading Container Placeholder",
+    loadingPlaceholder: "Loading Container Placeholder",
 };

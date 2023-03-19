@@ -21,7 +21,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props: ContentBlockPro
         <LoadingContainer
             size={props.size}
             loading={props.loading}
-            placeholder={props.placeholder}
+            loadingPlaceholder={props.loadingPlaceholder}
         >
             {props.children}
         </LoadingContainer>

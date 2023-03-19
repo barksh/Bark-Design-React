@@ -34,7 +34,7 @@ const LoadingContainerChildren: React.FC<LoadingContainerProps> = (props: Loadin
                 size={props.size}
             />
             <LoadingContainerStyledPlaceholderContainer>
-                {props.placeholder}
+                {props.loadingPlaceholder}
             </LoadingContainerStyledPlaceholderContainer>
         </React.Fragment>);
     }

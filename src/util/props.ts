@@ -21,7 +21,7 @@ export type PropsNoBorderAddOn = {
 
 export type PropsLoadingAddOn = {
     readonly loading?: boolean;
-    readonly placeholder?: ReactNode;
+    readonly loadingPlaceholder?: ReactNode;
 };
 
 export type PropsNoSeparatorAddOn = {
