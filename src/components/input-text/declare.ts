@@ -9,6 +9,13 @@ import { CommonInputProps } from "../input/declare";
 
 export type InputTextProps =
     & {
+        readonly type?:
+        | "text"
+        | "password"
+        | "email"
+        | "number"
+        | "telephone"
+        | "url";
     }
     & PropsPrefixAddOn
     & PropsSuffixAddOn
