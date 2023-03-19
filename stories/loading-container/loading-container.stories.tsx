@@ -25,7 +25,15 @@ const Template: ComponentStory<typeof LoadingContainer> = (args: any) => {
                 {...args}
             />
         </div>
-
+        <div style={{
+            width: '256px',
+            height: '128px',
+            border: '1px solid black',
+        }}>
+            <LoadingContainer
+                {...args}
+            />
+        </div>
     </Theme>);
 };
 
