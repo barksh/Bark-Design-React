@@ -16,6 +16,8 @@ export * from "./card/card";
 export * from "./card/declare";
 export * from "./content-block/content-block";
 export * from "./content-block/declare";
+export * from "./context-menu/context-menu";
+export * from "./context-menu/declare";
 export * from "./form/declare";
 export * from "./form/form";
 export * from "./global-style/global-style";
