@@ -12,12 +12,18 @@ import { ContentBlockProps } from "../declare";
 export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         width: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (props.width) {
+                return props.width;
+            }
             if (props.maximize) {
                 return "100%";
             }
             return "fit-content";
         }};
         height: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (props.height) {
+                return props.height;
+            }
             if (props.maximize) {
                 return "100%";
             }

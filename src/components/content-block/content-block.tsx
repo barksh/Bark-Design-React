@@ -12,6 +12,9 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props: ContentBlockPro
 
     return (<ContentBlockStyledContainer
         size={props.size}
+        width={props.width}
+        height={props.height}
+        maximize={props.maximize}
         noBorder={props.noBorder}
     >
         {props.children}
