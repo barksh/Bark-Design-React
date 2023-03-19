@@ -46,6 +46,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     const enrichedProps: ButtonProps = useButtonContext(props);
 
     return (<ButtonStyledButton
+        disabled={enrichedProps.disabled}
         className={enrichedProps.className}
         onClick={enrichedProps.onClick}
         size={enrichedProps.size}
@@ -66,9 +67,11 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
                 >
                     {enrichedProps.children}
                 </ButtonStyledTitle>
-                {enrichedProps.description ? <ButtonStyledDescription>
-                    {enrichedProps.description}
-                </ButtonStyledDescription> : null}
+                {enrichedProps.description
+                    ? (<ButtonStyledDescription>
+                        {enrichedProps.description}
+                    </ButtonStyledDescription>)
+                    : null}
             </ButtonStyledContentContainer>
             <ButtonSuffix
                 {...props}

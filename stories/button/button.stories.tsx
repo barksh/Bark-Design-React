@@ -53,6 +53,19 @@ const Template: ComponentStory<typeof Button> = (args: any) => {
                 size={30}
             />}
         />
+        <div>
+            With Prefix and Suffix and Disabled
+        </div>
+        <Button
+            {...args}
+            disabled
+            prefix={<FaBaseballBall
+                size={24}
+            />}
+            suffix={<FaAngleRight
+                size={30}
+            />}
+        />
     </Theme>);
 };
 

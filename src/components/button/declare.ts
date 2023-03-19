@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
 
 export type ButtonProps =
     & {
@@ -22,6 +22,7 @@ export type ButtonProps =
     & PropsMaximizeAddOn
     & PropsPrefixAddOn
     & PropsSuffixAddOn
+    & PropsDisabledAddOn
     & PropsChildrenAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;

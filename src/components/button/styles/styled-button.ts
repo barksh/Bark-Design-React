@@ -57,14 +57,20 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        background-color: ${(props: BarkThemeProps) => {
+        background-color: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.disabled) {
+                return props.theme.backColor.disabled;
+            }
             return props.theme.backColor.primary;
         }};
         color: ${(props: BarkThemeProps) => {
             return props.theme.textColor.primary;
         }};
         &:active {
-            background-color: ${(props: BarkThemeProps) => {
+            background-color: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.disabled) {
+                return props.theme.backColor.disabled;
+            }
             return props.theme.backColor.active;
         }}; 
         }
