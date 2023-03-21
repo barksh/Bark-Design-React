@@ -22,6 +22,8 @@ const Template: ComponentStory<typeof Card> = (args: any) => {
         </div>
         <Card
             {...args}
+            width={350}
+            height={350}
             loadingProvider={LoadingContainerBorder}
             bodyPrefix={<FaBoxOpen
                 size={40}
@@ -45,8 +47,8 @@ const Template: ComponentStory<typeof Card> = (args: any) => {
         </div>
         <Card
             {...args}
-            width={512}
-            height={512}
+            width={350}
+            height={350}
             loadingProvider={LoadingContainerRectangle}
             bodyPrefix={<FaBoxOpen
                 size={40}

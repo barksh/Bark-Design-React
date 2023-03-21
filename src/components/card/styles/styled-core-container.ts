@@ -11,4 +11,5 @@ export const CardStyledCoreContainer: StyledComponent<"div", BarkThemeProps, any
     styled.div`
         display: flex;
         flex-direction: row;
+        flex: 1;
 `;
