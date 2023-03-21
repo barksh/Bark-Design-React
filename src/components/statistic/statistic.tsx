@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { ContentBlock } from "../export";
+import { ContentBlock } from "../content-block/content-block";
 import { StatisticProps } from "./declare";
 import { StatisticStyledBody } from "./styles/styled-body";
 import { StatisticStyledContainer } from "./styles/styled-container";

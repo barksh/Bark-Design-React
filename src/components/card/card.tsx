@@ -62,9 +62,14 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
     const enrichedProps: CardProps = useCardContext(props);
 
     return (<ContentBlock
+        loading={enrichedProps.loading}
+        loadingPlaceholder={enrichedProps.loadingPlaceholder}
+        loadingProvider={enrichedProps.loadingProvider}
         size={enrichedProps.size}
         noBorder={enrichedProps.noBorder}
         maximize={enrichedProps.maximize}
+        width={enrichedProps.width}
+        height={enrichedProps.height}
     >
         <CardStyledCardContainer
             size={enrichedProps.size}

@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoSeparatorAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoSeparatorAddOn, PropsSizeAddon } from "../../util/props";
 
 export type CardProps =
     & {
@@ -19,6 +19,7 @@ export type CardProps =
 
         readonly actions?: React.ReactNode;
     }
+    & PropsLoadingAddOn
     & PropsNoBorderAddOn
     & PropsNoSeparatorAddOn
     & PropsMaximizeAddOn

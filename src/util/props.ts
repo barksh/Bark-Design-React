@@ -7,6 +7,16 @@
 import { ReactNode } from "react";
 import { SizePropertyValue } from "./size";
 
+export type LoadingContainerProps =
+    & {
+        readonly loading?: boolean;
+        readonly loadingPlaceholder?: ReactNode;
+    }
+    & PropsWidthHeightAddOn
+    & PropsClassNameAddOn
+    & PropsChildrenAddOn
+    & PropsSizeAddon;
+
 export type PropsChildrenAddOn = {
     readonly children?: ReactNode | undefined;
 };
@@ -19,10 +29,17 @@ export type PropsNoBorderAddOn = {
     readonly noBorder?: boolean;
 };
 
+export type PropsWidthHeightAddOn = {
+    readonly width?: string | number;
+    readonly height?: string | number;
+};
+
 export type PropsLoadingAddOn = {
+    readonly loadingProvider?: React.FC<LoadingContainerProps>;
+
     readonly loading?: boolean;
     readonly loadingPlaceholder?: ReactNode;
-};
+} & PropsWidthHeightAddOn;
 
 export type PropsNoSeparatorAddOn = {
     readonly noSeparator?: boolean;

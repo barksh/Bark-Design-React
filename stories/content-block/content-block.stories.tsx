@@ -6,7 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ContentBlock, Theme } from "../../src";
+import { ContentBlock, LoadingContainerBorder, Theme } from "../../src";
 
 export default {
     title: "Content Block",
@@ -19,6 +19,11 @@ const Template: ComponentStory<typeof ContentBlock> = (args: any) => {
         <ContentBlock
             {...args}
         />
+        <div>With Loading Config</div>
+        <ContentBlock
+            {...args}
+            loadingProvider={LoadingContainerBorder}
+        />
     </Theme>);
 };
 
@@ -26,4 +31,5 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     children: "Content Block Content",
+    loadingPlaceholder: "Loading Placeholder",
 };

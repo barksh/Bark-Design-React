@@ -6,14 +6,14 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { LoadingContainer, Theme } from "../../src";
+import { LoadingContainerBorder, Theme } from "../../src";
 
 export default {
     title: "Loading Container",
-    component: LoadingContainer,
-} as ComponentMeta<typeof LoadingContainer>;
+    component: LoadingContainerBorder,
+} as ComponentMeta<typeof LoadingContainerBorder>;
 
-const Template: ComponentStory<typeof LoadingContainer> = (args: any) => {
+const Template: ComponentStory<typeof LoadingContainerBorder> = (args: any) => {
 
     return (<Theme>
         <div style={{
@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof LoadingContainer> = (args: any) => {
             height: '256px',
             border: '1px solid black',
         }}>
-            <LoadingContainer
+            <LoadingContainerBorder
                 {...args}
             />
         </div>
@@ -30,16 +30,16 @@ const Template: ComponentStory<typeof LoadingContainer> = (args: any) => {
             height: '128px',
             border: '1px solid black',
         }}>
-            <LoadingContainer
+            <LoadingContainerBorder
                 {...args}
             />
         </div>
     </Theme>);
 };
 
-export const Primary = Template.bind({});
+export const Border = Template.bind({});
 
-Primary.args = {
+Border.args = {
     children: "Loading Container Content",
     loading: true,
     loadingPlaceholder: "Loading Container Placeholder",

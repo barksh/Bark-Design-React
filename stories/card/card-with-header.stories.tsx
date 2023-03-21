@@ -126,4 +126,5 @@ export const WithHeader = Template.bind({});
 WithHeader.args = {
     bodyTitle: "Card Title",
     children: "Card Content",
+    loadingPlaceholder: "Loading Placeholder",
 };

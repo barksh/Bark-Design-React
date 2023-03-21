@@ -71,4 +71,5 @@ export const WithActions = Template.bind({});
 WithActions.args = {
     bodyTitle: "Card Title",
     children: "Card Content",
+    loadingPlaceholder: "Loading Placeholder",
 };

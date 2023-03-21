@@ -6,8 +6,8 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Card, Theme } from "../../src";
 import { FaBoxOpen } from "react-icons/fa";
+import { Card, LoadingContainerBorder, Theme } from "../../src";
 
 export default {
     title: "Card",
@@ -44,6 +44,17 @@ const Template: ComponentStory<typeof Card> = (args: any) => {
             />}
             bodySuffix={<div>Suffix</div>}
         />
+        <div>
+            With Prefix and Suffix and Loading Provider
+        </div>
+        <Card
+            {...args}
+            loadingProvider={LoadingContainerBorder}
+            bodyPrefix={<FaBoxOpen
+                size={40}
+            />}
+            bodySuffix={<div>Suffix</div>}
+        />
     </Theme>);
 };
 
@@ -52,4 +63,5 @@ export const Primary = Template.bind({});
 Primary.args = {
     bodyTitle: "Card Title",
     children: "Card Content",
+    loadingPlaceholder: "Loading Placeholder",
 };
