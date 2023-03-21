@@ -1,65 +1,64 @@
 /**
  * @author WMXPY
- * @namespace Components_LoadingContainer_Styles
- * @description Styled Top Moving Object
+ * @namespace Components_LoadingContainerBorder_Styles
+ * @description Styled Left Moving Object
  */
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { fixSizeProps } from "../../../util/size";
-import { LoadingContainerProps } from "../declare";
+import { LoadingContainerBorderProps } from "../declare";
 
-const smallTopMovingObjectKeyframes = keyframes`
+const smallLeftMovingObjectKeyframes = keyframes`
     0% {
-        left: -8px;
+        bottom: -8px;
     }
     5% {
-        left: -8px;
+        bottom: -8px;
     }
     95% {
-        left: 100%;
+        bottom: 100%;
     }
     100% {
-        left: 100%;
+        bottom: 100%;
     }
 `;
 
-const regularTopMovingObjectKeyframes = keyframes`
+const regularLeftMovingObjectKeyframes = keyframes`
     0% {
-        left: -12px;
+        bottom: -12px;
     }
     5% {
-        left: -12px;
+        bottom: -12px;
     }
     95% {
-        left: 100%;
+        bottom: 100%;
     }
     100% {
-        left: 100%;
+        bottom: 100%;
     }
 `;
 
-const largeTopMovingObjectKeyframes = keyframes`
+const largeLeftMovingObjectKeyframes = keyframes`
     0% {
-        left: -24px;
+        bottom: -24px;
     }
     5% {
-        left: -24px;
+        bottom: -24px;
     }
     95% {
-        left: 100%;
+        bottom: 100%;
     }
     100% {
-        left: 100%;
+        bottom: 100%;
     }
 `;
 
-export const LoadingContainerTopMovingObject: StyledComponent<"div", BarkThemeProps, any> =
+export const LoadingContainerBorderLeftMovingObject: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         transition: all 0.2s ease-in-out;
         position: absolute;
-        top: 0;
-        left: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+        bottom: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "-8px";
@@ -67,7 +66,8 @@ export const LoadingContainerTopMovingObject: StyledComponent<"div", BarkThemePr
                 case 'large': return "-24px";
             }
         }};
-        width: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+        left: 0;
+        height: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "8px";
@@ -75,7 +75,7 @@ export const LoadingContainerTopMovingObject: StyledComponent<"div", BarkThemePr
                 case 'large': return "24px";
             }
         }};
-        height: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+        width: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             if (!props.loading) {
                 return "0px";
             }
@@ -89,12 +89,12 @@ export const LoadingContainerTopMovingObject: StyledComponent<"div", BarkThemePr
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        animation-name: ${(props: BarkThemeProps<LoadingContainerProps>) => {
+        animation-name: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
-                case 'small': return smallTopMovingObjectKeyframes;
-                case 'regular': return regularTopMovingObjectKeyframes;
-                case 'large': return largeTopMovingObjectKeyframes;
+                case 'small': return smallLeftMovingObjectKeyframes;
+                case 'regular': return regularLeftMovingObjectKeyframes;
+                case 'large': return largeLeftMovingObjectKeyframes;
             }
         }};
         animation-duration: 2s;
