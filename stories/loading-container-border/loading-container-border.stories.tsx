@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
- * @namespace LoadingContainer
- * @description Loading Container
+ * @namespace LoadingContainerBorder
+ * @description Loading Container Border
  * @override Story
  */
 

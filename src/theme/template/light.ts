@@ -25,6 +25,7 @@ export const defaultLightThemeProfile: BarkThemeProfile = {
     },
     borderColor: {
         primary: '#4444BB',
+        secondary: '#01FF70',
         focus: '#a9c0de',
         active: '#2a7ae2',
     },
