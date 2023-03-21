@@ -13,4 +13,8 @@ export const LoadingContainerRectangleStyledContainer: StyledComponent<"div", Ba
         height: 100%;
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 `;

@@ -6,6 +6,8 @@
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { fixSizeProps } from "../../../util/size";
+import { LoadingContainerRectangleProps } from "../declare";
 
 const frontKeyframes = keyframes`
     100% {
@@ -19,14 +21,35 @@ export const LoadingContainerRectangleStyledFrontRectangle: StyledComponent<"div
         transition: 0.8s all ease-in-out;
         pointerEvents: none;
         position: absolute;
-        width: 3rem;
-        height: 3rem;
+        width: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "24px";
+                case 'regular': return "48px";
+                case 'large': return "96px";
+            }
+        }};
+        height: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "24px";
+                case 'regular': return "48px";
+                case 'large': return "96px";
+            }
+        }};
         opacity: 1;
-        outline: 0.5rem solid ${(props: BarkThemeProps) => {
+        outline: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "4px";
+                case 'regular': return "8px";
+                case 'large': return "12px";
+            }
+        }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
         animation-name: ${frontKeyframes};
         animation-duration: 3s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
 `;

@@ -7,13 +7,14 @@
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { fixSizeProps } from "../../../util/size";
+import { fixWidthHeight } from "../../../util/width-height";
 import { ContentBlockProps } from "../declare";
 
 export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         width: ${(props: BarkThemeProps<ContentBlockProps>) => {
-            if (props.width) {
-                return props.width;
+            if (typeof props.width !== 'undefined') {
+                return fixWidthHeight(props.width);
             }
             if (props.maximize) {
                 return "100%";
@@ -21,8 +22,8 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             return "fit-content";
         }};
         height: ${(props: BarkThemeProps<ContentBlockProps>) => {
-            if (props.height) {
-                return props.height;
+            if (typeof props.height !== 'undefined') {
+                return fixWidthHeight(props.height);
             }
             if (props.maximize) {
                 return "100%";
