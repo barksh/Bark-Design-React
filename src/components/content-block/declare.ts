@@ -8,8 +8,6 @@ import { PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsMaximi
 
 export type ContentBlockProps =
     & {
-        readonly width?: string | number;
-        readonly height?: string | number;
     }
     & PropsLoadingAddOn
     & PropsNoBorderAddOn
