@@ -8,6 +8,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { ModalProps } from "./declare";
 import { ModalStyledContainer } from "./styles/styled-container";
+import { ModalStyledContent } from "./styles/styled-content";
 
 const getAttachedElement = (props: ModalProps): HTMLElement => {
 
@@ -23,8 +24,13 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
 
     if (props.active) {
         return (createPortal(
-            (<ModalStyledContainer>
-                {props.children}
+            (<ModalStyledContainer
+                zIndex={props.zIndex}
+                disableBackgroundPointerEvent={props.disableBackgroundPointerEvent}
+            >
+                <ModalStyledContent>
+                    {props.children}
+                </ModalStyledContent>
             </ModalStyledContainer>),
             attachedElement,
             props.identifier,

@@ -17,7 +17,10 @@ export const ModalStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
         z-index: ${(props: BarkThemeProps<ModalProps>) => {
             return props.zIndex || 5;
         }};
-        background-color: ${(props: BarkThemeProps) => {
+        background-color: ${(props: BarkThemeProps<ModalProps>) => {
+            if (!props.disableBackgroundPointerEvent) {
+                return 'transparent';
+            }
             return convertHexToRGBA(
                 props.theme.backColor.disabled,
                 BACKGROUND_OPACITY,
@@ -30,5 +33,10 @@ export const ModalStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
         display: flex;
         justify-content: center;
         align-items: center;
-        pointer-events: auto;
+        pointer-events: ${(props: BarkThemeProps<ModalProps>) => {
+            if (!props.disableBackgroundPointerEvent) {
+                return "none";
+            }
+            return "auto";
+        }};
 `;

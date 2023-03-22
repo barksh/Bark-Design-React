@@ -13,6 +13,8 @@ export type ModalProps =
         readonly getAttachedElement?: () => HTMLElement;
 
         readonly zIndex?: number;
+
+        readonly disableBackgroundPointerEvent?: boolean;
     }
     & PropsClassNameAddOn
     & PropsChildrenAddOn;
