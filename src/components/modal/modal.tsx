@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { createPortal } from "react-dom";
+import { useOverlayZIndex } from "../../hooks/export";
 import { ModalProps } from "./declare";
 import { ModalStyledContainer } from "./styles/styled-container";
 import { ModalStyledContent } from "./styles/styled-content";
@@ -22,10 +23,12 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
 
     const attachedElement: HTMLElement = getAttachedElement(props);
 
+    const zIndex: number = useOverlayZIndex();
+
     if (props.active) {
         return (createPortal(
             (<ModalStyledContainer
-                zIndex={props.zIndex}
+                zIndex={props.zIndex ?? zIndex}
                 disableBackgroundPointerEvent={props.disableBackgroundPointerEvent}
             >
                 <ModalStyledContent>

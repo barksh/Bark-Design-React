@@ -11,13 +11,14 @@ export class ToastManager {
     private static _bottomRightInstance: ToastManager | null = null;
     private static _bottomLeftInstance: ToastManager | null = null;
 
-    public static getTopRightHtmlElement(): ToastManager {
+    public static getTopRightHtmlElement(zIndex: number): ToastManager {
 
         if (this._topRightInstance) {
             return this._topRightInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
+            zIndex,
             undefined,
             0,
             0,
@@ -31,13 +32,14 @@ export class ToastManager {
         return this._topRightInstance;
     }
 
-    public static getTopLeftHtmlElement(): ToastManager {
+    public static getTopLeftHtmlElement(zIndex: number): ToastManager {
 
         if (this._topLeftInstance) {
             return this._topLeftInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
+            zIndex,
             0,
             undefined,
             0,
@@ -51,13 +53,14 @@ export class ToastManager {
         return this._topLeftInstance;
     }
 
-    public static getBottomRightHtmlElement(): ToastManager {
+    public static getBottomRightHtmlElement(zIndex: number): ToastManager {
 
         if (this._bottomRightInstance) {
             return this._bottomRightInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
+            zIndex,
             undefined,
             0,
             undefined,
@@ -71,13 +74,14 @@ export class ToastManager {
         return this._bottomRightInstance;
     }
 
-    public static getBottomLeftHtmlElement(): ToastManager {
+    public static getBottomLeftHtmlElement(zIndex: number): ToastManager {
 
         if (this._bottomLeftInstance) {
             return this._bottomLeftInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
+            zIndex,
             0,
             undefined,
             undefined,
@@ -92,6 +96,7 @@ export class ToastManager {
     }
 
     private static _createToastElement(
+        zIndex: number,
         left: number | undefined,
         right: number | undefined,
         top: number | undefined,
@@ -101,7 +106,7 @@ export class ToastManager {
         const element: HTMLElement = document.createElement('div');
 
         element.style.position = 'fixed';
-        element.style.zIndex = '5';
+        element.style.zIndex = `${zIndex}`;
 
         element.style.margin = '12px';
 
