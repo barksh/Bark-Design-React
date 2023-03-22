@@ -10,6 +10,7 @@ import { InputContainer } from "../input/input-container";
 import { InputTextProps } from "./declare";
 import { InputTextStyledContainer } from "./styles/styled-container";
 import { InputTextStyledInput } from "./styles/styled-input";
+import { fixInputType } from "./type";
 
 export const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
 
@@ -30,7 +31,7 @@ export const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
         >
             <InputTextStyledInput
                 disabled={enrichedProps.disabled}
-                type={enrichedProps.type}
+                type={fixInputType(enrichedProps.type)}
                 size={enrichedProps.size}
                 placeholder={enrichedProps.placeholder}
                 value={enrichedProps.value}
