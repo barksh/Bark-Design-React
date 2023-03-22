@@ -14,17 +14,18 @@ export class ToastManager {
     public static getTopRightHtmlElement(zIndex: number): ToastManager {
 
         if (this._topRightInstance) {
+            this._topRightInstance.element.style.zIndex = `${zIndex}`;
             return this._topRightInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
-            zIndex,
             undefined,
             0,
             0,
             undefined,
         );
         element.style.alignItems = 'flex-end';
+        element.style.zIndex = `${zIndex}`;
 
         document.body.appendChild(element);
 
@@ -35,17 +36,18 @@ export class ToastManager {
     public static getTopLeftHtmlElement(zIndex: number): ToastManager {
 
         if (this._topLeftInstance) {
+            this._topLeftInstance.element.style.zIndex = `${zIndex}`;
             return this._topLeftInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
-            zIndex,
             0,
             undefined,
             0,
             undefined,
         );
         element.style.alignItems = 'flex-start';
+        element.style.zIndex = `${zIndex}`;
 
         document.body.appendChild(element);
 
@@ -56,17 +58,18 @@ export class ToastManager {
     public static getBottomRightHtmlElement(zIndex: number): ToastManager {
 
         if (this._bottomRightInstance) {
+            this._bottomRightInstance.element.style.zIndex = `${zIndex}`;
             return this._bottomRightInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
-            zIndex,
             undefined,
             0,
             undefined,
             0,
         );
         element.style.alignItems = 'flex-end';
+        element.style.zIndex = `${zIndex}`;
 
         document.body.appendChild(element);
 
@@ -77,17 +80,18 @@ export class ToastManager {
     public static getBottomLeftHtmlElement(zIndex: number): ToastManager {
 
         if (this._bottomLeftInstance) {
+            this._bottomLeftInstance.element.style.zIndex = `${zIndex}`;
             return this._bottomLeftInstance;
         }
 
         const element: HTMLElement = this._createToastElement(
-            zIndex,
             0,
             undefined,
             undefined,
             0,
         );
         element.style.alignItems = 'flex-start';
+        element.style.zIndex = `${zIndex}`;
 
         document.body.appendChild(element);
 
@@ -96,7 +100,6 @@ export class ToastManager {
     }
 
     private static _createToastElement(
-        zIndex: number,
         left: number | undefined,
         right: number | undefined,
         top: number | undefined,
@@ -106,7 +109,6 @@ export class ToastManager {
         const element: HTMLElement = document.createElement('div');
 
         element.style.position = 'fixed';
-        element.style.zIndex = `${zIndex}`;
 
         element.style.margin = '12px';
 
