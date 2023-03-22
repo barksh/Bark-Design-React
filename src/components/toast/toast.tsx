@@ -36,7 +36,9 @@ export const Toast: React.FC<ToastProps> = (props: ToastProps) => {
 
     if (props.active) {
         return (createPortal(
-            (<ToastStyledContainer>
+            (<ToastStyledContainer
+                position={props.position}
+            >
                 {props.children}
             </ToastStyledContainer>),
             attachedElement,
