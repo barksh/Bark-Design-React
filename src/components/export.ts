@@ -35,6 +35,8 @@ export * from "./loading-container-progress-bar/declare";
 export * from "./loading-container-progress-bar/loading-container-progress-bar";
 export * from "./loading-container-rectangle/declare";
 export * from "./loading-container-rectangle/loading-container-rectangle";
+export * from "./modal/declare";
+export * from "./modal/modal";
 export * from "./statistic/declare";
 export * from "./statistic/statistic";
 export * from "./tabs/declare";
@@ -43,4 +45,6 @@ export * from "./tabs/tabs";
 export * from "./theme/theme";
 export * from "./title/declare";
 export * from "./title/title";
+export * from "./toast/declare";
+export * from "./toast/toast";
 
