@@ -12,6 +12,9 @@ import { ContentBlockProps } from "../declare";
 
 export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        background-color: ${(props: BarkThemeProps) => {
+            return props.theme.backColor.primary;
+        }};
         width: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.width !== 'undefined') {
                 return fixWidthHeight(props.width);
