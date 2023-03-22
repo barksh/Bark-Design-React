@@ -5,25 +5,48 @@
  */
 
 import * as React from "react";
-import { FormController } from "../../components/form/controller";
 
-export const useTimedActive = (): FormController => {
+export type UseTimedActive = {
 
-    const [loading, setLoading] = React.useState<boolean>(true);
-    const formControllerRef: React.MutableRefObject<FormController | null> =
-        React.useRef(null);
+    readonly active: boolean;
 
-    React.useEffect(() => {
+    readonly open: (duration?: number) => void;
+    readonly close: () => void;
+};
 
-        if (!formControllerRef.current) {
-            formControllerRef.current = FormController.create();
+export const useTimedActive = (): UseTimedActive => {
+
+    const timerRef: React.MutableRefObject<NodeJS.Timeout | null> = React.useRef(null);
+
+    const [active, setActive] = React.useState<boolean>(false);
+
+    const open = (duration?: number) => {
+
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
         }
-        setLoading(false);
-    }, []);
 
-    if (!formControllerRef.current || loading) {
-        return null as any;
-    }
+        setActive(true);
 
-    return formControllerRef.current;
+        if (typeof duration === 'number') {
+            timerRef.current = setTimeout(() => {
+                close();
+            }, duration);
+        }
+    };
+
+    const close = () => {
+
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
+        }
+
+        setActive(false);
+    };
+
+    return {
+        active,
+        open,
+        close,
+    };
 };
