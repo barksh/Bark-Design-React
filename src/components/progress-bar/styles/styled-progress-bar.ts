@@ -7,6 +7,6 @@
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 
-export const ProgressBarStyledProgressBar: StyledComponent<"div", BarkThemeProps, any> =
-    styled.div`
+export const ProgressBarStyledProgressBar: StyledComponent<"progress", BarkThemeProps, any> =
+    styled.progress`
 `;

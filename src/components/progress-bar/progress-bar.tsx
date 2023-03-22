@@ -9,7 +9,6 @@ import { ProgressBarProps } from "./declare";
 import { ProgressBarStyledContainer } from "./styles/styled-container";
 import { ProgressBarStyledHeader } from "./styles/styled-header";
 import { ProgressBarStyledInformation } from "./styles/styled-information";
-import { ProgressBarStyledProgress } from "./styles/styled-progress";
 import { ProgressBarStyledProgressBar } from "./styles/styled-progress-bar";
 import { ProgressBarStyledTitle } from "./styles/styled-title";
 
@@ -20,16 +19,13 @@ export const ProgressBar: React.FC<ProgressBarProps> = (props: ProgressBarProps)
     >
         <ProgressBarStyledHeader>
             <ProgressBarStyledTitle>
-
+                {props.title}
             </ProgressBarStyledTitle>
             <ProgressBarStyledInformation>
-
+                {props.information}
             </ProgressBarStyledInformation>
         </ProgressBarStyledHeader>
-        <ProgressBarStyledProgressBar>
-            <ProgressBarStyledProgress>
-
-            </ProgressBarStyledProgress>
-        </ProgressBarStyledProgressBar>
+        <ProgressBarStyledProgressBar
+        />
     </ProgressBarStyledContainer>);
 };

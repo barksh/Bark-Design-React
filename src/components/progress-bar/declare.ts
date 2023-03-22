@@ -8,6 +8,11 @@ import { PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
 
 export type ProgressBarProps =
     & {
+        readonly progress: number;
+        readonly total: number;
+
+        readonly title?: string;
+        readonly information?: string;
     }
     & PropsClassNameAddOn
     & PropsSizeAddon;
