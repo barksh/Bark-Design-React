@@ -21,4 +21,5 @@ export const ModalStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
         display: flex;
         justify-content: center;
         align-items: center;
+        pointer-events: auto;
 `;
