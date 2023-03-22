@@ -37,6 +37,8 @@ export * from "./loading-container-rectangle/declare";
 export * from "./loading-container-rectangle/loading-container-rectangle";
 export * from "./modal/declare";
 export * from "./modal/modal";
+export * from "./progress-bar/declare";
+export * from "./progress-bar/progress-bar";
 export * from "./statistic/declare";
 export * from "./statistic/statistic";
 export * from "./tabs/declare";
