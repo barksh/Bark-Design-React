@@ -39,6 +39,8 @@ export * from "./modal/declare";
 export * from "./modal/modal";
 export * from "./progress-bar/declare";
 export * from "./progress-bar/progress-bar";
+export * from "./side-panel/declare";
+export * from "./side-panel/side-panel";
 export * from "./statistic/declare";
 export * from "./statistic/statistic";
 export * from "./tabs/declare";
