@@ -17,7 +17,10 @@ export const ProgressBar: React.FC<ProgressBarProps> = (props: ProgressBarProps)
     return (<ProgressBarStyledContainer
         size={props.size}
     >
-        <ProgressBarStyledHeader>
+        <ProgressBarStyledHeader
+            size={props.size}
+            maximize={props.maximize}
+        >
             <ProgressBarStyledTitle>
                 {props.title}
             </ProgressBarStyledTitle>
@@ -26,6 +29,11 @@ export const ProgressBar: React.FC<ProgressBarProps> = (props: ProgressBarProps)
             </ProgressBarStyledInformation>
         </ProgressBarStyledHeader>
         <ProgressBarStyledProgressBar
+            size={props.size}
+            maximize={props.maximize}
+            color={props.color}
+            max={props.total}
+            value={props.progress}
         />
     </ProgressBarStyledContainer>);
 };

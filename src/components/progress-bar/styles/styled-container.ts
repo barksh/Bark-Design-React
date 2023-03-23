@@ -9,4 +9,8 @@ import { BarkThemeProps } from "../../../theme/declare";
 
 export const ProgressBarStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
 `;

@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsClassNameAddOn, PropsMaximizeAddOn, PropsSizeAddon } from "../../util/props";
 
 export type ProgressBarProps =
     & {
@@ -13,6 +13,9 @@ export type ProgressBarProps =
 
         readonly title?: string;
         readonly information?: string;
+
+        readonly color?: string;
     }
+    & PropsMaximizeAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;
