@@ -15,8 +15,6 @@ const getAttachedElement = (props: ToastProps, zIndex: number): HTMLElement => {
 
     const fixedZIndex: number = props.zIndex ?? zIndex;
 
-    console.log('fixedZIndex', props.zIndex, zIndex, fixedZIndex);
-
     if (typeof props.getAttachedElement === 'function') {
         return props.getAttachedElement();
     }

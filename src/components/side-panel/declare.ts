@@ -10,7 +10,13 @@ export type SidePanelPropsAlign = 'left' | 'right';
 
 export type SidePanelProps =
     & {
+        readonly identifier?: string;
+        readonly active?: boolean;
+
         readonly align?: SidePanelPropsAlign;
+        readonly getAttachedElement?: () => HTMLElement;
+
+        readonly zIndex?: number;
     }
     & PropsNoBorderAddOn
     & PropsClassNameAddOn

@@ -5,21 +5,37 @@
  */
 
 import * as React from "react";
-import { ContentBlock } from "../content-block/content-block";
+import { createPortal } from "react-dom";
+import { useOverlayZIndex } from "../../hooks/export";
 import { SidePanelProps } from "./declare";
 import { SidePanelStyledContainer } from "./styles/styled-container";
 
+const getAttachedElement = (props: SidePanelProps): HTMLElement => {
+
+    if (typeof props.getAttachedElement === 'function') {
+        return props.getAttachedElement();
+    }
+
+    return document.body;
+};
+
 export const SidePanel: React.FC<SidePanelProps> = (props: SidePanelProps) => {
 
-    return (<ContentBlock
-        size={props.size}
-        balancedBorder
-        noBorder={props.noBorder}
-    >
-        <SidePanelStyledContainer
-            size={props.size}
-        >
-            {props.children}
-        </SidePanelStyledContainer>
-    </ContentBlock>);
+    const zIndex: number = useOverlayZIndex();
+
+    const attachedElement: HTMLElement = getAttachedElement(props);
+
+    if (props.active) {
+        return (createPortal(
+            (<SidePanelStyledContainer
+                zIndex={zIndex}
+                size={props.size}
+            >
+                {props.children}
+            </SidePanelStyledContainer>),
+            attachedElement,
+            props.identifier,
+        ));
+    }
+    return null;
 };

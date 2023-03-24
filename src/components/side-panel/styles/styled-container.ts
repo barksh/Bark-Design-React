@@ -4,10 +4,28 @@
  * @description Container
  */
 
-import styled, { StyledComponent } from "styled-components";
+import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { fixSizeProps } from "../../../util/size";
 import { SidePanelProps } from "../declare";
+
+const slideInRightKeyframes = keyframes`
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+`;
+
+const slideInLeftKeyframes = keyframes`
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+`;
 
 export const SidePanelStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
@@ -19,4 +37,12 @@ export const SidePanelStyledContainer: StyledComponent<"div", BarkThemeProps, an
                 case 'large': return "4px 16px";
             }
         }};
+        animation-name: ${(props: BarkThemeProps<SidePanelProps>) => {
+            if (props.align === 'left') {
+                return slideInLeftKeyframes;
+            }
+            return slideInRightKeyframes;
+        }};
+        animation-duration: 0.2s;
+        animation-timing-function: ease-in-out;
 `;
