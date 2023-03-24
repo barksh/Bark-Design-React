@@ -4,12 +4,13 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
 
 export type ContentBlockProps =
     & {
     }
     & PropsLoadingAddOn
+    & PropsBalancedBorderAddOn
     & PropsNoBorderAddOn
     & PropsMaximizeAddOn
     & PropsClassNameAddOn
