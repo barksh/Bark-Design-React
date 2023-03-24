@@ -38,6 +38,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props: ContentBlockPro
         width={props.width}
         height={props.height}
         maximize={props.maximize}
+        balancedBorder={props.balancedBorder}
         noBorder={props.noBorder}
     >
         <LoadingContainer

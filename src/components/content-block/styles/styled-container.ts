@@ -51,6 +51,13 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
                 return "0px";
             }
             const fixedSize = fixSizeProps(props.size);
+            if (props.balancedBorder) {
+                switch (fixedSize) {
+                    case 'small': return "1px";
+                    case 'regular': return "1px";
+                    case 'large': return "2px";
+                }
+            }
             switch (fixedSize) {
                 case 'small': return "4px";
                 case 'regular': return "6px";
