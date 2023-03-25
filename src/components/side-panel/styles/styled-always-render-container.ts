@@ -11,6 +11,20 @@ import { SidePanelProps } from "../declare";
 
 export const SidePanelStyledAlwaysRenderContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        position: fixed;
+        top: 0;
+        left: ${(props: BarkThemeProps<SidePanelProps>) => {
+            if (props.align === 'left') {
+                return 0;
+            }
+            return 'auto';
+        }};
+        right: ${(props: BarkThemeProps<SidePanelProps>) => {
+            if (props.align === 'right') {
+                return 0;
+            }
+            return 'auto';
+        }};
         padding: ${(props: BarkThemeProps<SidePanelProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

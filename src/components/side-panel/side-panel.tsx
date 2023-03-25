@@ -23,6 +23,7 @@ const getAttachedElement = (props: SidePanelProps): HTMLElement => {
 const SidePanelContainer: React.FC<SidePanelProps> = (props: SidePanelProps) => {
 
     if (props.alwaysRender) {
+
         return (<SidePanelStyledAlwaysRenderContainer
             active={props.active}
             align={props.align}
@@ -32,6 +33,7 @@ const SidePanelContainer: React.FC<SidePanelProps> = (props: SidePanelProps) => 
             {props.children}
         </SidePanelStyledAlwaysRenderContainer>);
     }
+
     return (<SidePanelStyledContainer
         active={props.active}
         align={props.align}
@@ -48,7 +50,7 @@ export const SidePanel: React.FC<SidePanelProps> = (props: SidePanelProps) => {
 
     const attachedElement: HTMLElement = getAttachedElement(props);
 
-    if (props.active) {
+    if (props.active || props.alwaysRender) {
         return (createPortal(
             (<SidePanelContainer
                 {...props}
