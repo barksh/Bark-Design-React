@@ -6,11 +6,14 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Menu, Theme } from "../../src";
+import { Menu, MenuItem, Theme } from "../../src";
 
 export default {
     title: "Menu",
     component: Menu,
+    subcomponents: {
+        MenuItem,
+    }
 } as ComponentMeta<typeof Menu>;
 
 const Template: ComponentStory<typeof Menu> = (args: any) => {
