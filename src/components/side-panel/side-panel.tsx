@@ -8,6 +8,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { useOverlayZIndex } from "../../hooks/export";
 import { SidePanelProps } from "./declare";
+import { SidePanelStyledAlwaysRenderContainer } from "./styles/styled-always-render-container";
 import { SidePanelStyledContainer } from "./styles/styled-container";
 
 const getAttachedElement = (props: SidePanelProps): HTMLElement => {
@@ -19,6 +20,28 @@ const getAttachedElement = (props: SidePanelProps): HTMLElement => {
     return document.body;
 };
 
+const SidePanelContainer: React.FC<SidePanelProps> = (props: SidePanelProps) => {
+
+    if (props.alwaysRender) {
+        return (<SidePanelStyledAlwaysRenderContainer
+            active={props.active}
+            align={props.align}
+            zIndex={props.zIndex}
+            size={props.size}
+        >
+            {props.children}
+        </SidePanelStyledAlwaysRenderContainer>);
+    }
+    return (<SidePanelStyledContainer
+        active={props.active}
+        align={props.align}
+        zIndex={props.zIndex}
+        size={props.size}
+    >
+        {props.children}
+    </SidePanelStyledContainer>);
+};
+
 export const SidePanel: React.FC<SidePanelProps> = (props: SidePanelProps) => {
 
     const zIndex: number = useOverlayZIndex();
@@ -27,12 +50,12 @@ export const SidePanel: React.FC<SidePanelProps> = (props: SidePanelProps) => {
 
     if (props.active) {
         return (createPortal(
-            (<SidePanelStyledContainer
+            (<SidePanelContainer
+                {...props}
                 zIndex={zIndex}
-                size={props.size}
             >
                 {props.children}
-            </SidePanelStyledContainer>),
+            </SidePanelContainer>),
             attachedElement,
             props.identifier,
         ));

@@ -11,6 +11,7 @@ export type SidePanelPropsAlign = 'left' | 'right';
 export type SidePanelProps =
     & {
         readonly identifier?: string;
+        readonly alwaysRender?: boolean;
         readonly active?: boolean;
 
         readonly align?: SidePanelPropsAlign;
