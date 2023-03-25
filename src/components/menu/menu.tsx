@@ -5,15 +5,22 @@
  */
 
 import * as React from "react";
+import { ContentBlock } from "../export";
 import { MenuProps } from "./declare";
 import { MenuStyledContainer } from "./styles/styled-container";
 
 export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
 
-    return (<MenuStyledContainer
+    return (<ContentBlock
         size={props.size}
+        maximize={props.maximize}
         noBorder={props.noBorder}
+        balancedBorder={props.balancedBorder}
     >
-        {props.children}
-    </MenuStyledContainer>);
+        <MenuStyledContainer
+            size={props.size}
+        >
+            {props.children}
+        </MenuStyledContainer>
+    </ContentBlock>);
 };

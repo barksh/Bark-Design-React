@@ -37,6 +37,7 @@ export * from "./loading-container-rectangle/declare";
 export * from "./loading-container-rectangle/loading-container-rectangle";
 export * from "./menu/declare";
 export * from "./menu/menu";
+export * from "./menu/menu-item";
 export * from "./modal/declare";
 export * from "./modal/modal";
 export * from "./progress-bar/declare";
