@@ -21,7 +21,14 @@ const Template: ComponentStory<typeof Menu> = (args: any) => {
     return (<Theme>
         <Menu
             {...args}
-        />
+        >
+            <MenuItem
+                title="Menu Item 1"
+            />
+            <MenuItem
+                title="Menu Item 2"
+            />
+        </Menu>
     </Theme>);
 };
 

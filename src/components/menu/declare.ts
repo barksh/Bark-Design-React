@@ -18,11 +18,10 @@ export type MenuProps =
 
 export type MenuItemProps =
     & {
-        readonly title?: string;
+        readonly title: string;
         readonly description?: string;
     }
     & PropsSizeAddon
     & PropsPrefixAddOn
     & PropsSuffixAddOn
-    & PropsClassNameAddOn
-    & PropsChildrenAddOn;
+    & PropsClassNameAddOn;
