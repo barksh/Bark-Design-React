@@ -12,6 +12,18 @@ import { InputTextareaProps } from "../declare";
 export const InputTextareaStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         height: fit-content;
+        width: ${(props: BarkThemeProps<InputTextareaProps>) => {
+            if (props.maximize) {
+                return '100%';
+            }
+
+            const fixedSize = fixSizeProps(props.size);
+            switch (fixedSize) {
+                case 'small': return "256px";
+                case 'regular': return "256px";
+                case 'large': return "312px";
+            }
+        }};
         border: ${(props: BarkThemeProps<InputTextareaProps>) => {
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
@@ -30,4 +42,6 @@ export const InputTextareaStyledContainer: StyledComponent<"div", BarkThemeProps
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
+        margin: 0px;
+        padding: 0px;
 `;
