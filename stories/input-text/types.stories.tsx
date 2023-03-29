@@ -28,6 +28,13 @@ const Template: ComponentStory<typeof InputText> = (args: any) => {
         />
         <InputText
             {...args}
+            title="Date"
+            type="date"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
             title="Password"
             type="password"
             value={value}

@@ -10,6 +10,7 @@ export const fixInputType = (type: InputTextPropsType | undefined): string => {
 
     switch (type) {
         case "text": return "text";
+        case "date": return "date";
         case "password": return "password";
         case "email": return "email";
         case "number": return "number";
