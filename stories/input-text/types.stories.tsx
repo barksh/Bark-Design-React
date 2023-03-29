@@ -28,6 +28,20 @@ const Template: ComponentStory<typeof InputText> = (args: any) => {
         />
         <InputText
             {...args}
+            title="Search"
+            type="search"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Color"
+            type="color"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
             title="Date"
             type="date"
             value={value}
@@ -37,6 +51,41 @@ const Template: ComponentStory<typeof InputText> = (args: any) => {
             {...args}
             title="Time"
             type="time"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Week"
+            type="week"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Month"
+            type="month"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Date Time"
+            type="datetime"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Radio"
+            type="radio"
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+        />
+        <InputText
+            {...args}
+            title="Range"
+            type="range"
             value={value}
             onChange={(newValue) => setValue(newValue)}
         />

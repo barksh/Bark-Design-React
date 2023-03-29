@@ -9,8 +9,15 @@ import { CommonInputProps } from "../input/declare";
 
 export type InputTextPropsType =
     | "text"
+    | "search"
+    | "color"
     | "date"
     | "time"
+    | "week"
+    | "month"
+    | "datetime"
+    | "radio"
+    | "range"
     | "password"
     | "email"
     | "number"
