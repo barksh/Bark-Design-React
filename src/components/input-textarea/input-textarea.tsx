@@ -21,18 +21,17 @@ export const InputTextarea: React.FC<InputTextareaProps> = (props: InputTextarea
     return (<InputContainer
         title={enrichedProps.title}
         size={enrichedProps.size}
+        maximize={enrichedProps.maximize}
         information={enrichedProps.information}
         warning={enrichedProps.warning}
         error={enrichedProps.error}
     >
         <InputTextareaStyledContainer
             size={enrichedProps.size}
-            maximize={enrichedProps.maximize}
         >
             <InputTextareaStyledTextarea
                 disabled={enrichedProps.disabled}
                 size={enrichedProps.size}
-                maximize={enrichedProps.maximize}
                 placeholder={enrichedProps.placeholder}
                 value={enrichedProps.value}
                 resizable={enrichedProps.resizable}

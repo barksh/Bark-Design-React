@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsMaximizeAddOn, PropsSizeAddon } from "../../util/props";
 
 export type CommonInputProps<T = any> =
     & {
@@ -19,6 +19,7 @@ export type CommonInputProps<T = any> =
         readonly onChange?: (value: T) => void;
         readonly onValidate?: (value: T) => true | string;
     }
+    & PropsMaximizeAddOn
     & PropsDisabledAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;

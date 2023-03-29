@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsMaximizeAddOn, PropsPlaceholderAddOn } from "../../util/props";
+import { PropsPlaceholderAddOn } from "../../util/props";
 import { CommonInputProps } from "../input/declare";
 
 export type InputTextareaProps =
@@ -13,5 +13,4 @@ export type InputTextareaProps =
         readonly rows?: number;
     }
     & PropsPlaceholderAddOn
-    & PropsMaximizeAddOn
     & CommonInputProps<string>;

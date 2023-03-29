@@ -24,6 +24,7 @@ export const InputSelect: React.FC<InputSelectProps> = (props: InputSelectProps)
     return (<InputContainer
         title={enrichedProps.title}
         size={enrichedProps.size}
+        maximize={enrichedProps.maximize}
         information={enrichedProps.information}
         warning={enrichedProps.warning}
         error={enrichedProps.error}

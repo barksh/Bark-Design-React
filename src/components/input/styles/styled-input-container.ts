@@ -12,6 +12,9 @@ import { CommonInputProps } from "../declare";
 export const InputStyledInputContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         width: ${(props: BarkThemeProps<CommonInputProps>) => {
+            if (props.maximize) {
+                return '100%';
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "256px";
