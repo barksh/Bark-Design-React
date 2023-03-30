@@ -21,13 +21,13 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         transition: all 0.2s ease-in-out;
         cursor: pointer;
         width: ${(props: BarkThemeProps<ButtonProps>) => {
-            if (props.maximize) {
+            if (props.maximize || props.maximizeWidth) {
                 return "100%";
             }
             return "inherit";
         }};
         height: ${(props: BarkThemeProps<ButtonProps>) => {
-            if (props.maximize) {
+            if (props.maximize || props.maximizeHeight) {
                 return "100%";
             }
             return "auto";

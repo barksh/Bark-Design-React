@@ -29,6 +29,7 @@ const SidePanelContainer: React.FC<SidePanelProps> = (props: SidePanelProps) => 
             align={props.align}
             zIndex={props.zIndex}
             size={props.size}
+            noBorder={props.noBorder}
         >
             {props.children}
         </SidePanelStyledAlwaysRenderContainer>);
@@ -39,6 +40,7 @@ const SidePanelContainer: React.FC<SidePanelProps> = (props: SidePanelProps) => 
         align={props.align}
         zIndex={props.zIndex}
         size={props.size}
+        noBorder={props.noBorder}
     >
         {props.children}
     </SidePanelStyledContainer>);

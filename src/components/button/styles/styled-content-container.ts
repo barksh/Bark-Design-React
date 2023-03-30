@@ -20,6 +20,10 @@ export const ButtonStyledContentContainer: StyledComponent<"div", BarkThemeProps
         width: 100%;
         height: 100%;
         padding: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.noPadding) {
+                return "0px";
+            }
+
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "2px 6px";

@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
 
 export type SidePanelPropsAlign = 'left' | 'right';
 
@@ -20,6 +20,8 @@ export type SidePanelProps =
         readonly zIndex?: number;
     }
     & PropsNoBorderAddOn
+    & PropsWidthHeightAddOn
+    & PropsMaximizeAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;

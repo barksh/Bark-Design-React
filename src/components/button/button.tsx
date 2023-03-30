@@ -20,6 +20,7 @@ const ButtonPrefix: React.FC<ButtonProps> = (props: ButtonProps) => {
     if (props.prefix) {
         return (<ButtonStyledPrefixContainer
             size={props.size}
+            noPrefixPadding={props.noPrefixPadding}
             actionPrefix={props.actionPrefix}
         >
             {props.prefix}
@@ -33,6 +34,7 @@ const ButtonSuffix: React.FC<ButtonProps> = (props: ButtonProps) => {
     if (props.suffix) {
         return (<ButtonStyledSuffixContainer
             size={props.size}
+            noSuffixPadding={props.noSuffixPadding}
             actionSuffix={props.actionSuffix}
         >
             {props.suffix}
@@ -52,15 +54,21 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         size={enrichedProps.size}
         flex={enrichedProps.flex}
         maximize={enrichedProps.maximize}
+        maximizeWidth={enrichedProps.maximizeWidth}
+        maximizeHeight={enrichedProps.maximizeHeight}
         noBorder={enrichedProps.noBorder}
+        noPadding={enrichedProps.noPadding}
         keepVisible={enrichedProps.keepVisible}
     >
-        <ButtonStyledContainer>
+        <ButtonStyledContainer
+            noPadding={enrichedProps.noPadding}
+        >
             <ButtonPrefix
                 {...props}
             />
             <ButtonStyledContentContainer
                 size={enrichedProps.size}
+                noPadding={enrichedProps.noPadding}
             >
                 <ButtonStyledTitle
                     size={enrichedProps.size}

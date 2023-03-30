@@ -41,7 +41,6 @@ export const ProgressBarStyledProgressBar: StyledComponent<"progress", BarkTheme
             return props.theme.borderColor.primary;
         }};
         border-radius: none;
-        color: red;
         -webkit-appearance: none;
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;

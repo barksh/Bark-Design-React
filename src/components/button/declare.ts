@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoPaddingAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
 
 export type ButtonProps =
     & {
@@ -17,8 +17,12 @@ export type ButtonProps =
         readonly actionSuffix?: boolean;
 
         readonly keepVisible?: boolean;
+
+        readonly noPrefixPadding?: boolean;
+        readonly noSuffixPadding?: boolean;
     }
     & PropsNoBorderAddOn
+    & PropsNoPaddingAddOn
     & PropsMaximizeAddOn
     & PropsPrefixAddOn
     & PropsSuffixAddOn

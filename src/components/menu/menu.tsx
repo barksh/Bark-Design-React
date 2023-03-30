@@ -12,22 +12,24 @@ import { MenuStyledContainer } from "./styles/styled-container";
 
 export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
 
-    return (<MenuItemContext.Provider
-        value={{
-            size: props.size,
-        }}
+    return (<ContentBlock
+        size={props.size}
+        maximize={props.maximize}
+        maximizeWidth={props.maximizeWidth}
+        maximizeHeight={props.maximizeHeight}
+        noBorder={props.noBorder}
+        balancedBorder={props.balancedBorder}
     >
-        <ContentBlock
+        <MenuStyledContainer
             size={props.size}
-            maximize={props.maximize}
-            noBorder={props.noBorder}
-            balancedBorder={props.balancedBorder}
         >
-            <MenuStyledContainer
-                size={props.size}
+            <MenuItemContext.Provider
+                value={{
+                    size: props.size,
+                }}
             >
                 {props.children}
-            </MenuStyledContainer>
-        </ContentBlock>
-    </MenuItemContext.Provider>);
+            </MenuItemContext.Provider>
+        </MenuStyledContainer>
+    </ContentBlock>);
 };

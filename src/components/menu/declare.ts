@@ -20,8 +20,13 @@ export type MenuItemProps =
     & {
         readonly title: string;
         readonly description?: string;
+
+        readonly onClick?: () => void;
+
+        readonly level?: number;
     }
     & PropsSizeAddon
     & PropsPrefixAddOn
     & PropsSuffixAddOn
-    & PropsClassNameAddOn;
+    & PropsClassNameAddOn
+    & PropsChildrenAddOn;

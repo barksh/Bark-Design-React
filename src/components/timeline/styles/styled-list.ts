@@ -1,19 +1,19 @@
 /**
  * @author WMXPY
- * @namespace Components_Menu_Styles
- * @description Styled Container
+ * @namespace Components_Timeline_Styles
+ * @description Styled List
  */
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 
-export const MenuStyledContainer: StyledComponent<"ul", BarkThemeProps, any> =
-    styled.ul`
-        list-style: none;
-        width: 100%;
-        height: 100%;
+export const TimelineStyledList: StyledComponent<"ol", BarkThemeProps, any> =
+    styled.ol`
         padding: 0;
         margin: 0;
+        list-style: none;
         display: flex;
         flex-direction: column;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
 `;

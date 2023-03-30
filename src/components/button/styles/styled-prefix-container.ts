@@ -20,6 +20,9 @@ export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
             }
         }};
         padding-top: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.noPrefixPadding) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "2px";
@@ -28,6 +31,9 @@ export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
             }
         }};
         padding-left: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.noPrefixPadding) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";
