@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { ButtonProps } from "../declare";
 
@@ -20,13 +21,13 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         }};
         transition: all 0.2s ease-in-out;
         cursor: pointer;
-        width: ${(props: BarkThemeProps<ButtonProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.maximize || props.maximizeWidth) {
                 return "100%";
             }
             return "inherit";
         }};
-        height: ${(props: BarkThemeProps<ButtonProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.maximize || props.maximizeHeight) {
                 return "100%";
             }
@@ -45,7 +46,7 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-bottom: ${(props: BarkThemeProps<ButtonProps>) => {
+        ${parseLogicalCSSProperty("border-bottom")}: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

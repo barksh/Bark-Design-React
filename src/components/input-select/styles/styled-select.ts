@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { InputSelectProps } from "../declare";
 
@@ -13,8 +14,8 @@ export const InputSelectStyledSelect: StyledComponent<"select", BarkThemeProps, 
     styled.select`
         box-sizing: default;
         cursor: pointer;
-        width: 100%;
-        height: ${(props: BarkThemeProps<InputSelectProps>) => {
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<InputSelectProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "26px";
@@ -40,7 +41,7 @@ export const InputSelectStyledSelect: StyledComponent<"select", BarkThemeProps, 
                 case 'large': return "24px";
             }
         }};
-        padding-left: ${(props: BarkThemeProps<InputSelectProps>) => {
+        ${parseLogicalCSSProperty("padding-left")}: ${(props: BarkThemeProps<InputSelectProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "2px";

@@ -6,11 +6,12 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 
 export const LeadingStaticStyledContentContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         display: flex;
         align-items: center;
         justify-content: center;

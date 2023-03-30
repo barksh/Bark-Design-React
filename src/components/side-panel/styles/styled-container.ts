@@ -6,6 +6,7 @@
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { fixWidthHeight } from "../../../util/width-height";
 import { SidePanelProps } from "../declare";
@@ -30,9 +31,9 @@ const slideInLeftKeyframes = keyframes`
 
 export const SidePanelStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        height: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         max-width: 100%;
-        width:${(props: BarkThemeProps<SidePanelProps>) => {
+        ${parseLogicalCSSProperty("width")}:${(props: BarkThemeProps<SidePanelProps>) => {
             if (typeof props.width !== 'undefined') {
                 return fixWidthHeight(props.width);
             }
@@ -47,14 +48,14 @@ export const SidePanelStyledContainer: StyledComponent<"div", BarkThemeProps, an
             }
         }};
         position: fixed;
-        top: 0;
-        left: ${(props: BarkThemeProps<SidePanelProps>) => {
+        ${parseLogicalCSSProperty("top")}: 0;
+        ${parseLogicalCSSProperty("left")}: ${(props: BarkThemeProps<SidePanelProps>) => {
             if (props.align === 'left') {
                 return 0;
             }
             return 'auto';
         }};
-        right: ${(props: BarkThemeProps<SidePanelProps>) => {
+        ${parseLogicalCSSProperty("right")}: ${(props: BarkThemeProps<SidePanelProps>) => {
             if (props.align === 'right') {
                 return 0;
             }
@@ -65,7 +66,7 @@ export const SidePanelStyledContainer: StyledComponent<"div", BarkThemeProps, an
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
         }};
-        border-left: ${(props: BarkThemeProps<SidePanelProps>) => {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<SidePanelProps>) => {
             if (props.align !== 'right' || props.noBorder) {
                 return 'none';
             }
@@ -78,7 +79,7 @@ export const SidePanelStyledContainer: StyledComponent<"div", BarkThemeProps, an
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-right: ${(props: BarkThemeProps<SidePanelProps>) => {
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<SidePanelProps>) => {
             if (props.align !== 'left' || props.noBorder) {
                 return 'none';
             }

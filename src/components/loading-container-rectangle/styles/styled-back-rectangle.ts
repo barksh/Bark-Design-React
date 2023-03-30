@@ -6,6 +6,7 @@
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { LoadingContainerRectangleProps } from "../declare";
 
@@ -20,7 +21,7 @@ export const LoadingContainerRectangleStyledBackRectangle: StyledComponent<"div"
         transition: 0.8s all ease-in-out;
         pointerEvents: none;
         position: absolute;
-        width: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "24px";
@@ -28,7 +29,7 @@ export const LoadingContainerRectangleStyledBackRectangle: StyledComponent<"div"
                 case 'large': return "96px";
             }
         }};
-        height: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "24px";

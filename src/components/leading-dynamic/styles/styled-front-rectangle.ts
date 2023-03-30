@@ -6,6 +6,7 @@
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { LeadingDynamicProps } from "../declare";
 
@@ -21,8 +22,8 @@ export const LeadingDynamicStyledFrontRectangle: StyledComponent<"div", BarkThem
         transition: 0.3s border ease-in-out;
         pointerEvents: none;
         position: absolute;
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         opacity: 1;
         border: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
             const fixedSize = fixSizeProps(props.size);
@@ -45,7 +46,7 @@ export const LeadingDynamicStyledFrontRectangle: StyledComponent<"div", BarkThem
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-left: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
             if (!props.loading && props.noBorder) {
                 return "0px";
             }

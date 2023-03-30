@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { fixWidthHeight } from "../../../util/width-height";
 import { ContentBlockProps } from "../declare";
@@ -15,7 +16,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
         }};
-        width: ${(props: BarkThemeProps<ContentBlockProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.width !== 'undefined') {
                 return fixWidthHeight(props.width);
             }
@@ -24,7 +25,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             }
             return "fit-content";
         }};
-        height: ${(props: BarkThemeProps<ContentBlockProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.height !== 'undefined') {
                 return fixWidthHeight(props.height);
             }
@@ -46,7 +47,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-right: ${(props: BarkThemeProps<ContentBlockProps>) => {
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

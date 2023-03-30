@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { ProgressBarProps } from "../declare";
 
 export const ProgressBarStyledProgressBar: StyledComponent<"progress", BarkThemeProps, any> =
     styled.progress`
-        width: ${(props: BarkThemeProps<ProgressBarProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ProgressBarProps>) => {
             if (props.maximize) {
                 return "100%";
             }
@@ -22,7 +23,7 @@ export const ProgressBarStyledProgressBar: StyledComponent<"progress", BarkTheme
                 case 'large': return "256px";
             }
         }};
-        height: ${(props: BarkThemeProps<ProgressBarProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ProgressBarProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "14px";

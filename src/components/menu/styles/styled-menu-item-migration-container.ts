@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { MenuItemProps } from "../declare";
 
@@ -30,7 +31,7 @@ export const MenuStyledMenuItemMigrationContainer: StyledComponent<"div", BarkTh
                 case 'large': return "4px 8px";
             }
         }};
-        padding-left: ${(props: BarkThemeProps<MenuItemProps>) => {
+        ${parseLogicalCSSProperty("padding-left")}: ${(props: BarkThemeProps<MenuItemProps>) => {
             const base: number = getBasePaddingLeft(props);
             const levelMigration: number = typeof props.level === 'number'
                 ? props.level * base

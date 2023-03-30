@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { convertHexToRGBA } from "../../../util/hex-to-rgba";
 import { ModalProps } from "../declare";
 
@@ -26,10 +27,10 @@ export const ModalStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
                 BACKGROUND_OPACITY,
             );
         }};
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("top")}: 0;
+        ${parseLogicalCSSProperty("left")}: 0;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         display: flex;
         justify-content: center;
         align-items: center;

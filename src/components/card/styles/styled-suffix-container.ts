@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { CardProps } from "../declare";
 
@@ -19,7 +20,7 @@ export const CardStyledSuffixContainer: StyledComponent<"div", BarkThemeProps, a
                 case 'large': return "20px";
             }
         }};
-        padding-top: ${(props: BarkThemeProps<CardProps>) => {
+        ${parseLogicalCSSProperty("padding-top")}: ${(props: BarkThemeProps<CardProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";
@@ -27,7 +28,7 @@ export const CardStyledSuffixContainer: StyledComponent<"div", BarkThemeProps, a
                 case 'large': return "8px";
             }
         }};
-        padding-right: ${(props: BarkThemeProps<CardProps>) => {
+        ${parseLogicalCSSProperty("padding-right")}: ${(props: BarkThemeProps<CardProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "6px";

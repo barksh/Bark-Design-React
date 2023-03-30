@@ -6,13 +6,14 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { LeadingDynamicProps } from "../declare";
 
 export const LeadingDynamicStyledContentContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         transition: 0.3s opacity ease-in-out;
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         display: flex;
         align-items: center;
         justify-content: center;

@@ -6,6 +6,7 @@
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { LeadingDynamicProps } from "../declare";
 
@@ -20,8 +21,8 @@ export const LeadingDynamicStyledBackRectangle: StyledComponent<"div", BarkTheme
         transition: 0.3s border ease-in-out;
         pointerEvents: none;
         position: absolute;
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         opacity: 1;
         border: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
             const fixedSize = fixSizeProps(props.size);

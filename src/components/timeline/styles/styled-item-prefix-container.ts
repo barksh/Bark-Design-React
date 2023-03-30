@@ -6,8 +6,9 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 
 export const TimelineStyledItemPrefixContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        height: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
 `;

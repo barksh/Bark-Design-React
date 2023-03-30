@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { LeadingStaticProps } from "../declare";
 
 export const LeadingStaticStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<LeadingStaticProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LeadingStaticProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "32px";
@@ -19,7 +20,7 @@ export const LeadingStaticStyledContainer: StyledComponent<"div", BarkThemeProps
                 case 'large': return "64px";
             }
         }};
-        height: ${(props: BarkThemeProps<LeadingStaticProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LeadingStaticProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "32px";
@@ -43,7 +44,7 @@ export const LeadingStaticStyledContainer: StyledComponent<"div", BarkThemeProps
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-left: ${(props: BarkThemeProps<LeadingStaticProps>) => {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<LeadingStaticProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

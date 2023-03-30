@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { ButtonProps } from "../declare";
 
@@ -19,7 +20,7 @@ export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
                 case 'large': return "20px";
             }
         }};
-        padding-top: ${(props: BarkThemeProps<ButtonProps>) => {
+        ${parseLogicalCSSProperty("padding-top")}: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.noPrefixPadding) {
                 return "0px";
             }
@@ -30,7 +31,7 @@ export const ButtonStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
                 case 'large': return "4px";
             }
         }};
-        padding-left: ${(props: BarkThemeProps<ButtonProps>) => {
+        ${parseLogicalCSSProperty("padding-left")}: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.noPrefixPadding) {
                 return "0px";
             }

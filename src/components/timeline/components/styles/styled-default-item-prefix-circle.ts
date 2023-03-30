@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../../util/size";
 import { TimelineItemProps } from "../../declare";
 
 export const TimelineComponentStyledDefaultItemPrefixCircle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<TimelineItemProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<TimelineItemProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "8px";
@@ -19,7 +20,7 @@ export const TimelineComponentStyledDefaultItemPrefixCircle: StyledComponent<"di
                 case 'large': return "16px";
             }
         }};
-        height: ${(props: BarkThemeProps<TimelineItemProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<TimelineItemProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "8px";

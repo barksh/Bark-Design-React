@@ -6,13 +6,14 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { MenuItemProps } from "../declare";
 
 export const MenuStyledMenuItemContainer: StyledComponent<"li", BarkThemeProps, any> =
     styled.li`
-        height: 100%;
-        border-bottom: ${(props: BarkThemeProps<MenuItemProps>) => {
+        ${parseLogicalCSSProperty("height")}: 100%;
+        ${parseLogicalCSSProperty("border-bottom")}: ${(props: BarkThemeProps<MenuItemProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "1px";
@@ -23,6 +24,6 @@ export const MenuStyledMenuItemContainer: StyledComponent<"li", BarkThemeProps, 
             return props.theme.borderColor.primary;
         }};
         :last-child {
-            border-bottom: none;
+            ${parseLogicalCSSProperty("border-bottom")}: none;
         }
 `;

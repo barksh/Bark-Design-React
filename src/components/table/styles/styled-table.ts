@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { TableProps } from "../declare";
 
 export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
     styled.table`
-       width: 100%;
+       ${parseLogicalCSSProperty("width")}: 100%;
        border-collapse: collapse;
        table-layout: ${(props: BarkThemeProps<TableProps>) => {
             if (props.fixedLayout) {

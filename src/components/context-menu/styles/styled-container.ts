@@ -6,18 +6,19 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { ContentMenuProps } from "../declare";
 
 export const ContentMenuStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<ContentMenuProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ContentMenuProps>) => {
             if (props.maximize) {
                 return "100%";
             }
             return "fit-content";
         }};
-        height: ${(props: BarkThemeProps<ContentMenuProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ContentMenuProps>) => {
             if (props.maximize) {
                 return "100%";
             }
@@ -36,7 +37,7 @@ export const ContentMenuStyledContainer: StyledComponent<"div", BarkThemeProps, 
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-right: ${(props: BarkThemeProps<ContentMenuProps>) => {
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<ContentMenuProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

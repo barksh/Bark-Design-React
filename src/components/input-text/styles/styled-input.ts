@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { InputTextProps } from "../declare";
 
 export const InputTextStyledInput: StyledComponent<"input", BarkThemeProps, any> =
     styled.input`
-        width: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
         outline: none;
         border: none;
         border-radius: 0px;

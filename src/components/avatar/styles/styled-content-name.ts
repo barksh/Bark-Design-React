@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { getColorPaletteFromName } from "../data/color-palette";
 import { getTextColorByColor } from "../data/text-color";
@@ -16,8 +17,8 @@ export const AvatarStyledContentName: StyledComponent<"div", BarkThemeProps, any
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         color: ${(props: BarkThemeProps<AvatarProps>) => {
             const paletteColor: string = getColorPaletteFromName(
                 props.name,

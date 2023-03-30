@@ -6,15 +6,16 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { CardProps } from "../declare";
 
 export const CardStyledHeader: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         display: flex;
-        width: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
         justify-content: center;
         align-items: stretch;
-        border-bottom: ${(props: BarkThemeProps<CardProps>) => {
+        ${parseLogicalCSSProperty("border-bottom")}: ${(props: BarkThemeProps<CardProps>) => {
             if (props.noSeparator) {
                 return "0px";
             }

@@ -6,13 +6,14 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { InputTextProps } from "../declare";
 
 export const InputTextStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: 100%;
-        height: fit-content;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: fit-content;
         border: ${(props: BarkThemeProps<InputTextProps>) => {
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
@@ -22,7 +23,7 @@ export const InputTextStyledContainer: StyledComponent<"div", BarkThemeProps, an
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-left: ${(props: BarkThemeProps<InputTextProps>) => {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<InputTextProps>) => {
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '5px';

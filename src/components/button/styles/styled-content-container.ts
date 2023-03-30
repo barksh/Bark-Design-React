@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { ButtonProps } from "../declare";
 
@@ -17,8 +18,8 @@ export const ButtonStyledContentContainer: StyledComponent<"div", BarkThemeProps
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        width: 100%;
-        height: 100%;
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: 100%;
         padding: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.noPadding) {
                 return "0px";

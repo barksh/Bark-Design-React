@@ -6,51 +6,52 @@
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { LoadingContainerBorderProps } from "../declare";
 
 const smallLeftMovingObjectKeyframes = keyframes`
     0% {
-        bottom: -8px;
+        ${parseLogicalCSSProperty("bottom")}: -8px;
     }
     5% {
-        bottom: -8px;
+        ${parseLogicalCSSProperty("bottom")}: -8px;
     }
     95% {
-        bottom: 100%;
+        ${parseLogicalCSSProperty("bottom")}: 100%;
     }
     100% {
-        bottom: 100%;
+        ${parseLogicalCSSProperty("bottom")}: 100%;
     }
 `;
 
 const regularLeftMovingObjectKeyframes = keyframes`
     0% {
-        bottom: -12px;
+        ${parseLogicalCSSProperty("bottom")}: -12px;
     }
     5% {
-        bottom: -12px;
+        ${parseLogicalCSSProperty("bottom")}: -12px;
     }
     95% {
-        bottom: 100%;
+        ${parseLogicalCSSProperty("bottom")}: 100%;
     }
     100% {
-        bottom: 100%;
+        ${parseLogicalCSSProperty("bottom")}: 100%;
     }
 `;
 
 const largeLeftMovingObjectKeyframes = keyframes`
     0% {
-        bottom: -24px;
+        ${parseLogicalCSSProperty("bottom")}: -24px;
     }
     5% {
-        bottom: -24px;
+        ${parseLogicalCSSProperty("bottom")}: -24px;
     }
     95% {
-        bottom: 100%;
+        ${parseLogicalCSSProperty("bottom")}: 100%;
     }
     100% {
-        bottom: 100%;
+        ${parseLogicalCSSProperty("bottom")}: 100%;
     }
 `;
 
@@ -58,7 +59,7 @@ export const LoadingContainerBorderLeftMovingObject: StyledComponent<"div", Bark
     styled.div`
         transition: all 0.2s ease-in-out;
         position: absolute;
-        bottom: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
+        ${parseLogicalCSSProperty("bottom")}: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "-8px";
@@ -66,8 +67,8 @@ export const LoadingContainerBorderLeftMovingObject: StyledComponent<"div", Bark
                 case 'large': return "-24px";
             }
         }};
-        left: 0;
-        height: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
+        ${parseLogicalCSSProperty("left")}: 0;
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "8px";
@@ -75,7 +76,7 @@ export const LoadingContainerBorderLeftMovingObject: StyledComponent<"div", Bark
                 case 'large': return "24px";
             }
         }};
-        width: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
             if (!props.loading) {
                 return "0px";
             }

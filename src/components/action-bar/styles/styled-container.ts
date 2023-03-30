@@ -6,18 +6,19 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { ActionBarProps } from "../declare";
 
 export const ActionBarStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<ActionBarProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ActionBarProps>) => {
             if (props.maximize) {
                 return "100%";
             }
             return "fit-content";
         }};
-        height: ${(props: BarkThemeProps<ActionBarProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ActionBarProps>) => {
             if (props.maximize) {
                 return "100%";
             }
@@ -36,7 +37,7 @@ export const ActionBarStyledContainer: StyledComponent<"div", BarkThemeProps, an
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-right: ${(props: BarkThemeProps<ActionBarProps>) => {
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<ActionBarProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { CommonInputProps } from "../declare";
 
 export const InputStyledInputContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<CommonInputProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<CommonInputProps>) => {
             if (props.maximize) {
                 return '100%';
             }
@@ -22,7 +23,7 @@ export const InputStyledInputContainer: StyledComponent<"div", BarkThemeProps, a
                 case 'large': return "384px";
             }
         }};
-        height: fit-content;
+        ${parseLogicalCSSProperty("height")}: fit-content;
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
         }};

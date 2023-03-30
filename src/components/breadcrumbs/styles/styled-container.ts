@@ -6,18 +6,19 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { BreadcrumbsProps } from "../declare";
 
 export const BreadcrumbsStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<BreadcrumbsProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<BreadcrumbsProps>) => {
             if (props.maximize) {
                 return "100%";
             }
             return "fit-content";
         }};
-        height: ${(props: BarkThemeProps<BreadcrumbsProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<BreadcrumbsProps>) => {
             if (props.maximize) {
                 return "100%";
             }
@@ -36,7 +37,7 @@ export const BreadcrumbsStyledContainer: StyledComponent<"div", BarkThemeProps, 
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-right: ${(props: BarkThemeProps<BreadcrumbsProps>) => {
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<BreadcrumbsProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

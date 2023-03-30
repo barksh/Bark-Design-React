@@ -6,13 +6,14 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { InputTextareaProps } from "../declare";
 
 export const InputTextareaStyledTextarea: StyledComponent<"textarea", BarkThemeProps, any> =
     styled.textarea`
-        width: 100%;
-        height: ${(props: BarkThemeProps<InputTextareaProps>) => {
+        ${parseLogicalCSSProperty("width")}: 100%;
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<InputTextareaProps>) => {
             if (typeof props.rows === 'number') {
                 return `${props.rows}em`;
             }

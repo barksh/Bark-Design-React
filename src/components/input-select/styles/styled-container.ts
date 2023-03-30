@@ -6,12 +6,13 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { InputSelectProps } from "../declare";
 
 export const InputSelectStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        height: fit-content;
+        ${parseLogicalCSSProperty("height")}: fit-content;
         border: ${(props: BarkThemeProps<InputSelectProps>) => {
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
@@ -21,7 +22,7 @@ export const InputSelectStyledContainer: StyledComponent<"div", BarkThemeProps, 
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-left: ${(props: BarkThemeProps<InputSelectProps>) => {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<InputSelectProps>) => {
             const fixedSize = fixSizeProps(props.size);
             if (fixedSize === 'large') {
                 return '5px';

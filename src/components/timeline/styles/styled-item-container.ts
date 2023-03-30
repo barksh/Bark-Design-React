@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { TimelineItemProps } from "../declare";
 import { TimelineStyledItemPrefixContainer } from "./styled-item-prefix-container";
@@ -20,7 +21,7 @@ export const TimelineStyledItemContainer: StyledComponent<"li", BarkThemeProps, 
             ${TimelineStyledItemPrefixContainer}:before {
                 z-index: -1;
                 content: "";
-                height: calc(100% + ${(props: BarkThemeProps<TimelineItemProps>) => {
+                ${parseLogicalCSSProperty("height")}: calc(100% + ${(props: BarkThemeProps<TimelineItemProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "16px";
@@ -28,10 +29,10 @@ export const TimelineStyledItemContainer: StyledComponent<"li", BarkThemeProps, 
                 case 'large': return "32px";
             }
         }});
-                width: 2px;
+                ${parseLogicalCSSProperty("width")}: 2px;
                 position: absolute;
-                top: 0px;
-                left: calc(50% - 1px);
+                ${parseLogicalCSSProperty("top")}: 0px;
+                ${parseLogicalCSSProperty("left")}: calc(50% - 1px);
                 background-color: ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
@@ -39,12 +40,12 @@ export const TimelineStyledItemContainer: StyledComponent<"li", BarkThemeProps, 
         }
         &:first-child {
             ${TimelineStyledItemPrefixContainer}:before {
-                top: 50%;
+                ${parseLogicalCSSProperty("top")}: 50%;
             }
         }
         &:last-child:not(:only-child) {
             ${TimelineStyledItemPrefixContainer}:before {
-                height: 50%;
+                ${parseLogicalCSSProperty("height")}: 50%;
             }
         }
 `;

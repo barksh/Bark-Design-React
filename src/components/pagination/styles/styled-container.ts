@@ -6,18 +6,19 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { PaginationProps } from "../declare";
 
 export const PaginationStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        width: ${(props: BarkThemeProps<PaginationProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<PaginationProps>) => {
             if (props.maximize) {
                 return "100%";
             }
             return "fit-content";
         }};
-        height: ${(props: BarkThemeProps<PaginationProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<PaginationProps>) => {
             if (props.maximize) {
                 return "100%";
             }
@@ -36,7 +37,7 @@ export const PaginationStyledContainer: StyledComponent<"div", BarkThemeProps, a
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        border-right: ${(props: BarkThemeProps<PaginationProps>) => {
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<PaginationProps>) => {
             if (props.noBorder) {
                 return "0px";
             }

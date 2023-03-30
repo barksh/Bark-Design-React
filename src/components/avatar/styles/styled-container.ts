@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { AvatarProps } from "../declare";
 
@@ -50,10 +51,10 @@ export const AvatarStyledContainer: StyledComponent<"div", BarkThemeProps, any> 
         }} solid ${(props: BarkThemeProps<AvatarProps>) => {
             return props.theme.borderColor.primary;
         }};
-        width: ${(props: BarkThemeProps<AvatarProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<AvatarProps>) => {
             return getWidthHeight(props);
         }};
-        height: ${(props: BarkThemeProps<AvatarProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<AvatarProps>) => {
             return getWidthHeight(props);
         }};
         background-color: ${(props: BarkThemeProps) => {

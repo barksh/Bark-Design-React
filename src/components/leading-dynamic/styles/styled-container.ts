@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { LeadingDynamicProps } from "../declare";
 
@@ -15,7 +16,7 @@ export const LeadingDynamicStyledContainer: StyledComponent<"div", BarkThemeProp
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
         }};
-        width: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "32px";
@@ -23,7 +24,7 @@ export const LeadingDynamicStyledContainer: StyledComponent<"div", BarkThemeProp
                 case 'large': return "64px";
             }
         }};
-        height: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "32px";

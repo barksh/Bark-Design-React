@@ -6,6 +6,7 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
 import { CardProps } from "../declare";
 
@@ -22,7 +23,7 @@ export const CardStyledHeaderSuffixContainer: StyledComponent<"div", BarkThemePr
                 case 'large': return "20px";
             }
         }};
-        border-left: ${(props: BarkThemeProps<CardProps>) => {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<CardProps>) => {
             if (props.noSeparator) {
                 return "0px";
             }
