@@ -22,6 +22,7 @@ export const LeadingDynamicStyledContentContainer: StyledComponent<"div", BarkTh
             if (props.loading) {
                 return 0;
             }
+            return 1;
         }};
         color: ${(props: BarkThemeProps) => {
             return props.theme.textColor.primary;
