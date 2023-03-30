@@ -24,4 +24,7 @@ export const LoadingContainerBorderStyledPlaceholderContainer: StyledComponent<"
                 case 'large': return "8px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

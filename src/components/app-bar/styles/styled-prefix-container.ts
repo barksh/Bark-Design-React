@@ -27,4 +27,7 @@ export const AppBarStyledPrefixContainer: StyledComponent<"div", BarkThemeProps,
                 case 'large': return "20px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

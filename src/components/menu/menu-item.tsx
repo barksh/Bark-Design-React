@@ -76,9 +76,10 @@ const getClickDiverseComponent = (props: MenuItemProps): React.FC<ButtonProps> =
     if (typeof props.onClick === 'function') {
         return Button;
     }
-    return () => {
+
+    return (newComponentProps: any) => {
         return (<React.Fragment>
-            {props.children}
+            {newComponentProps.children}
         </React.Fragment>);
     };
 };
@@ -102,6 +103,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props: MenuItemProps) => {
         >
             <MenuStyledMenuItemContentContainer
                 size={enrichedProps.size}
+                onClick={enrichedProps.onClick}
             >
                 <MenuItemPrefix
                     {...enrichedProps}

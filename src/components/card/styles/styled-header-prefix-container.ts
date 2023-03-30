@@ -30,4 +30,7 @@ export const CardStyledHeaderPrefixContainer: StyledComponent<"div", BarkThemePr
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

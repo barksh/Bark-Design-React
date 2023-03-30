@@ -20,4 +20,7 @@ export const AppBarStyledHeader: StyledComponent<"div", BarkThemeProps, any> =
                 case 'large': return "32px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

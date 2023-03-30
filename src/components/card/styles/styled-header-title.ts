@@ -39,4 +39,7 @@ export const CardStyledHeaderTitle: StyledComponent<"div", BarkThemeProps, any> 
                 case 'large': return "10px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;
