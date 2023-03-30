@@ -7,7 +7,7 @@
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import * as React from "react";
-import { Button, SidePanel, Theme, TitleProps } from "../../src";
+import { Button, Menu, MenuItem, SidePanel, SidePanelProps, Theme } from "../../src";
 
 export default {
     title: "Side Panel",
@@ -21,12 +21,37 @@ const Template: ComponentStory<typeof SidePanel> = (args: any) => {
         <SidePanel
             {...args}
         >
-            Hello World
+            <Menu
+                noBorder
+                maximizeWidth
+            >
+                <MenuItem
+                    title="Menu Item 1"
+                >
+                    <MenuItem
+                        title="Menu Item 1.1"
+                    />
+                    <MenuItem
+                        title="Menu Item 1.2"
+                    />
+                </MenuItem>
+                <MenuItem
+                    title="Menu Item 2"
+                >
+                    <MenuItem
+                        title="Menu Item 2.1"
+                    />
+                    <MenuItem
+                        title="Menu Item 2.2"
+                    />
+                </MenuItem>
+            </Menu>
         </SidePanel>
     </Theme>);
 };
 
-export const Primary: ComponentStory<React.FC<TitleProps>> = Template.bind({});
+export const Primary: ComponentStory<React.FC<SidePanelProps>> = Template.bind({});
 
 Primary.args = {
+    align: "left",
 };

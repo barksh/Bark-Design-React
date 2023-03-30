@@ -6,6 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { FaBaseballBall } from "react-icons/fa";
 import { Menu, MenuItem, Theme } from "../../src";
 
 export default {
@@ -24,9 +25,54 @@ const Template: ComponentStory<typeof Menu> = (args: any) => {
         >
             <MenuItem
                 title="Menu Item 1"
+                description="Menu Item 1 Description"
+                prefix={<FaBaseballBall
+                    size={24}
+                />}
             />
             <MenuItem
                 title="Menu Item 2"
+            >
+                <MenuItem
+                    title="Menu Item 2.1"
+                    description="Menu Item 2.1 Description"
+                    prefix={<FaBaseballBall
+                        size={24}
+                    />}
+                    suffix={<FaBaseballBall
+                        size={24}
+                    />}
+                    onClick={() => {
+                        alert('click');
+                    }}
+                >
+                    <MenuItem
+                        title="Menu Item 2.1.1"
+                    />
+                    <MenuItem
+                        title="Menu Item 2.1.2"
+                        description="Menu Item 2.1.2 Description"
+                        onClick={() => {
+                            alert('click');
+                        }}
+                    />
+                </MenuItem>
+                <MenuItem
+                    title="Menu Item 2.2"
+                    description="Menu Item 2.2 Description"
+                    prefix={<FaBaseballBall
+                        size={24}
+                    />}
+                    suffix={<FaBaseballBall
+                        size={24}
+                    />}
+                />
+            </MenuItem>
+            <MenuItem
+                title="Menu Item 3"
+                suffix={<FaBaseballBall
+                    size={24}
+                />}
             />
         </Menu>
     </Theme>);

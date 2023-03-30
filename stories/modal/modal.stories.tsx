@@ -7,7 +7,7 @@
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import * as React from "react";
-import { Button, Card, Modal, Theme, TitleProps } from "../../src";
+import { Button, Card, Modal, ModalProps, Theme } from "../../src";
 
 export default {
     title: "Modal",
@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof Modal> = (args: any) => {
     </Theme>);
 };
 
-export const Primary: ComponentStory<React.FC<TitleProps>> = Template.bind({});
+export const Primary: ComponentStory<React.FC<ModalProps>> = Template.bind({});
 
 Primary.args = {
 };
