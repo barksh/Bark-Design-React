@@ -76,7 +76,11 @@ const getClickDiverseComponent = (props: MenuItemProps): React.FC<ButtonProps> =
     if (typeof props.onClick === 'function') {
         return Button;
     }
-    return React.Fragment;
+    return () => {
+        return (<React.Fragment>
+            {props.children}
+        </React.Fragment>);
+    };
 };
 
 export const MenuItem: React.FC<MenuItemProps> = (props: MenuItemProps) => {
