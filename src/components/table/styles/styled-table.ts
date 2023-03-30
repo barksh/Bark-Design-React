@@ -70,5 +70,8 @@ export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
         }
 `;

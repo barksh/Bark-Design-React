@@ -33,6 +33,7 @@ export type BarkThemeProfile = {
     readonly textColor: {
         readonly primary: string;
         readonly secondary: string;
+        readonly emphasize: string;
         readonly warning: string;
         readonly error: string;
         readonly action: string;

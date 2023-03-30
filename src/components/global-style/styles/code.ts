@@ -14,6 +14,9 @@ export const GlobalStyleCode = createGlobalStyle`
         background-color: ${(props: BarkThemeProps) => {
         return props.theme.backColor.emphasize;
     }};
+    color: ${(props: BarkThemeProps) => {
+        return props.theme.textColor.emphasize;
+    }};
     }
     code {
         padding: 1px 5px;

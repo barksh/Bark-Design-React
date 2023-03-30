@@ -32,6 +32,7 @@ export const defaultLightThemeProfile: BarkThemeProfile = {
     textColor: {
         primary: '#000000',
         secondary: '#888888',
+        emphasize: '#000000',
         warning: '#ffb700',
         error: '#ff0000',
         action: '#2a7ae2',

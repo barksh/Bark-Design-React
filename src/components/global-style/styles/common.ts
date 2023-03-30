@@ -21,5 +21,8 @@ export const GlobalStyleCommon = createGlobalStyle`
         background-color: ${(props: BarkThemeProps) => {
         return props.theme.backColor.primary;
     }};
+    color: ${(props: BarkThemeProps) => {
+        return props.theme.textColor.primary;
+    }};
     }
 `;
