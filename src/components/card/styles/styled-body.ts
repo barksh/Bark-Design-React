@@ -19,4 +19,7 @@ export const CardStyledBody: StyledComponent<"div", BarkThemeProps, any> =
                 case 'large': return "18px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.secondary;
+        }};
 `;

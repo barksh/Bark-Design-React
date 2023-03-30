@@ -22,4 +22,7 @@ export const LeadingDynamicStyledContentContainer: StyledComponent<"div", BarkTh
                 return 0;
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

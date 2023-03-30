@@ -24,8 +24,8 @@ export const defaultDartThemeProfile: BarkThemeProfile = {
         ],
     },
     borderColor: {
-        primary: '#4444BB',
-        secondary: '#01FF70',
+        primary: '#01FF70',
+        secondary: '#4444BB',
         focus: '#a9c0de',
         active: '#2a7ae2',
     },

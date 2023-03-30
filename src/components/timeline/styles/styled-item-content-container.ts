@@ -19,4 +19,7 @@ export const TimelineStyledItemContentContainer: StyledComponent<"div", BarkThem
                 case 'large': return "4px 12px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

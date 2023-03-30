@@ -56,6 +56,13 @@ export const InputTextareaStyledTextarea: StyledComponent<"textarea", BarkThemeP
             }
         }};
         border: 1px dashed transparent;
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
+        background-color: ${(props: BarkThemeProps) => {
+            return props.theme.backColor.primary;
+        }};
+
         &:focus-within {
             border: 1px dashed ${(props: BarkThemeProps) => {
             return props.theme.borderColor.active;

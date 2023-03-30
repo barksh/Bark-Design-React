@@ -5,7 +5,7 @@
  */
 
 import { BarkTheme, BarkThemeMode, BarkThemeProfile } from "./declare";
-import { defaultDartThemeProfile } from "./template/dart";
+import { defaultDartThemeProfile } from "./template/dark";
 import { defaultLightThemeProfile } from "./template/light";
 
 export const getBarkThemeProfile = (mode: BarkThemeMode, theme?: Partial<BarkTheme>): BarkThemeProfile => {

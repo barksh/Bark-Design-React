@@ -35,4 +35,7 @@ export const CardStyledSuffixContainer: StyledComponent<"div", BarkThemeProps, a
                 case 'large': return "10px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

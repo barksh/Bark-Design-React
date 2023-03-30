@@ -23,4 +23,7 @@ export const InputStyledInputContainer: StyledComponent<"div", BarkThemeProps, a
             }
         }};
         height: fit-content;
+        background-color: ${(props: BarkThemeProps) => {
+            return props.theme.backColor.primary;
+        }};
 `;

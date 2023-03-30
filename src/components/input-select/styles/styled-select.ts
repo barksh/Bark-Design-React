@@ -48,6 +48,9 @@ export const InputSelectStyledSelect: StyledComponent<"select", BarkThemeProps, 
                 case 'large': return "6px";
             }
         }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 
         &:focus-within {
             border: 1px dashed ${(props: BarkThemeProps) => {

@@ -38,6 +38,13 @@ export const InputTextStyledInput: StyledComponent<"input", BarkThemeProps, any>
             }
         }};
         border: 1px dashed transparent;
+        background-color: ${(props: BarkThemeProps) => {
+            return props.theme.backColor.primary;
+        }};
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
+
         &:focus-within {
             border: 1px dashed ${(props: BarkThemeProps) => {
             return props.theme.borderColor.active;

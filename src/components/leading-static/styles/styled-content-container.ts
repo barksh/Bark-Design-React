@@ -15,4 +15,7 @@ export const LeadingStaticStyledContentContainer: StyledComponent<"div", BarkThe
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        color: ${(props: BarkThemeProps) => {
+            return props.theme.textColor.primary;
+        }};
 `;

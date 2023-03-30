@@ -5,6 +5,7 @@
  */
 
 import { createGlobalStyle } from "styled-components";
+import { BarkThemeProps } from "../../../theme/declare";
 
 // spell-checker: disable
 export const GlobalStyleCommon = createGlobalStyle`
@@ -17,5 +18,8 @@ export const GlobalStyleCommon = createGlobalStyle`
         margin: 0;
         padding: 0;
         position: relative;
+        background-color: ${(props: BarkThemeProps) => {
+        return props.theme.backColor.primary;
+    }};
     }
 `;
