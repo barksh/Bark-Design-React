@@ -23,8 +23,10 @@ export const MenuStyledMenuItemContentContainer: StyledComponent<"div", BarkThem
                 case 'large': return "4px 12px";
             }
         }};
-        color: ${(props: BarkThemeProps<MenuItemProps>) => {
-            if (typeof props.onClick === "function") {
+        color: ${(props: BarkThemeProps<MenuItemProps, {
+            readonly hasOnClick: boolean;
+        }>) => {
+            if (props.hasOnClick) {
                 return "inherit";
             }
             return props.theme.textColor.primary;

@@ -103,7 +103,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props: MenuItemProps) => {
         >
             <MenuStyledMenuItemContentContainer
                 size={enrichedProps.size}
-                onClick={enrichedProps.onClick}
+                hasOnClick={Boolean(enrichedProps.onClick)}
             >
                 <MenuItemPrefix
                     {...enrichedProps}
