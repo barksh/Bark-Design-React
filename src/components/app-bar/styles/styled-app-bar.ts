@@ -15,6 +15,12 @@ export const AppBarStyledAppBar: StyledComponent<"div", BarkThemeProps, any> =
         align-items: center;
         justify-content: center;
         width: 100%;
+        position: ${(props: BarkThemeProps<AppBarProps>) => {
+            if (props.sticky) {
+                return "sticky";
+            }
+            return "relative";
+        }};
         height: ${(props: BarkThemeProps<AppBarProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

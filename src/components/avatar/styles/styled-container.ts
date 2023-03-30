@@ -56,4 +56,7 @@ export const AvatarStyledContainer: StyledComponent<"div", BarkThemeProps, any> 
         height: ${(props: BarkThemeProps<AvatarProps>) => {
             return getWidthHeight(props);
         }};
+        background-color: ${(props: BarkThemeProps) => {
+            return props.theme.backColor.primary;
+        }};
 `;

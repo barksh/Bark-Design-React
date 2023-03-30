@@ -19,7 +19,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             if (typeof props.width !== 'undefined') {
                 return fixWidthHeight(props.width);
             }
-            if (props.maximize) {
+            if (props.maximize || props.maximizeWidth) {
                 return "100%";
             }
             return "fit-content";
@@ -28,7 +28,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             if (typeof props.height !== 'undefined') {
                 return fixWidthHeight(props.height);
             }
-            if (props.maximize) {
+            if (props.maximize || props.maximizeHeight) {
                 return "100%";
             }
             return "fit-content";

@@ -39,6 +39,7 @@ export const AppBar: React.FC<AppBarProps> = (props: AppBarProps) => {
 
     return (<AppBarStyledAppBar
         size={props.size}
+        sticky={props.sticky}
     >
         <AppBarPrefix
             {...props}

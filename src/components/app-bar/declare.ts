@@ -4,11 +4,14 @@
  * @description Declare
  */
 
+import { ReactNode } from "react";
 import { PropsClassNameAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
 
 export type AppBarProps =
     & {
-        readonly title: string;
+        readonly title: ReactNode;
+
+        readonly sticky?: boolean;
     }
     & PropsPrefixAddOn
     & PropsSuffixAddOn
