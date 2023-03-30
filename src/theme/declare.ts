@@ -39,6 +39,8 @@ export type BarkThemeProfile = {
     };
 };
 
+export type BarkThemeMode = "light" | "dark";
+
 export type BarkTheme = {
 
     readonly light: BarkThemeProfile;

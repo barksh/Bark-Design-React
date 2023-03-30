@@ -33,6 +33,10 @@ export type PropsNoBorderAddOn = {
     readonly noBorder?: boolean;
 };
 
+export type PropsNoPaddingAddOn = {
+    readonly noPadding?: boolean;
+};
+
 export type PropsWidthHeightAddOn = {
     readonly width?: string | number;
     readonly height?: string | number;
@@ -51,6 +55,9 @@ export type PropsNoSeparatorAddOn = {
 
 export type PropsMaximizeAddOn = {
     readonly maximize?: boolean;
+
+    readonly maximizeWidth?: boolean;
+    readonly maximizeHeight?: boolean;
 };
 
 export type PropsPrefixAddOn = {

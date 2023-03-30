@@ -4,19 +4,38 @@
  * @description Default
  */
 
-import { BarkTheme, BarkThemeProfile } from "./declare";
+import { BarkTheme, BarkThemeMode, BarkThemeProfile } from "./declare";
+import { defaultDartThemeProfile } from "./template/dart";
 import { defaultLightThemeProfile } from "./template/light";
 
-export const getBarkThemeProfile = (theme?: Partial<BarkTheme>): BarkThemeProfile => {
+export const getBarkThemeProfile = (mode: BarkThemeMode, theme?: Partial<BarkTheme>): BarkThemeProfile => {
 
-    if (theme) {
+    if (mode === 'light') {
 
-        if (theme.light) {
-            return theme.light;
+        if (theme) {
+
+            if (theme.light) {
+                return theme.light;
+            }
+            if (theme.dark) {
+                return theme.dark;
+            }
         }
-        if (theme.dark) {
-            return theme.dark;
+        return defaultLightThemeProfile;
+    }
+
+    if (mode === 'dark') {
+
+        if (theme) {
+
+            if (theme.dark) {
+                return theme.dark;
+            }
+            if (theme.light) {
+                return theme.light;
+            }
         }
+        return defaultDartThemeProfile;
     }
     return defaultLightThemeProfile;
 };
