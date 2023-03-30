@@ -14,7 +14,7 @@ import { SidePanelProps } from "../declare";
 export const SidePanelStyledAlwaysRenderContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         ${parseLogicalCSSProperty("height")}: 100%;
-        max-width: 100%;
+        ${parseLogicalCSSProperty("max-width")}: 100%;
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<SidePanelProps>) => {
             if (typeof props.width !== 'undefined') {
                 return fixWidthHeight(props.width);

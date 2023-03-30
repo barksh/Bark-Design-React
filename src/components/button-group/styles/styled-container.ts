@@ -20,7 +20,7 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
             }
             return "fit-content";
         }};
-        max-width: 100%;
+        ${parseLogicalCSSProperty("max-width")}: 100%;
         ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
             if (props.maximize) {
                 return "100%";
