@@ -37,6 +37,10 @@ export type PropsNoPaddingAddOn = {
     readonly noPadding?: boolean;
 };
 
+export type PropsNoMarginAddOn = {
+    readonly noMargin?: boolean;
+};
+
 export type PropsWidthHeightAddOn = {
     readonly width?: string | number;
     readonly height?: string | number;

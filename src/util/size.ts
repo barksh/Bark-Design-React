@@ -15,10 +15,14 @@ export const fixSizeProps = (size?: SizePropertyValue): SizePropertyValue => {
 };
 
 export const limitSizeProps = (
-    size: SizePropertyValue,
+    size: SizePropertyValue | undefined,
     allowedValues: SizePropertyValue[],
     defaultValue: SizePropertyValue,
 ): SizePropertyValue => {
+
+    if (typeof size !== 'string') {
+        return defaultValue;
+    }
 
     if (allowedValues.includes(size)) {
         return size;
