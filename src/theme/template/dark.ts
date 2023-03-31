@@ -14,8 +14,8 @@ export const defaultDartThemeProfile: BarkThemeProfile = {
     backColor: {
         primary: '#000000',
         active: '#a9c0de',
-        emphasize: '#eeeeff',
-        disabled: '#dddddd',
+        emphasize: '#222222',
+        disabled: '#333333',
         palette: [
             '#4d455d',
             '#e96479',
@@ -31,8 +31,8 @@ export const defaultDartThemeProfile: BarkThemeProfile = {
     },
     textColor: {
         primary: '#ffffff',
-        secondary: '#888888',
-        emphasize: '#000000',
+        secondary: '#bbbbbb',
+        emphasize: '#ffffff',
         warning: '#ffb700',
         error: '#ff0000',
         action: '#2a7ae2',

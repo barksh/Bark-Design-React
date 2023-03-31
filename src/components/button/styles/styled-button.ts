@@ -20,7 +20,12 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
             return "auto";
         }};
         transition: all 0.2s ease-in-out;
-        cursor: pointer;
+        cursor: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.disabled) {
+                return "not-allowed";
+            }
+            return "pointer";
+        }};
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ButtonProps>) => {
             if (props.maximize || props.maximizeWidth) {
                 return "100%";
