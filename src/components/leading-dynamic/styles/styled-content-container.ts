@@ -18,8 +18,10 @@ export const LeadingDynamicStyledContentContainer: StyledComponent<"div", BarkTh
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        opacity: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
-            if (props.loading) {
+        opacity: ${(props: BarkThemeProps<LeadingDynamicProps, {
+        readonly isLoading: boolean;
+    }>) => {
+            if (props.isLoading) {
                 return 0;
             }
             return 1;

@@ -77,8 +77,10 @@ export const LoadingContainerBorderBottomMovingObject: StyledComponent<"div", Ba
                 case 'large': return "24px";
             }
         }};
-        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
-            if (!props.loading) {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LoadingContainerBorderProps, {
+            readonly isLoading: boolean;
+        }>) => {
+            if (!props.isLoading) {
                 return "0px";
             }
             const fixedSize = fixSizeProps(props.size);

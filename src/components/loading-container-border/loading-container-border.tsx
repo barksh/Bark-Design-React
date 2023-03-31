@@ -18,19 +18,19 @@ const LoadingContainerBorderChildren: React.FC<LoadingContainerBorderProps> = (p
     if (props.loading) {
         return (<React.Fragment>
             <LoadingContainerBorderTopMovingObject
-                loading={props.loading}
+                isLoading={props.loading}
                 size={props.size}
             />
             <LoadingContainerBorderRightMovingObject
-                loading={props.loading}
+                isLoading={props.loading}
                 size={props.size}
             />
             <LoadingContainerBorderBottomMovingObject
-                loading={props.loading}
+                isLoading={props.loading}
                 size={props.size}
             />
             <LoadingContainerBorderLeftMovingObject
-                loading={props.loading}
+                isLoading={props.loading}
                 size={props.size}
             />
             <LoadingContainerBorderStyledPlaceholderContainer>
@@ -46,10 +46,7 @@ const LoadingContainerBorderChildren: React.FC<LoadingContainerBorderProps> = (p
 
 export const LoadingContainerBorder: React.FC<LoadingContainerBorderProps> = (props: LoadingContainerBorderProps) => {
 
-    return (<LoadingContainerBorderStyledContainer
-        loading={props.loading}
-        size={props.size}
-    >
+    return (<LoadingContainerBorderStyledContainer>
         <LoadingContainerBorderChildren
             {...props}
         />

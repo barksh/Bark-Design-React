@@ -76,8 +76,10 @@ export const LoadingContainerBorderLeftMovingObject: StyledComponent<"div", Bark
                 case 'large': return "24px";
             }
         }};
-        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LoadingContainerBorderProps>) => {
-            if (!props.loading) {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LoadingContainerBorderProps, {
+            readonly isLoading: boolean;
+        }>) => {
+            if (!props.isLoading) {
                 return "0px";
             }
             const fixedSize = fixSizeProps(props.size);

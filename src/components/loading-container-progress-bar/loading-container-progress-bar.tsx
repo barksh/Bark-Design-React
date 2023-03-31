@@ -23,10 +23,7 @@ const LoadingContainerChildren: React.FC<LoadingContainerProgressBarProps> = (pr
 
 export const LoadingContainerProgressBar: React.FC<LoadingContainerProgressBarProps> = (props: LoadingContainerProgressBarProps) => {
 
-    return (<LoadingContainerProgressBarStyledContainer
-        loading={props.loading}
-        size={props.size}
-    >
+    return (<LoadingContainerProgressBarStyledContainer>
         <LoadingContainerChildren
             {...props}
         />

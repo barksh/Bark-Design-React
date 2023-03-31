@@ -16,15 +16,12 @@ const LoadingContainerChildren: React.FC<LoadingContainerRectangleProps> = (prop
     if (props.loading) {
         return (<React.Fragment>
             <LoadingContainerRectangleStyledCoreContainer
-                loading={props.loading}
                 size={props.size}
             >
                 <LoadingContainerRectangleStyledFrontRectangle
-                    loading={props.loading}
                     size={props.size}
                 />
                 <LoadingContainerRectangleStyledBackRectangle
-                    loading={props.loading}
                     size={props.size}
                 />
             </LoadingContainerRectangleStyledCoreContainer>
@@ -39,10 +36,7 @@ const LoadingContainerChildren: React.FC<LoadingContainerRectangleProps> = (prop
 
 export const LoadingContainerRectangle: React.FC<LoadingContainerRectangleProps> = (props: LoadingContainerRectangleProps) => {
 
-    return (<LoadingContainerRectangleStyledContainer
-        loading={props.loading}
-        size={props.size}
-    >
+    return (<LoadingContainerRectangleStyledContainer>
         <LoadingContainerChildren
             {...props}
         />

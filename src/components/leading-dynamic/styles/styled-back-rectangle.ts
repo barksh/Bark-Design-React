@@ -24,9 +24,11 @@ export const LeadingDynamicStyledBackRectangle: StyledComponent<"div", BarkTheme
         ${parseLogicalCSSProperty("width")}: 100%;
         ${parseLogicalCSSProperty("height")}: 100%;
         opacity: 1;
-        border: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
+        border: ${(props: BarkThemeProps<LeadingDynamicProps, {
+        readonly isLoading: boolean;
+    }>) => {
             const fixedSize = fixSizeProps(props.size);
-            if (props.loading) {
+            if (props.isLoading) {
                 switch (fixedSize) {
                     case 'small': return "4px";
                     case 'regular': return "6px";
@@ -38,8 +40,10 @@ export const LeadingDynamicStyledBackRectangle: StyledComponent<"div", BarkTheme
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.secondary;
         }};
-        animation-name: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
-            if (props.loading) {
+        animation-name: ${(props: BarkThemeProps<LeadingDynamicProps, {
+            readonly isLoading: boolean;
+        }>) => {
+            if (props.isLoading) {
                 return backKeyframes;
             }
             return 'none';

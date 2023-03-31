@@ -18,17 +18,17 @@ export const LeadingDynamic: React.FC<LeadingDynamicProps> = (props: LeadingDyna
     >
         <LeadingDynamicStyledFrontRectangle
             noBorder={props.noBorder}
-            loading={props.loading}
+            isLoading={props.loading}
             size={props.size}
         >
             <LeadingDynamicStyledContentContainer
-                loading={props.loading}
+                isLoading={props.loading}
             >
                 {props.children}
             </LeadingDynamicStyledContentContainer>
         </LeadingDynamicStyledFrontRectangle>
         <LeadingDynamicStyledBackRectangle
-            loading={props.loading}
+            isLoading={props.loading}
             size={props.size}
         />
     </LeadingDynamicStyledContainer>);

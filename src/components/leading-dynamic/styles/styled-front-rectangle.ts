@@ -25,9 +25,11 @@ export const LeadingDynamicStyledFrontRectangle: StyledComponent<"div", BarkThem
         ${parseLogicalCSSProperty("width")}: 100%;
         ${parseLogicalCSSProperty("height")}: 100%;
         opacity: 1;
-        border: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
+        border: ${(props: BarkThemeProps<LeadingDynamicProps, {
+        readonly isLoading: boolean;
+    }>) => {
             const fixedSize = fixSizeProps(props.size);
-            if (props.loading) {
+            if (props.isLoading) {
                 switch (fixedSize) {
                     case 'small': return "4px";
                     case 'regular': return "6px";
@@ -46,8 +48,10 @@ export const LeadingDynamicStyledFrontRectangle: StyledComponent<"div", BarkThem
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
-            if (!props.loading && props.noBorder) {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<LeadingDynamicProps, {
+            readonly isLoading: boolean;
+        }>) => {
+            if (!props.isLoading && props.noBorder) {
                 return "0px";
             }
             const fixedSize = fixSizeProps(props.size);
@@ -59,8 +63,10 @@ export const LeadingDynamicStyledFrontRectangle: StyledComponent<"div", BarkThem
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-        animation-name: ${(props: BarkThemeProps<LeadingDynamicProps>) => {
-            if (props.loading) {
+        animation-name: ${(props: BarkThemeProps<LeadingDynamicProps, {
+            readonly isLoading: boolean;
+        }>) => {
+            if (props.isLoading) {
                 return frontKeyframes;
             }
             return 'none';
