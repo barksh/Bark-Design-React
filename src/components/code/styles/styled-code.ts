@@ -11,8 +11,10 @@ import { CodeProps } from "../declare";
 export const CodeStyledCode: StyledComponent<"code", BarkThemeProps, any> =
     styled.code`
         display: block;
-        word-break: ${(props: BarkThemeProps<CodeProps>) => {
-            if (props.wrap) {
+        word-break: ${(props: BarkThemeProps<CodeProps, {
+        readonly shouldWrap?: boolean;
+    }>) => {
+            if (props.shouldWrap) {
                 if (props.break) {
                     return 'break-all';
                 }
@@ -20,8 +22,10 @@ export const CodeStyledCode: StyledComponent<"code", BarkThemeProps, any> =
             }
             return 'normal';
         }};
-        white-space: ${(props: BarkThemeProps<CodeProps>) => {
-            if (props.wrap) {
+        white-space: ${(props: BarkThemeProps<CodeProps, {
+            readonly shouldWrap?: boolean;
+        }>) => {
+            if (props.shouldWrap) {
                 return 'pre-wrap';
             }
             return 'pre';

@@ -5,14 +5,14 @@
  */
 
 import * as React from "react";
+import { useUnderlayZIndex } from "../../hooks/export";
 import { limitSizeProps } from "../../util/size";
-import { Button, ContentBlock } from "../export";
+import { ContentBlock } from "../export";
 import { CodeProps } from "./declare";
-import { CodeStyledButtonContainer } from "./styles/styled-button-container";
+import { CodeStyledButton } from "./styles/styled-button";
 import { CodeStyledCode } from "./styles/styled-code";
 import { CodeStyledContainer } from "./styles/styled-container";
 import { CodeStyledPre } from "./styles/styled-pre";
-import { useUnderlayZIndex } from "../../hooks/export";
 
 const CopyButtonContainer: React.FC<CodeProps> = (props: CodeProps) => {
 
@@ -27,24 +27,22 @@ const CopyButton: React.FC<CodeProps> = (props: CodeProps) => {
 
     const zIndex: number = useUnderlayZIndex();
 
-    return (<CodeStyledButtonContainer
+    return (<CodeStyledButton
         zIndex={zIndex}
+        size={limitSizeProps(
+            props.size,
+            ['small', 'regular'],
+            'regular',
+        )}
+        noPadding
+        onClick={() => {
+            navigator.clipboard.writeText(
+                String(props.children),
+            );
+        }}
     >
-        <Button
-            size={limitSizeProps(
-                props.size,
-                ['small', 'regular'],
-                'regular',
-            )}
-            onClick={() => {
-                navigator.clipboard.writeText(
-                    String(props.children),
-                );
-            }}
-        >
-            {props.copyButton}
-        </Button>
-    </CodeStyledButtonContainer>);
+        {props.copyButton}
+    </CodeStyledButton>);
 };
 
 export const Code: React.FC<CodeProps> = (props: CodeProps) => {
@@ -71,7 +69,7 @@ export const Code: React.FC<CodeProps> = (props: CodeProps) => {
             >
                 <CopyButtonContainer {...props} />
                 <CodeStyledCode
-                    wrap={props.wrap}
+                    shouldWrap={props.wrap}
                     break={props.break}
                     data-lang={props.language}
                 >
