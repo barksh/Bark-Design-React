@@ -86,6 +86,8 @@ export const Callout: React.FC<CalloutProps> = (props: CalloutProps) => {
     >
         <CalloutStyledContainer
             size={props.size}
+            shouldFullWidth={props.width || props.minWidth || props.maximizeWidth}
+            shouldFullHeight={props.height || props.minHeight || props.maximizeHeight}
             maximize={props.maximize}
             maximizeWidth={props.maximizeWidth}
             maximizeHeight={props.maximizeHeight}
