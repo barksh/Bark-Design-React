@@ -13,6 +13,8 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
     return (<TableStyledTable
         size={props.size}
         noBorder={props.noBorder}
+        noInnerBorder={props.noInnerBorder}
+        noOuterBorder={props.noOuterBorder}
         fixedLayout={props.fixedLayout}
     >
         {props.children}

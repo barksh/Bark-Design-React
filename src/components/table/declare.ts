@@ -4,14 +4,16 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
 
 export type TableProps =
     & {
         readonly fixedLayout?: boolean;
+
+        readonly noOuterBorder?: boolean;
+        readonly noInnerBorder?: boolean;
     }
     & PropsNoBorderAddOn
-    & PropsMaximizeAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;

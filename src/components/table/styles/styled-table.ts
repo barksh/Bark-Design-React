@@ -20,7 +20,7 @@ export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
             }
             return "auto";
         }};
-        border: ${(props: BarkThemeProps<TableProps>) => {
+        border-width: ${(props: BarkThemeProps<TableProps>) => {
             if (props.noBorder) {
                 return "0px";
             }
@@ -30,7 +30,14 @@ export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
                 case 'regular': return "1px";
                 case 'large': return "2px";
             }
-        }} solid ${(props: BarkThemeProps) => {
+        }};
+        border-style: ${(props: BarkThemeProps<TableProps>) => {
+            if (props.noOuterBorder) {
+                return "hidden";
+            }
+            return "solid";
+        }};
+        border-color: ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
         
@@ -61,12 +68,19 @@ export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
                 case 'large': return "6px";
             }
         }};
-            border: ${(props: BarkThemeProps<TableProps>) => {
+        border-width: ${(props: BarkThemeProps<TableProps>) => {
             if (props.noBorder) {
                 return "0px";
             }
             return "1px";
-        }} solid ${(props: BarkThemeProps) => {
+        }};
+        border-style: ${(props: BarkThemeProps<TableProps>) => {
+            if (props.noInnerBorder) {
+                return "hidden";
+            }
+            return "solid";
+        }};
+        border-color: ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
         color: ${(props: BarkThemeProps) => {
