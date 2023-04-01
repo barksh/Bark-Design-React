@@ -4,8 +4,6 @@
  * @description Width Height
  */
 
-export type SizePropertyValue = 'small' | 'regular' | 'large';
-
 export const fixWidthHeight = (widthHeight: number | string): string => {
 
     if (typeof widthHeight === 'number') {

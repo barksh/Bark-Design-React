@@ -5,12 +5,14 @@
  */
 
 import * as React from "react";
-import { Button, ButtonGroup, ContentBlock } from "../export";
+import { ButtonGroup, ContentBlock } from "../export";
 import { TabContext, TabControllerContext } from "./context";
+import { TabsControllerItem } from "./controller";
 import { TabsProps } from "./declare";
 import { TabsStyledContainer } from "./styles/styled-tabs-container";
 import { TabsStyledHeader } from "./styles/styled-tabs-header";
-import { TabsControllerItem } from "./controller";
+import { TabsStyledHeaderButton } from "./styles/styled-tabs-header-button";
+import { limitSizeProps } from "../../util/size";
 
 export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
 
@@ -37,14 +39,21 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
                     noBorder={true}
                 >
                     {props.controller.tabs.map((tab: TabsControllerItem) => {
-                        return (<Button
+                        return (<TabsStyledHeaderButton
+                            barSize={props.size}
+                            activated={tab.id === props.controller.getActiveTabId()}
+                            size={limitSizeProps(
+                                props.size,
+                                ["small", "regular"],
+                                "regular",
+                            )}
                             key={tab.id}
                             onClick={() => {
                                 props.controller.setActiveTabId(tab.id);
                             }}
                         >
                             {tab.title}
-                        </Button>);
+                        </TabsStyledHeaderButton>);
                     })}
                 </ButtonGroup>
             </TabsStyledHeader>
