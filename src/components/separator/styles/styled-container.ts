@@ -13,41 +13,84 @@ import { SeparatorProps } from "../declare";
 export const SeparatorStyledSeparator: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<SeparatorProps>) => {
-            if (props.maximize) {
-                return "100%";
+            if (props.direction === "vertical") {
+                const fixedSize = fixSizeProps(props.size);
+                switch (fixedSize) {
+                    case 'small': return "1px";
+                    case 'regular': return "1px";
+                    case 'large': return "2px";
+                }
             }
-            return "fit-content";
+            return "auto";
         }};
         ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<SeparatorProps>) => {
-            if (props.maximize) {
-                return "100%";
+            if (props.direction === "horizontal") {
+                const fixedSize = fixSizeProps(props.size);
+                switch (fixedSize) {
+                    case 'small': return "1px";
+                    case 'regular': return "1px";
+                    case 'large': return "2px";
+                }
             }
-            return "fit-content";
+            return "auto";
         }};
-        border: ${(props: BarkThemeProps<SeparatorProps>) => {
-            if (props.noBorder) {
-                return "0px";
-            }
-            const fixedSize = fixSizeProps(props.size);
-            switch (fixedSize) {
-                case 'small': return "1px";
-                case 'regular': return "1px";
-                case 'large': return "2px";
-            }
-        }} solid ${(props: BarkThemeProps) => {
+        background-color: ${(props: BarkThemeProps<SeparatorProps>) => {
             return props.theme.borderColor.primary;
         }};
-        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<SeparatorProps>) => {
-            if (props.noBorder) {
+        ${parseLogicalCSSProperty("margin-left")}: ${(props: BarkThemeProps<SeparatorProps>) => {
+            if (props.direction === "horizontal") {
                 return "0px";
             }
-            const fixedSize = fixSizeProps(props.size);
-            switch (fixedSize) {
-                case 'small': return "4px";
-                case 'regular': return "6px";
-                case 'large': return "8px";
+            if (props.withMargin) {
+                const fixedSize = fixSizeProps(props.size);
+                switch (fixedSize) {
+                    case 'small': return "2px";
+                    case 'regular': return "4px";
+                    case 'large': return "8px";
+                }
             }
-        }} solid ${(props: BarkThemeProps) => {
-            return props.theme.borderColor.primary;
+            return "0px";
+        }};
+        ${parseLogicalCSSProperty("margin-right")}: ${(props: BarkThemeProps<SeparatorProps>) => {
+            if (props.direction === "horizontal") {
+                return "0px";
+            }
+            if (props.withMargin) {
+                const fixedSize = fixSizeProps(props.size);
+                switch (fixedSize) {
+                    case 'small': return "2px";
+                    case 'regular': return "4px";
+                    case 'large': return "8px";
+                }
+            }
+            return "0px";
+        }};
+        ${parseLogicalCSSProperty("margin-top")}: ${(props: BarkThemeProps<SeparatorProps>) => {
+            if (props.direction === "vertical") {
+                return "0px";
+            }
+            if (props.withMargin) {
+                const fixedSize = fixSizeProps(props.size);
+                switch (fixedSize) {
+                    case 'small': return "2px";
+                    case 'regular': return "4px";
+                    case 'large': return "8px";
+                }
+            }
+            return "0px";
+        }};
+        ${parseLogicalCSSProperty("margin-bottom")}: ${(props: BarkThemeProps<SeparatorProps>) => {
+            if (props.direction === "vertical") {
+                return "0px";
+            }
+            if (props.withMargin) {
+                const fixedSize = fixSizeProps(props.size);
+                switch (fixedSize) {
+                    case 'small': return "2px";
+                    case 'regular': return "4px";
+                    case 'large': return "8px";
+                }
+            }
+            return "0px";
         }};
 `;

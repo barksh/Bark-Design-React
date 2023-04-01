@@ -12,8 +12,7 @@ export type SeparatorProps =
     & {
         readonly direction?: SeparatorPropsDirection;
 
-        readonly withBorder?: boolean;
-        readonly noSpacing?: boolean;
+        readonly withMargin?: boolean;
     }
     & PropsClassNameAddOn
     & PropsSizeAddon;

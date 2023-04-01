@@ -16,7 +16,6 @@ export const Separator: React.FC<SeparatorProps> = (props: SeparatorProps) => {
         className={props.className}
         size={props.size}
         direction={fixedDirection}
-        withBorder={props.withBorder}
-        noSpacing={props.noSpacing}
+        withMargin={props.withMargin}
     />);
 };

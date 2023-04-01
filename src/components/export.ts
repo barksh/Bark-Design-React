@@ -58,6 +58,8 @@ export * from "./pagination/declare";
 export * from "./pagination/pagination";
 export * from "./progress-bar/declare";
 export * from "./progress-bar/progress-bar";
+export * from "./separator/declare";
+export * from "./separator/separator";
 export * from "./side-panel/declare";
 export * from "./side-panel/side-panel";
 export * from "./statistic/declare";
