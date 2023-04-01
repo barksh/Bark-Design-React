@@ -43,7 +43,12 @@ export type PropsNoMarginAddOn = {
 
 export type PropsWidthHeightAddOn = {
     readonly width?: string | number;
+    readonly minWidth?: string | number;
+    readonly maxWidth?: string | number;
+
     readonly height?: string | number;
+    readonly minHeight?: string | number;
+    readonly maxHeight?: string | number;
 };
 
 export type PropsLoadingAddOn = {

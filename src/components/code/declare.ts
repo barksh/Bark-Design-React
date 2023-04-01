@@ -5,7 +5,7 @@
  */
 
 import { ReactNode } from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoMarginAddOn, PropsNoPaddingAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoMarginAddOn, PropsNoPaddingAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
 
 export type CodeProps =
     & {
@@ -18,6 +18,7 @@ export type CodeProps =
     & PropsNoPaddingAddOn
     & PropsNoMarginAddOn
     & PropsMaximizeAddOn
+    & PropsWidthHeightAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;

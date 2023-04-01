@@ -69,7 +69,11 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
         noBorder={enrichedProps.noBorder}
         maximize={enrichedProps.maximize}
         width={enrichedProps.width}
+        minWidth={enrichedProps.minWidth}
+        maxWidth={enrichedProps.maxWidth}
         height={enrichedProps.height}
+        minHeight={enrichedProps.minHeight}
+        maxHeight={enrichedProps.maxHeight}
     >
         <CardStyledCardContainer
             size={enrichedProps.size}

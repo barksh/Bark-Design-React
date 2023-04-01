@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoSeparatorAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsLoadingAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoSeparatorAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
 
 export type CardProps =
     & {
@@ -23,6 +23,7 @@ export type CardProps =
     & PropsNoBorderAddOn
     & PropsNoSeparatorAddOn
     & PropsMaximizeAddOn
+    & PropsWidthHeightAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;

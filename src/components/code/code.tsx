@@ -5,13 +5,13 @@
  */
 
 import * as React from "react";
+import { limitSizeProps } from "../../util/size";
 import { Button, ContentBlock } from "../export";
 import { CodeProps } from "./declare";
-import { CodeStyledContainer } from "./styles/styled-container";
-import { CodeStyledCode } from "./styles/styled-code";
-import { CodeStyledPre } from "./styles/styled-pre";
 import { CodeStyledButtonContainer } from "./styles/styled-button-container";
-import { limitSizeProps } from "../../util/size";
+import { CodeStyledCode } from "./styles/styled-code";
+import { CodeStyledContainer } from "./styles/styled-container";
+import { CodeStyledPre } from "./styles/styled-pre";
 
 const CopyButton: React.FC<CodeProps> = (props: CodeProps) => {
 
@@ -41,6 +41,12 @@ export const Code: React.FC<CodeProps> = (props: CodeProps) => {
 
     return (<ContentBlock
         size={props.size}
+        width={props.width}
+        minWidth={props.minWidth}
+        maxWidth={props.maxWidth}
+        height={props.height}
+        minHeight={props.minHeight}
+        maxHeight={props.maxHeight}
         maximize={props.maximize}
         maximizeWidth={props.maximizeWidth}
         maximizeHeight={props.maximizeHeight}
