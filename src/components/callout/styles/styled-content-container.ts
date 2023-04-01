@@ -9,4 +9,7 @@ import { BarkThemeProps } from "../../../theme/declare";
 
 export const CalloutStyledContentContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 `;

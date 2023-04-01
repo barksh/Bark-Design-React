@@ -5,7 +5,7 @@
  */
 
 import { ReactNode } from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn, PropsWidthHeightAddOn } from "../../util/props";
+import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoPaddingAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn, PropsWidthHeightAddOn } from "../../util/props";
 
 export type CalloutProps =
     & {
@@ -16,7 +16,9 @@ export type CalloutProps =
     & PropsPrefixAddOn
     & PropsSuffixAddOn
     & PropsWidthHeightAddOn
+    & PropsNoPaddingAddOn
     & PropsNoBorderAddOn
+    & PropsBalancedBorderAddOn
     & PropsMaximizeAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn

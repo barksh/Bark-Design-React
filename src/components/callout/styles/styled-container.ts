@@ -12,6 +12,7 @@ import { fixSizeProps } from "../../../util/size";
 
 export const CalloutStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        display: flex;
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<CalloutProps>) => {
             if (props.maximize) {
                 return '100%';

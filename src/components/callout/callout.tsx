@@ -17,7 +17,10 @@ import { CalloutStyledContainer } from "./styles/styled-container";
 const CalloutPrefix: React.FC<CalloutProps> = (props: CalloutProps) => {
 
     if (props.prefix) {
-        return (<CalloutStyledPrefix>
+        return (<CalloutStyledPrefix
+            size={props.size}
+            noPadding={props.noPadding}
+        >
             {props.prefix}
         </CalloutStyledPrefix>);
     }
@@ -27,7 +30,10 @@ const CalloutPrefix: React.FC<CalloutProps> = (props: CalloutProps) => {
 const CalloutSuffix: React.FC<CalloutProps> = (props: CalloutProps) => {
 
     if (props.suffix) {
-        return (<CalloutStyledSuffix>
+        return (<CalloutStyledSuffix
+            size={props.size}
+            noPadding={props.noPadding}
+        >
             {props.suffix}
         </CalloutStyledSuffix>);
     }
@@ -37,7 +43,11 @@ const CalloutSuffix: React.FC<CalloutProps> = (props: CalloutProps) => {
 const CalloutTitle: React.FC<CalloutProps> = (props: CalloutProps) => {
 
     if (props.title) {
-        return (<CalloutStyledTitle>
+        return (<CalloutStyledTitle
+            size={props.size}
+            noPadding={props.noPadding}
+            noBorder={!Boolean(props.children)}
+        >
             {props.title}
         </CalloutStyledTitle>);
     }
@@ -47,7 +57,10 @@ const CalloutTitle: React.FC<CalloutProps> = (props: CalloutProps) => {
 const CalloutActions: React.FC<CalloutProps> = (props: CalloutProps) => {
 
     if (props.actions) {
-        return (<CalloutStyledActions>
+        return (<CalloutStyledActions
+            size={props.size}
+            noPadding={props.noPadding}
+        >
             {props.actions}
         </CalloutStyledActions>);
     }
@@ -67,6 +80,7 @@ export const Callout: React.FC<CalloutProps> = (props: CalloutProps) => {
         maximize={props.maximize}
         maximizeWidth={props.maximizeWidth}
         maximizeHeight={props.maximizeHeight}
+        balancedBorder={props.balancedBorder}
         noBorder={props.noBorder}
     >
         <CalloutStyledContainer
