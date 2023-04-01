@@ -25,6 +25,8 @@ const Template: ComponentStory<typeof Tabs> = (args: any) => {
         <Tabs
             {...args}
             controller={controller}
+            minWidth={512}
+            minHeight={512}
         >
             <Tab
                 title="Tab 1"

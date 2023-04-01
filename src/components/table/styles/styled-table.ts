@@ -12,15 +12,15 @@ import { TableProps } from "../declare";
 
 export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
     styled.table`
-       ${parseLogicalCSSProperty("width")}: 100%;
-       border-collapse: collapse;
-       table-layout: ${(props: BarkThemeProps<TableProps>) => {
+        ${parseLogicalCSSProperty("width")}: 100%;
+        border-collapse: collapse;
+        table-layout: ${(props: BarkThemeProps<TableProps>) => {
             if (props.fixedLayout) {
                 return "fixed";
             }
             return "auto";
         }};
-       border: ${(props: BarkThemeProps<TableProps>) => {
+        border: ${(props: BarkThemeProps<TableProps>) => {
             if (props.noBorder) {
                 return "0px";
             }
@@ -33,9 +33,8 @@ export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
         }};
-
+        
         & th {
-
             cursor: default;
             padding: ${(props: BarkThemeProps<TableProps>) => {
             const fixedSize = fixSizeProps(props.size);
@@ -54,7 +53,6 @@ export const TableStyledTable: StyledComponent<"table", BarkThemeProps, any> =
         }
 
         & td {
-
             padding: ${(props: BarkThemeProps<TableProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

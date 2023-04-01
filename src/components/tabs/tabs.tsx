@@ -41,6 +41,7 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
                 >
                     {props.controller.tabs.map((tab: TabsControllerItem) => {
                         return (<TabsStyledHeaderButton
+                            key={tab.id}
                             barSize={props.size}
                             activated={tab.id === props.controller.getActiveTabId()}
                             size={limitSizeProps(
@@ -48,7 +49,6 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
                                 ["small", "regular"],
                                 "regular",
                             )}
-                            key={tab.id}
                             onClick={() => {
                                 props.controller.setActiveTabId(tab.id);
                             }}
