@@ -13,6 +13,8 @@ export type TabsProps =
 
         readonly activeTabId?: string;
         readonly onTabIdChange?: (tabId: string) => void;
+
+        readonly noHeaderEndingBorder?: boolean;
     }
     & PropsMaximizeAddOn
     & PropsWidthHeightAddOn
