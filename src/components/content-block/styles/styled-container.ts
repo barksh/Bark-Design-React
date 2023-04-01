@@ -13,6 +13,8 @@ import { ContentBlockProps } from "../declare";
 
 export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        display: block;
+        overflow: auto;
         white-space: pre-wrap;
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
@@ -39,25 +41,25 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             if (typeof props.minWidth !== 'undefined') {
                 return fixWidthHeight(props.minWidth);
             }
-            return "fit-content";
+            return "none";
         }};
         ${parseLogicalCSSProperty("min-height")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.minHeight !== 'undefined') {
                 return fixWidthHeight(props.minHeight);
             }
-            return "fit-content";
+            return "none";
         }};
         ${parseLogicalCSSProperty("max-width")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.maxWidth !== 'undefined') {
                 return fixWidthHeight(props.maxWidth);
             }
-            return "fit-content";
+            return "none";
         }};
         ${parseLogicalCSSProperty("max-height")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.maxHeight !== 'undefined') {
                 return fixWidthHeight(props.maxHeight);
             }
-            return "fit-content";
+            return "none";
         }};
         border: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (props.noBorder) {
