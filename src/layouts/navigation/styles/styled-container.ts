@@ -13,6 +13,4 @@ export const NavigationLayoutStyledContainer: StyledComponent<"div", BarkThemePr
         ${parseLogicalCSSProperty("width")}: 100%;
         ${parseLogicalCSSProperty("height")}: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
 `;

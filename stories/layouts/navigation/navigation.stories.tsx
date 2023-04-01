@@ -6,7 +6,7 @@
  */
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { NavigationLayout, Theme } from "../../../src";
+import { Menu, MenuItem, NavigationLayout, Theme } from "../../../src";
 
 export default {
     title: "Navigation Layout",
@@ -18,6 +18,20 @@ const Template: ComponentStory<typeof NavigationLayout> = (args: any) => {
     return (<Theme>
         <NavigationLayout
             {...args}
+            navigation={<Menu
+                maximizeWidth
+                noBorder
+            >
+                <MenuItem
+                    title="Home"
+                />
+                <MenuItem
+                    title="About"
+                />
+                <MenuItem
+                    title="Contact"
+                />
+            </Menu>}
         />
     </Theme>);
 };
