@@ -13,6 +13,7 @@ import { ContentBlockProps } from "../declare";
 
 export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        white-space: pre-wrap;
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
         }};
