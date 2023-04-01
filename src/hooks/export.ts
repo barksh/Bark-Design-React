@@ -5,6 +5,7 @@
  */
 
 export * from "./form/use-form";
+export * from "./tabs/use-tabs";
 export * from "./time/use-timed-active";
 export * from "./z-index/controller";
 export * from "./z-index/use-overlay-z-index";

@@ -4,19 +4,31 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
+import { TabsController } from "./controller";
 
 export type TabsProps =
     & {
-        readonly title: string;
+        readonly controller: TabsController;
+
+        readonly activeTabId?: string;
+        readonly onTabIdChange?: (tabId: string) => void;
     }
+    & PropsMaximizeAddOn
+    & PropsWidthHeightAddOn
+    & PropsNoBorderAddOn
     & PropsChildrenAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;
 
 export type TabProps =
     & {
+        readonly tabId?: string;
+        readonly title: string;
     }
+    & PropsMaximizeAddOn
+    & PropsWidthHeightAddOn
+    & PropsNoBorderAddOn
     & PropsChildrenAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;
