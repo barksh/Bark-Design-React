@@ -64,6 +64,7 @@ export const Code: React.FC<CodeProps> = (props: CodeProps) => {
             size={props.size}
         >
             <CodeStyledPre
+                noBorder={props.noBorder}
                 noPadding={props.noPadding}
                 noMargin={props.noMargin}
             >

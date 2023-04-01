@@ -57,6 +57,18 @@ const CardSuffix: React.FC<CardProps> = (props: CardProps) => {
     return null;
 };
 
+const CardBodyTitle: React.FC<CardProps> = (props: CardProps) => {
+
+    if (props.bodyTitle) {
+        return (<CardStyledTitle
+            size={props.size}
+        >
+            {props.bodyTitle}
+        </CardStyledTitle>);
+    }
+    return null;
+};
+
 export const Card: React.FC<CardProps> = (props: CardProps) => {
 
     const enrichedProps: CardProps = useCardContext(props);
@@ -87,18 +99,16 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
                 />
                 <CardStyledContentContainer
                     size={enrichedProps.size}
+                    noPadding={enrichedProps.noPadding}
                 >
-                    <CardStyledTitle
-                        size={enrichedProps.size}
-                    >
-                        {enrichedProps.bodyTitle}
-                    </CardStyledTitle>
+                    <CardBodyTitle
+                        {...enrichedProps}
+                    />
                     <CardStyledBody
                         size={enrichedProps.size}
                     >
                         {enrichedProps.children}
                     </CardStyledBody>
-
                 </CardStyledContentContainer>
                 <CardSuffix
                     {...enrichedProps}

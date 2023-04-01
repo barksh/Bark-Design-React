@@ -23,4 +23,10 @@ export const CodeStyledPre: StyledComponent<"pre", BarkThemeProps, any> =
             }
             return "revert";
         }};
+        border: ${(props: BarkThemeProps<CodeProps>) => {
+            if (props.noBorder) {
+                return "0px";
+            }
+            return "auto";
+        }};
 `;

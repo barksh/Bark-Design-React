@@ -13,6 +13,10 @@ export const CardStyledContentContainer: StyledComponent<"div", BarkThemeProps, 
     styled.div`
         flex: 1;
         padding: ${(props: BarkThemeProps<CardProps>) => {
+            if (props.noPadding) {
+                return "0px";
+            }
+
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "6px";

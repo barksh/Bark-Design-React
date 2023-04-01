@@ -12,6 +12,8 @@ import { CodeProps } from "../declare";
 
 export const CodeStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        width: 100%;
+        height: 100%;
         ${parseLogicalCSSProperty("min-width")}: ${(props: BarkThemeProps<CodeProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {

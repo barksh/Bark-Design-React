@@ -5,7 +5,7 @@
  */
 
 import { ReactNode } from "react";
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoMarginAddOn, PropsNoPaddingAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoMarginAddOn, PropsNoPaddingAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
 
 export type CodeProps =
     & {
@@ -16,6 +16,7 @@ export type CodeProps =
         readonly wrap?: boolean;
         readonly break?: boolean;
     }
+    & PropsNoBorderAddOn
     & PropsNoPaddingAddOn
     & PropsNoMarginAddOn
     & PropsMaximizeAddOn
