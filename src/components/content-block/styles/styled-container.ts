@@ -34,6 +34,30 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             }
             return "fit-content";
         }};
+        ${parseLogicalCSSProperty("min-width")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (typeof props.minWidth !== 'undefined') {
+                return fixWidthHeight(props.minWidth);
+            }
+            return "fit-content";
+        }};
+        ${parseLogicalCSSProperty("min-height")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (typeof props.minHeight !== 'undefined') {
+                return fixWidthHeight(props.minHeight);
+            }
+            return "fit-content";
+        }};
+        ${parseLogicalCSSProperty("max-width")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (typeof props.maxWidth !== 'undefined') {
+                return fixWidthHeight(props.maxWidth);
+            }
+            return "fit-content";
+        }};
+        ${parseLogicalCSSProperty("max-height")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (typeof props.maxHeight !== 'undefined') {
+                return fixWidthHeight(props.maxHeight);
+            }
+            return "fit-content";
+        }};
         border: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (props.noBorder) {
                 return "0px";

@@ -15,14 +15,14 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
     styled.div`
         display: flex;
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
-            if (props.maximize) {
+            if (props.maximize || props.maximizeWidth) {
                 return "100%";
             }
             return "fit-content";
         }};
         ${parseLogicalCSSProperty("max-width")}: 100%;
         ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
-            if (props.maximize) {
+            if (props.maximize || props.maximizeHeight) {
                 return "100%";
             }
             return "fit-content";

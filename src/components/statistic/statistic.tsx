@@ -47,6 +47,15 @@ export const Statistic: React.FC<StatisticProps> = (props: StatisticProps) => {
     return (<ContentBlock
         size={props.size}
         noBorder={props.noBorder}
+        width={props.width}
+        minWidth={props.minWidth}
+        maxWidth={props.maxWidth}
+        height={props.height}
+        minHeight={props.minHeight}
+        maxHeight={props.maxHeight}
+        maximize={props.maximize}
+        maximizeWidth={props.maximizeWidth}
+        maximizeHeight={props.maximizeHeight}
     >
         <StatisticStyledContainer
             size={props.size}

@@ -19,6 +19,8 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps)
         noBorder={enrichedProps.noBorder}
         noSeparator={enrichedProps.noSeparator}
         maximize={enrichedProps.maximize}
+        maximizeWidth={enrichedProps.maximizeWidth}
+        maximizeHeight={enrichedProps.maximizeHeight}
     >
         <ButtonContext.Provider
             value={{

@@ -17,6 +17,12 @@ export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
         maximize={props.maximize}
         maximizeWidth={props.maximizeWidth}
         maximizeHeight={props.maximizeHeight}
+        width={props.width}
+        minWidth={props.minWidth}
+        maxWidth={props.maxWidth}
+        height={props.height}
+        minHeight={props.minHeight}
+        maxHeight={props.maxHeight}
         noBorder={props.noBorder}
         balancedBorder={props.balancedBorder}
     >

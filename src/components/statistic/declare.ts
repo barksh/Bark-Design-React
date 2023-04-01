@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
 
 export type StatisticPropsAlign = 'left' | 'center' | 'right';
 
@@ -16,6 +16,8 @@ export type StatisticProps =
         readonly align?: StatisticPropsAlign;
     }
     & PropsNoBorderAddOn
+    & PropsMaximizeAddOn
+    & PropsWidthHeightAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;

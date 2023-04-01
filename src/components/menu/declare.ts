@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
+import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn, PropsWidthHeightAddOn } from "../../util/props";
 
 export type MenuProps =
     & {
@@ -12,6 +12,7 @@ export type MenuProps =
     & PropsNoBorderAddOn
     & PropsBalancedBorderAddOn
     & PropsMaximizeAddOn
+    & PropsWidthHeightAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn
     & PropsSizeAddon;
