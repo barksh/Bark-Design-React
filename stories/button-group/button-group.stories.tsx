@@ -34,6 +34,44 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
                 Button 3
             </Button>
         </ButtonGroup>
+        <div>
+            Keep Visible
+        </div>
+        <ButtonGroup
+            {...args}
+            keepVisible
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
+            Keep Visible and Very Long
+        </div>
+        <ButtonGroup
+            {...args}
+            keepVisible
+        >
+            <Button
+                description={"This is Button 1 ".repeat(3)}
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
     </Theme>);
 };
 
