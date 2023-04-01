@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace GlobalStyles
- * @description Core
+ * @description Code
  * @override Story
  */
 
