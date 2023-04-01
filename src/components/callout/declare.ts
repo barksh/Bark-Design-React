@@ -4,11 +4,17 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
+import { ReactNode } from "react";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn, PropsWidthHeightAddOn } from "../../util/props";
 
 export type CalloutProps =
     & {
+        readonly title?: ReactNode;
+
+        readonly actions?: ReactNode;
     }
+    & PropsPrefixAddOn
+    & PropsSuffixAddOn
     & PropsWidthHeightAddOn
     & PropsNoBorderAddOn
     & PropsMaximizeAddOn

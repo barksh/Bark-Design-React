@@ -7,6 +7,52 @@
 import * as React from "react";
 import { ContentBlock } from "../export";
 import { CalloutProps } from "./declare";
+import { CalloutStyledContentContainer } from "./styles/styled-content-container";
+import { CalloutStyledTitle } from "./styles/styled-title";
+import { CalloutStyledActions } from "./styles/styled-actions";
+import { CalloutStyledPrefix } from "./styles/styled-prefix";
+import { CalloutStyledSuffix } from "./styles/styled-suffix";
+import { CalloutStyledContainer } from "./styles/styled-container";
+
+const CalloutPrefix: React.FC<CalloutProps> = (props: CalloutProps) => {
+
+    if (props.prefix) {
+        return (<CalloutStyledPrefix>
+            {props.prefix}
+        </CalloutStyledPrefix>);
+    }
+    return null;
+};
+
+const CalloutSuffix: React.FC<CalloutProps> = (props: CalloutProps) => {
+
+    if (props.suffix) {
+        return (<CalloutStyledSuffix>
+            {props.suffix}
+        </CalloutStyledSuffix>);
+    }
+    return null;
+};
+
+const CalloutTitle: React.FC<CalloutProps> = (props: CalloutProps) => {
+
+    if (props.title) {
+        return (<CalloutStyledTitle>
+            {props.title}
+        </CalloutStyledTitle>);
+    }
+    return null;
+};
+
+const CalloutActions: React.FC<CalloutProps> = (props: CalloutProps) => {
+
+    if (props.actions) {
+        return (<CalloutStyledActions>
+            {props.actions}
+        </CalloutStyledActions>);
+    }
+    return null;
+};
 
 export const Callout: React.FC<CalloutProps> = (props: CalloutProps) => {
 
@@ -23,6 +69,24 @@ export const Callout: React.FC<CalloutProps> = (props: CalloutProps) => {
         maximizeHeight={props.maximizeHeight}
         noBorder={props.noBorder}
     >
-        {props.children}
+        <CalloutStyledContainer
+            size={props.size}
+        >
+            <CalloutPrefix
+                {...props}
+            />
+            <CalloutStyledContentContainer>
+                <CalloutTitle
+                    {...props}
+                />
+                {props.children}
+                <CalloutActions
+                    {...props}
+                />
+            </CalloutStyledContentContainer>
+            <CalloutSuffix
+                {...props}
+            />
+        </CalloutStyledContainer>
     </ContentBlock>);
 };

@@ -16,8 +16,29 @@ export default {
 const Template: ComponentStory<typeof Callout> = (args: any) => {
 
     return (<Theme>
+        <div>Basic</div>
         <Callout
             {...args}
+        />
+        <div>With Title</div>
+        <Callout
+            {...args}
+            title="Title"
+        />
+        <div>With Actions</div>
+        <Callout
+            {...args}
+            actions={<div>Actions</div>}
+        />
+        <div>With Prefix</div>
+        <Callout
+            {...args}
+            prefix={<div>Prefix</div>}
+        />
+        <div>With Suffix</div>
+        <Callout
+            {...args}
+            suffix={<div>Suffix</div>}
         />
     </Theme>);
 };
