@@ -21,6 +21,102 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
     return (<Theme>
         <ButtonGroup
             {...args}
+            noBorder
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
+            No Separator
+        </div>
+        <ButtonGroup
+            {...args}
+            noSeparator
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
+            Left
+        </div>
+        <ButtonGroup
+            {...args}
+            noBorderLeft
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
+            Right
+        </div>
+        <ButtonGroup
+            {...args}
+            noBorderRight
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
+            Top
+        </div>
+        <ButtonGroup
+            {...args}
+            noBorderTop
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
+            Bottom
+        </div>
+        <ButtonGroup
+            {...args}
+            noBorderBottom
         >
             <Button
                 description="This is Button 1"
@@ -41,5 +137,4 @@ export const NoBorder = Template.bind({});
 
 NoBorder.args = {
     keepVisible: true,
-    noBorder: true,
 };

@@ -27,8 +27,32 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
             }
             return "fit-content";
         }};
-        border: ${(props: BarkThemeProps<ButtonGroupProps>) => {
-            if (props.noBorder) {
+        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
+            if (props.noBorder || props.noBorderLeft) {
+                return "0px";
+            }
+            const fixedSize = fixSizeProps(props.size);
+            if (fixedSize === 'large') {
+                return '2px';
+            }
+            return '1px';
+        }} solid ${(props: BarkThemeProps) => {
+            return props.theme.borderColor.primary;
+        }};
+        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
+            if (props.noBorder || props.noBorderRight) {
+                return "0px";
+            }
+            const fixedSize = fixSizeProps(props.size);
+            if (fixedSize === 'large') {
+                return '2px';
+            }
+            return '1px';
+        }} solid ${(props: BarkThemeProps) => {
+            return props.theme.borderColor.primary;
+        }};
+        ${parseLogicalCSSProperty("border-top")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
+            if (props.noBorder || props.noBorderTop) {
                 return "0px";
             }
             const fixedSize = fixSizeProps(props.size);
@@ -40,10 +64,18 @@ export const ButtonGroupStyledContainer: StyledComponent<"div", BarkThemeProps, 
             return props.theme.borderColor.primary;
         }};
         ${parseLogicalCSSProperty("border-bottom")}: ${(props: BarkThemeProps<ButtonGroupProps>) => {
-            if (props.noBorder) {
+            if (props.noBorder || props.noBorderBottom) {
                 return "0px";
             }
+
             const fixedSize = fixSizeProps(props.size);
+            if (props.balancedBorder) {
+                if (fixedSize === 'large') {
+                    return '2px';
+                }
+                return '1px';
+            }
+
             if (fixedSize === 'large') {
                 return '5px';
             }

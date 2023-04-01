@@ -4,13 +4,19 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoSeparatorAddOn, PropsSizeAddon } from "../../util/props";
+import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoSeparatorAddOn, PropsSizeAddon } from "../../util/props";
 
 export type ButtonGroupProps =
     & {
         readonly keepVisible?: boolean;
+
+        readonly noBorderTop?: boolean;
+        readonly noBorderBottom?: boolean;
+        readonly noBorderLeft?: boolean;
+        readonly noBorderRight?: boolean;
     }
     & PropsNoBorderAddOn
+    & PropsBalancedBorderAddOn
     & PropsNoSeparatorAddOn
     & PropsMaximizeAddOn
     & PropsChildrenAddOn

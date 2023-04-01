@@ -17,6 +17,11 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps)
     return (<ButtonGroupStyledContainer
         size={enrichedProps.size}
         noBorder={enrichedProps.noBorder}
+        balancedBorder={enrichedProps.balancedBorder}
+        noBorderTop={enrichedProps.noBorderTop}
+        noBorderBottom={enrichedProps.noBorderBottom}
+        noBorderLeft={enrichedProps.noBorderLeft}
+        noBorderRight={enrichedProps.noBorderRight}
         noSeparator={enrichedProps.noSeparator}
         maximize={enrichedProps.maximize}
         maximizeWidth={enrichedProps.maximizeWidth}

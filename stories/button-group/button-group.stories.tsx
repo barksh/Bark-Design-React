@@ -35,6 +35,25 @@ const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
             </Button>
         </ButtonGroup>
         <div>
+            Balanced Border
+        </div>
+        <ButtonGroup
+            {...args}
+            balancedBorder
+        >
+            <Button
+                description="This is Button 1"
+            >
+                Button
+            </Button>
+            <Button>
+                Button 2
+            </Button>
+            <Button>
+                Button 3
+            </Button>
+        </ButtonGroup>
+        <div>
             Keep Visible
         </div>
         <ButtonGroup
