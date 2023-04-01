@@ -14,6 +14,9 @@ export const MenuStyledMenuItemContainer: StyledComponent<"li", BarkThemeProps, 
     styled.li`
         ${parseLogicalCSSProperty("height")}: 100%;
         ${parseLogicalCSSProperty("border-bottom")}: ${(props: BarkThemeProps<MenuItemProps>) => {
+            if (props.noSeparator) {
+                return "0px";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "1px";

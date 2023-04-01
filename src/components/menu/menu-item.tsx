@@ -92,6 +92,7 @@ export const MenuItem: React.FC<MenuItemProps> = (props: MenuItemProps) => {
 
     return (<MenuStyledMenuItemContainer
         size={enrichedProps.size}
+        noSeparator={enrichedProps.noSeparator}
     >
         <ClickDiverseComponent
             noBorder={true}

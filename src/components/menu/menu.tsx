@@ -32,6 +32,7 @@ export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
             <MenuItemContext.Provider
                 value={{
                     size: props.size,
+                    noSeparator: props.noSeparator,
                 }}
             >
                 {props.children}

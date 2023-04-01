@@ -21,15 +21,28 @@ const Template: ComponentStory<typeof NavigationLayout> = (args: any) => {
             navigation={<Menu
                 maximizeWidth
                 noBorder
+                noSeparator
             >
                 <MenuItem
                     title="Home"
+                    onClick={() => {
+                        // Nothing
+                    }}
                 />
                 <MenuItem
                     title="About"
+                    onClick={() => {
+                        // Nothing
+                    }}
                 />
                 <MenuItem
                     title="Contact"
+                    onClick={() => {
+                        // Nothing
+                    }}
+                />
+                <MenuItem
+                    title="Login"
                 />
             </Menu>}
         />
