@@ -12,29 +12,39 @@ import { CodeStyledButtonContainer } from "./styles/styled-button-container";
 import { CodeStyledCode } from "./styles/styled-code";
 import { CodeStyledContainer } from "./styles/styled-container";
 import { CodeStyledPre } from "./styles/styled-pre";
+import { useUnderlayZIndex } from "../../hooks/export";
 
-const CopyButton: React.FC<CodeProps> = (props: CodeProps) => {
+const CopyButtonContainer: React.FC<CodeProps> = (props: CodeProps) => {
 
     if (props.copyButton) {
 
-        return (<CodeStyledButtonContainer>
-            <Button
-                size={limitSizeProps(
-                    props.size,
-                    ['small', 'regular'],
-                    'regular',
-                )}
-                onClick={() => {
-                    navigator.clipboard.writeText(
-                        String(props.children),
-                    );
-                }}
-            >
-                {props.copyButton}
-            </Button>
-        </CodeStyledButtonContainer>);
+        return (<CopyButton {...props} />);
     }
     return null;
+};
+
+const CopyButton: React.FC<CodeProps> = (props: CodeProps) => {
+
+    const zIndex: number = useUnderlayZIndex();
+
+    return (<CodeStyledButtonContainer
+        zIndex={zIndex}
+    >
+        <Button
+            size={limitSizeProps(
+                props.size,
+                ['small', 'regular'],
+                'regular',
+            )}
+            onClick={() => {
+                navigator.clipboard.writeText(
+                    String(props.children),
+                );
+            }}
+        >
+            {props.copyButton}
+        </Button>
+    </CodeStyledButtonContainer>);
 };
 
 export const Code: React.FC<CodeProps> = (props: CodeProps) => {
@@ -59,9 +69,10 @@ export const Code: React.FC<CodeProps> = (props: CodeProps) => {
                 noPadding={props.noPadding}
                 noMargin={props.noMargin}
             >
-                <CopyButton {...props} />
+                <CopyButtonContainer {...props} />
                 <CodeStyledCode
                     wrap={props.wrap}
+                    break={props.break}
                     data-lang={props.language}
                 >
                     {props.children}

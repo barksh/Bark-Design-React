@@ -37,6 +37,7 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
             >
                 <ButtonGroup
                     noBorder={true}
+                    keepVisible={true}
                 >
                     {props.controller.tabs.map((tab: TabsControllerItem) => {
                         return (<TabsStyledHeaderButton

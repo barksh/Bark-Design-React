@@ -14,6 +14,7 @@ export type CodeProps =
         readonly copyButton?: ReactNode;
 
         readonly wrap?: boolean;
+        readonly break?: boolean;
     }
     & PropsNoPaddingAddOn
     & PropsNoMarginAddOn

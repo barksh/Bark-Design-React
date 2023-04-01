@@ -31,5 +31,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     language: "raw",
-    children: "Content",
+    wrap: true,
+    break: false,
+    children: "Content ".repeat(100),
 };

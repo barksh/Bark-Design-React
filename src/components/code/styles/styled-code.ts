@@ -13,7 +13,10 @@ export const CodeStyledCode: StyledComponent<"code", BarkThemeProps, any> =
         display: block;
         word-break: ${(props: BarkThemeProps<CodeProps>) => {
             if (props.wrap) {
-                return 'break-all';
+                if (props.break) {
+                    return 'break-all';
+                }
+                return 'break-word';
             }
             return 'normal';
         }};
