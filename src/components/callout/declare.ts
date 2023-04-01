@@ -12,6 +12,8 @@ export type CalloutProps =
         readonly title?: ReactNode;
 
         readonly actions?: ReactNode;
+
+        readonly contentPadding?: boolean;
     }
     & PropsPrefixAddOn
     & PropsSuffixAddOn

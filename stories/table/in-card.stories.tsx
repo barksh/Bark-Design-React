@@ -38,7 +38,6 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
                 </thead>
                 <tbody>
                     <tr>
-
                         <td>John</td>
                         <td>Doe</td>
                         <td>50</td>
@@ -74,7 +73,6 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
             >
                 <tbody>
                     <tr>
-
                         <td>John</td>
                         <td>Doe</td>
                         <td>50</td>

@@ -14,14 +14,14 @@ export const CalloutStyledContainer: StyledComponent<"div", BarkThemeProps, any>
     styled.div`
         display: flex;
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<CalloutProps>) => {
-            if (props.maximize) {
-                return '100%';
+            if (props.maximize || props.maximizeWidth) {
+                return "100%";
             }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
-                case 'small': return "256px";
-                case 'regular': return "256px";
-                case 'large': return "384px";
+                case "small": return "256px";
+                case "regular": return "256px";
+                case "large": return "384px";
             }
         }};
 `;

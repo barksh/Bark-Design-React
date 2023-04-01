@@ -13,6 +13,7 @@ import { CalloutStyledActions } from "./styles/styled-actions";
 import { CalloutStyledPrefix } from "./styles/styled-prefix";
 import { CalloutStyledSuffix } from "./styles/styled-suffix";
 import { CalloutStyledContainer } from "./styles/styled-container";
+import { CalloutStyledContent } from "./styles/styled-content";
 
 const CalloutPrefix: React.FC<CalloutProps> = (props: CalloutProps) => {
 
@@ -85,6 +86,9 @@ export const Callout: React.FC<CalloutProps> = (props: CalloutProps) => {
     >
         <CalloutStyledContainer
             size={props.size}
+            maximize={props.maximize}
+            maximizeWidth={props.maximizeWidth}
+            maximizeHeight={props.maximizeHeight}
         >
             <CalloutPrefix
                 {...props}
@@ -93,7 +97,11 @@ export const Callout: React.FC<CalloutProps> = (props: CalloutProps) => {
                 <CalloutTitle
                     {...props}
                 />
-                {props.children}
+                <CalloutStyledContent
+                    contentPadding={props.contentPadding}
+                >
+                    {props.children}
+                </CalloutStyledContent>
                 <CalloutActions
                     {...props}
                 />
