@@ -5,9 +5,8 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Tab, Tabs, Theme } from "../../../src";
-import { useTabs } from "../../src/hooks/tabs/use-tabs";
+import { Meta, StoryFn } from "@storybook/react";
+import { Tab, Tabs, Theme, useTabs } from "../../../src";
 
 export default {
     title: "Tabs",
@@ -15,9 +14,9 @@ export default {
     subcomponents: {
         Tab,
     },
-} as ComponentMeta<typeof Tabs>;
+} as Meta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args: any) => {
+const Template: StoryFn<typeof Tabs> = (args: any) => {
 
     const controller = useTabs();
 
