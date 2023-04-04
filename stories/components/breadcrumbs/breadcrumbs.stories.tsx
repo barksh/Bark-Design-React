@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Breadcrumbs, Theme } from "../../../src";
 
 export default {
     title: "Breadcrumbs",
     component: Breadcrumbs,
-} as ComponentMeta<typeof Breadcrumbs>;
+} as Meta<typeof Breadcrumbs>;
 
-const Template: ComponentStory<typeof Breadcrumbs> = (args: any) => {
+const Template: StoryFn<typeof Breadcrumbs> = (args: any) => {
 
     return (<Theme>
         <Breadcrumbs

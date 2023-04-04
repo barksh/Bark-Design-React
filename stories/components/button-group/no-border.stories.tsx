@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Button, ButtonGroup, Theme } from "../../../src";
 
 export default {
@@ -14,9 +14,9 @@ export default {
     subcomponents: {
         Button,
     },
-} as ComponentMeta<typeof ButtonGroup>;
+} as Meta<typeof ButtonGroup>;
 
-const Template: ComponentStory<typeof ButtonGroup> = (args: any) => {
+const Template: StoryFn<typeof ButtonGroup> = (args: any) => {
 
     return (<Theme>
         <ButtonGroup

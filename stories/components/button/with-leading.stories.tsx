@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { useState } from "react";
 import { FaAngleRight, FaBaseballBall } from "react-icons/fa";
 import { Button, LeadingDynamic, Theme } from "../../../src";
@@ -13,9 +13,9 @@ import { Button, LeadingDynamic, Theme } from "../../../src";
 export default {
     title: "Button",
     component: Button,
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args: any) => {
+const Template: StoryFn<typeof Button> = (args: any) => {
 
     const [loading, setLoading] = useState<boolean>(false);
 

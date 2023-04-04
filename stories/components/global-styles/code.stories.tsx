@@ -5,14 +5,14 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Theme } from "../../../src";
 
 export default {
     title: "Global Styles",
-} as ComponentMeta<any>;
+} as Meta<any>;
 
-const Template: ComponentStory<any> = (_args: any) => {
+const Template: StoryFn<any> = (_args: any) => {
 
     return (<Theme>
         <div>

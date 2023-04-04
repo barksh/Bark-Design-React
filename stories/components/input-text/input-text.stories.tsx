@@ -5,16 +5,16 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
 import { InputText, Theme } from "../../../src";
 
 export default {
     title: "Input Text",
     component: InputText,
-} as ComponentMeta<typeof InputText>;
+} as Meta<typeof InputText>;
 
-const Template: ComponentStory<typeof InputText> = (args: any) => {
+const Template: StoryFn<typeof InputText> = (args: any) => {
 
     const [value, setValue] = React.useState('');
 

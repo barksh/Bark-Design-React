@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { LoadingContainerRectangle, Theme } from "../../../src";
 
 export default {
     title: "Loading Container",
     component: LoadingContainerRectangle,
-} as ComponentMeta<typeof LoadingContainerRectangle>;
+} as Meta<typeof LoadingContainerRectangle>;
 
-const Template: ComponentStory<typeof LoadingContainerRectangle> = (args: any) => {
+const Template: StoryFn<typeof LoadingContainerRectangle> = (args: any) => {
 
     return (<Theme>
         <div style={{

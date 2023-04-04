@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { ActionBar, Theme } from "../../../src";
 
 export default {
     title: "Action Bar",
     component: ActionBar,
-} as ComponentMeta<typeof ActionBar>;
+} as Meta<typeof ActionBar>;
 
-const Template: ComponentStory<typeof ActionBar> = (args: any) => {
+const Template: StoryFn<typeof ActionBar> = (args: any) => {
 
     return (<Theme>
         <ActionBar

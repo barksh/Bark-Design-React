@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Timeline, Theme, TimelineItem } from "../../../src";
 
 export default {
@@ -14,9 +14,9 @@ export default {
     subcomponents: {
         TimelineItem,
     },
-} as ComponentMeta<typeof Timeline>;
+} as Meta<typeof Timeline>;
 
-const Template: ComponentStory<typeof Timeline> = (args: any) => {
+const Template: StoryFn<typeof Timeline> = (args: any) => {
 
     return (<Theme>
         <Timeline

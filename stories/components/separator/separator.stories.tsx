@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Separator, Theme } from "../../../src";
 
 export default {
     title: "Separator",
     component: Separator,
-} as ComponentMeta<typeof Separator>;
+} as Meta<typeof Separator>;
 
-const Template: ComponentStory<typeof Separator> = (args: any) => {
+const Template: StoryFn<typeof Separator> = (args: any) => {
 
     return (<Theme>
         <div>Horizontal</div>

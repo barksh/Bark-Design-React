@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { ContentBlock, Theme } from "../../../src";
 
 export default {
     title: "Content Block",
     component: ContentBlock,
-} as ComponentMeta<typeof ContentBlock>;
+} as Meta<typeof ContentBlock>;
 
-const Template: ComponentStory<typeof ContentBlock> = (args: any) => {
+const Template: StoryFn<typeof ContentBlock> = (args: any) => {
 
     return (<Theme>
         <div>

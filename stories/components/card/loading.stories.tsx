@@ -5,16 +5,16 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { FaArrowRight, FaBoxOpen } from "react-icons/fa";
 import { Button, ButtonGroup, Card, LoadingContainerBorder, LoadingContainerRectangle, Theme } from "../../../src";
 
 export default {
     title: "Card",
     component: Card,
-} as ComponentMeta<typeof Card>;
+} as Meta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args: any) => {
+const Template: StoryFn<typeof Card> = (args: any) => {
 
     return (<Theme>
         <div>

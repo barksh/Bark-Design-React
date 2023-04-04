@@ -5,16 +5,16 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { FaMap } from "react-icons/fa";
 import { LeadingDynamic, Theme } from "../../../src";
 
 export default {
     title: "Leading",
     component: LeadingDynamic,
-} as ComponentMeta<typeof LeadingDynamic>;
+} as Meta<typeof LeadingDynamic>;
 
-const Template: ComponentStory<typeof LeadingDynamic> = (args: any) => {
+const Template: StoryFn<typeof LeadingDynamic> = (args: any) => {
 
     return (<Theme>
         <LeadingDynamic

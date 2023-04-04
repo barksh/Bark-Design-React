@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Menu, MenuItem, NavigationLayout, Theme } from "../../../src";
 
 export default {
     title: "Navigation Layout",
     component: NavigationLayout,
-} as ComponentMeta<typeof NavigationLayout>;
+} as Meta<typeof NavigationLayout>;
 
-const Template: ComponentStory<typeof NavigationLayout> = (args: any) => {
+const Template: StoryFn<typeof NavigationLayout> = (args: any) => {
 
     return (<Theme>
         <NavigationLayout

@@ -5,16 +5,16 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { FaAngleRight, FaBaseballBall } from "react-icons/fa";
 import { AppBar, Button, Theme } from "../../../src";
 
 export default {
     title: "App Bar",
     component: AppBar,
-} as ComponentMeta<typeof AppBar>;
+} as Meta<typeof AppBar>;
 
-const Template: ComponentStory<typeof AppBar> = (args: any) => {
+const Template: StoryFn<typeof AppBar> = (args: any) => {
 
     return (<Theme>
         <AppBar

@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Statistic, Theme } from "../../../src";
 
 export default {
     title: "Statistic",
     component: Statistic,
-} as ComponentMeta<typeof Statistic>;
+} as Meta<typeof Statistic>;
 
-const Template: ComponentStory<typeof Statistic> = (args: any) => {
+const Template: StoryFn<typeof Statistic> = (args: any) => {
 
     return (<Theme>
         <Statistic

@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
 import { Button, Card, Modal, ModalProps, Theme } from "../../../src";
 
@@ -15,9 +15,9 @@ export default {
     subcomponents: {
         Card,
     },
-} as ComponentMeta<typeof Modal>;
+} as Meta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args: any) => {
+const Template: StoryFn<typeof Modal> = (args: any) => {
 
     return (<Theme>
         <Button>Test</Button>
@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof Modal> = (args: any) => {
     </Theme>);
 };
 
-export const Primary: ComponentStory<React.FC<ModalProps>> = Template.bind({});
+export const Primary: StoryFn<React.FC<ModalProps>> = Template.bind({});
 
 Primary.args = {
 };

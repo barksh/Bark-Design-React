@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { FaBaseballBall } from "react-icons/fa";
 import { Menu, MenuItem, Theme } from "../../../src";
 
@@ -15,9 +15,9 @@ export default {
     subcomponents: {
         MenuItem,
     }
-} as ComponentMeta<typeof Menu>;
+} as Meta<typeof Menu>;
 
-const Template: ComponentStory<typeof Menu> = (args: any) => {
+const Template: StoryFn<typeof Menu> = (args: any) => {
 
     return (<Theme>
         <Menu

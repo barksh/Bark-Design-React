@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { ContentMenu, Theme } from "../../../src";
 
 export default {
     title: "Content Menu",
     component: ContentMenu,
-} as ComponentMeta<typeof ContentMenu>;
+} as Meta<typeof ContentMenu>;
 
-const Template: ComponentStory<typeof ContentMenu> = (args: any) => {
+const Template: StoryFn<typeof ContentMenu> = (args: any) => {
 
     return (<Theme>
         <ContentMenu

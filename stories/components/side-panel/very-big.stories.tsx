@@ -5,16 +5,16 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
 import { Button, Menu, MenuItem, SidePanel, SidePanelProps, Theme } from "../../../src";
 
 export default {
     title: "Side Panel",
     component: SidePanel,
-} as ComponentMeta<typeof SidePanel>;
+} as Meta<typeof SidePanel>;
 
-const Template: ComponentStory<typeof SidePanel> = (args: any) => {
+const Template: StoryFn<typeof SidePanel> = (args: any) => {
 
     return (<Theme>
         <Button>Test</Button>
@@ -110,7 +110,7 @@ const Template: ComponentStory<typeof SidePanel> = (args: any) => {
     </Theme>);
 };
 
-export const VeryBig: ComponentStory<React.FC<SidePanelProps>> = Template.bind({});
+export const VeryBig: StoryFn<React.FC<SidePanelProps>> = Template.bind({});
 
 VeryBig.args = {
     align: "left",

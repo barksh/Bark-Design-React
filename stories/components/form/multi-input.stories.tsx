@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Button, ButtonGroup, Form, InputSelect, InputText, InputTextarea, Theme, useForm } from "../../../src";
 
 export default {
@@ -15,9 +15,9 @@ export default {
         InputText,
         InputTextarea,
     },
-} as ComponentMeta<typeof Form>;
+} as Meta<typeof Form>;
 
-const Template: ComponentStory<typeof Form> = (_args: any) => {
+const Template: StoryFn<typeof Form> = (_args: any) => {
 
     const form = useForm();
 

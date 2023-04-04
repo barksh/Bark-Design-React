@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Spacing, Theme } from "../../../src";
 
 export default {
     title: "Spacing",
     component: Spacing,
-} as ComponentMeta<typeof Spacing>;
+} as Meta<typeof Spacing>;
 
-const Template: ComponentStory<typeof Spacing> = (args: any) => {
+const Template: StoryFn<typeof Spacing> = (args: any) => {
 
     return (<Theme>
         <div>Horizontal</div>

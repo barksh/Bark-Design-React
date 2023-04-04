@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { Button, LeadingDynamic, LeadingStatic, Theme, Timeline, TimelineItem } from "../../../src";
@@ -13,9 +13,9 @@ import { Button, LeadingDynamic, LeadingStatic, Theme, Timeline, TimelineItem } 
 export default {
     title: "Timeline",
     component: Timeline,
-} as ComponentMeta<typeof Timeline>;
+} as Meta<typeof Timeline>;
 
-const Template: ComponentStory<typeof Timeline> = (args: any) => {
+const Template: StoryFn<typeof Timeline> = (args: any) => {
 
     const [loading, setLoading] = useState<boolean>(false);
 

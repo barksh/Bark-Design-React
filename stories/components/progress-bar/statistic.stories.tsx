@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { ProgressBar, Theme } from "../../../src";
 
 export default {
     title: "Progress Bar",
     component: ProgressBar,
-} as ComponentMeta<typeof ProgressBar>;
+} as Meta<typeof ProgressBar>;
 
-const Template: ComponentStory<typeof ProgressBar> = (args: any) => {
+const Template: StoryFn<typeof ProgressBar> = (args: any) => {
 
     return (<Theme>
         <ProgressBar

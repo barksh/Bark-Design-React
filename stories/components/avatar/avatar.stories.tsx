@@ -5,15 +5,15 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Avatar, Theme } from "../../../src";
 
 export default {
     title: "Avatar",
     component: Avatar,
-} as ComponentMeta<typeof Avatar>;
+} as Meta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args: any) => {
+const Template: StoryFn<typeof Avatar> = (args: any) => {
 
     return (<Theme>
         <Avatar

@@ -5,16 +5,16 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
 import { Theme, Title, TitleProps } from "../../../src";
 
 export default {
     title: "Title",
     component: Title,
-} as ComponentMeta<typeof Title>;
+} as Meta<typeof Title>;
 
-const Template: ComponentStory<typeof Title> = (args: any) => {
+const Template: StoryFn<typeof Title> = (args: any) => {
 
     return (<Theme>
         <div>Level 1</div>
@@ -50,7 +50,7 @@ const Template: ComponentStory<typeof Title> = (args: any) => {
     </Theme>);
 };
 
-export const Primary: ComponentStory<React.FC<TitleProps>> = Template.bind({});
+export const Primary: StoryFn<React.FC<TitleProps>> = Template.bind({});
 
 Primary.args = {
     children: 'Hello World',

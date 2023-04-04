@@ -5,7 +5,7 @@
  * @override Story
  */
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
 import { Button, Card, Theme, Toast, ToastProps } from "../../../src";
 
@@ -15,9 +15,9 @@ export default {
     subcomponents: {
         Card,
     },
-} as ComponentMeta<typeof Toast>;
+} as Meta<typeof Toast>;
 
-const Template: ComponentStory<typeof Toast> = (args: any) => {
+const Template: StoryFn<typeof Toast> = (args: any) => {
 
     return (<Theme>
         <Button>Test</Button>
@@ -43,7 +43,7 @@ const Template: ComponentStory<typeof Toast> = (args: any) => {
     </Theme>);
 };
 
-export const Primary: ComponentStory<React.FC<ToastProps>> = Template.bind({});
+export const Primary: StoryFn<React.FC<ToastProps>> = Template.bind({});
 
 Primary.args = {
     position: 'bottom-right',
