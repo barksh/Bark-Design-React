@@ -61,7 +61,9 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         keepVisible={enrichedProps.keepVisible}
     >
         <ButtonStyledContainer
+            size={enrichedProps.size}
             noPadding={enrichedProps.noPadding}
+            square={enrichedProps.square}
         >
             <ButtonPrefix
                 {...props}
@@ -69,6 +71,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
             <ButtonStyledContentContainer
                 size={enrichedProps.size}
                 noPadding={enrichedProps.noPadding}
+                square={enrichedProps.square}
             >
                 <ButtonStyledTitle
                     size={enrichedProps.size}
@@ -76,7 +79,9 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
                     {enrichedProps.children}
                 </ButtonStyledTitle>
                 {enrichedProps.description
-                    ? (<ButtonStyledDescription>
+                    ? (<ButtonStyledDescription
+                        size={enrichedProps.size}
+                    >
                         {enrichedProps.description}
                     </ButtonStyledDescription>)
                     : null}

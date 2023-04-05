@@ -16,7 +16,12 @@ export const ButtonStyledContentContainer: StyledComponent<"div", BarkThemeProps
         text-align: start;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.square) {
+                return "center";
+            }
+            return "flex-start";
+        }};
         justify-content: center;
         ${parseLogicalCSSProperty("width")}: 100%;
         ${parseLogicalCSSProperty("height")}: 100%;

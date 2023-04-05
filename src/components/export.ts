@@ -64,6 +64,8 @@ export * from "./side-panel/declare";
 export * from "./side-panel/side-panel";
 export * from "./spacing/declare";
 export * from "./spacing/spacing";
+export * from "./spinner-rectangle/declare";
+export * from "./spinner-rectangle/spinner-rectangle";
 export * from "./statistic/declare";
 export * from "./statistic/statistic";
 export * from "./table/declare";

@@ -12,6 +12,7 @@ export type ButtonProps =
         readonly onClick?: () => any;
 
         readonly flex?: number;
+        readonly square?: boolean;
 
         readonly actionPrefix?: boolean;
         readonly actionSuffix?: boolean;
