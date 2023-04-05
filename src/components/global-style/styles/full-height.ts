@@ -5,9 +5,10 @@
  */
 
 import { createGlobalStyle } from "styled-components";
+import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 
 export const GlobalStyleFullHeight = createGlobalStyle`
     html, body, #root {
-        height: 100%;
+        ${parseLogicalCSSProperty("min-height")}: 100%;
     }
 `;
