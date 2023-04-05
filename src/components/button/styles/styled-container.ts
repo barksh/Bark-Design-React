@@ -25,6 +25,9 @@ export const ButtonStyledContainer: StyledComponent<"div", BarkThemeProps, any> 
         justify-content: center;
         flex-direction: row;
         ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.fitContent) {
+                return "fit-content";
+            }
             if (!props.square) {
                 return "100%";
             }
@@ -36,6 +39,9 @@ export const ButtonStyledContainer: StyledComponent<"div", BarkThemeProps, any> 
             }
         }};
         ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.fitContent) {
+                return "fit-content";
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "32px";

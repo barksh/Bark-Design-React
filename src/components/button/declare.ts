@@ -13,6 +13,7 @@ export type ButtonProps =
 
         readonly flex?: number;
         readonly square?: boolean;
+        readonly fitContent?: boolean;
 
         readonly actionPrefix?: boolean;
         readonly actionSuffix?: boolean;

@@ -31,10 +31,10 @@ const CopyButton: React.FC<CodeProps> = (props: CodeProps) => {
         zIndex={zIndex}
         size={limitSizeProps(
             props.size,
-            ['small', 'regular'],
-            'regular',
+            ['small'],
+            'small',
         )}
-        noPadding
+        fitContent
         onClick={() => {
             navigator.clipboard.writeText(
                 String(props.children),

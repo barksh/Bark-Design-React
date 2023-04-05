@@ -64,6 +64,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
             size={enrichedProps.size}
             noPadding={enrichedProps.noPadding}
             square={enrichedProps.square}
+            fitContent={enrichedProps.fitContent}
         >
             <ButtonPrefix
                 {...props}
