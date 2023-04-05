@@ -21,6 +21,18 @@ const Template: StoryFn<typeof Button> = (args: any) => {
             {...args}
         />
         <div>
+            Square
+        </div>
+        <Button
+            {...args}
+            square={true}
+            description={undefined}
+        >
+            <FaAngleRight
+                size={24}
+            />
+        </Button>
+        <div>
             Without description
         </div>
         <Button

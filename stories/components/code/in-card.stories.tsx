@@ -15,8 +15,6 @@ export default {
 
 const Template: StoryFn<typeof Code> = (args: any) => {
 
-    console.log(args);
-
     return (<Theme>
         <Card
             headerTitle="Code"
