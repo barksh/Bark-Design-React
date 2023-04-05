@@ -4,15 +4,17 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
+import { PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon } from "../../util/props";
 
 export type PaginationProps =
     & {
+        readonly currentPage: number;
+        readonly pageCount: number;
+        readonly maxPageCount?: number;
+
+        readonly onChange?: (page: number) => void;
     }
     & PropsNoBorderAddOn
     & PropsMaximizeAddOn
-    & PropsPrefixAddOn
-    & PropsSuffixAddOn
     & PropsClassNameAddOn
-    & PropsChildrenAddOn
     & PropsSizeAddon;
