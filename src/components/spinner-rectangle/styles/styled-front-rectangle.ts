@@ -1,27 +1,28 @@
 /**
  * @author WMXPY
- * @namespace Components_LoadingContainerRectangle_Styles
- * @description Styled Back Rectangle
+ * @namespace Components_SpinnerRectangle_Styles
+ * @description Styled Front Rectangle
  */
 
 import styled, { keyframes, StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
-import { LoadingContainerRectangleProps } from "../declare";
+import { SpinnerRectangleProps } from "../declare";
 
-const backKeyframes = keyframes`
+const frontKeyframes = keyframes`
     100% {
         transform: rotate(360deg);
     }
 `;
 
-export const LoadingContainerRectangleStyledBackRectangle: StyledComponent<"div", BarkThemeProps, any> =
+export const SpinnerRectangleStyledFrontRectangle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        z-index: 1;
         transition: 0.8s all ease-in-out;
         pointerEvents: none;
         position: absolute;
-        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<SpinnerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "24px";
@@ -29,7 +30,7 @@ export const LoadingContainerRectangleStyledBackRectangle: StyledComponent<"div"
                 case 'large': return "96px";
             }
         }};
-        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<SpinnerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "24px";
@@ -38,7 +39,7 @@ export const LoadingContainerRectangleStyledBackRectangle: StyledComponent<"div"
             }
         }};
         opacity: 1;
-        outline: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        outline: ${(props: BarkThemeProps<SpinnerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "4px";
@@ -46,10 +47,10 @@ export const LoadingContainerRectangleStyledBackRectangle: StyledComponent<"div"
                 case 'large': return "12px";
             }
         }} solid ${(props: BarkThemeProps) => {
-            return props.theme.borderColor.secondary;
+            return props.theme.borderColor.primary;
         }};
-        animation-name: ${backKeyframes};
-        animation-duration: 1.5s;
+        animation-name: ${frontKeyframes};
+        animation-duration: 3s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
 `;

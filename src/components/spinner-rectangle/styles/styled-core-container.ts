@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Components_LoadingContainerRectangle_Styles
+ * @namespace Components_SpinnerRectangle_Styles
  * @description Styled Core Container
  */
 
@@ -8,16 +8,16 @@ import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { fixSizeProps } from "../../../util/size";
-import { LoadingContainerRectangleProps } from "../declare";
+import { SpinnerRectangleProps } from "../declare";
 
-export const LoadingContainerRectangleStyledCoreContainer: StyledComponent<"div", BarkThemeProps, any> =
+export const SpinnerRectangleStyledCoreContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         transition: 0.8s all ease-in-out;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<SpinnerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "24px";
@@ -25,7 +25,7 @@ export const LoadingContainerRectangleStyledCoreContainer: StyledComponent<"div"
                 case 'large': return "96px";
             }
         }};
-        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<SpinnerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "24px";
@@ -33,7 +33,7 @@ export const LoadingContainerRectangleStyledCoreContainer: StyledComponent<"div"
                 case 'large': return "96px";
             }
         }};
-        margin: ${(props: BarkThemeProps<LoadingContainerRectangleProps>) => {
+        margin: ${(props: BarkThemeProps<SpinnerRectangleProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "12px";
