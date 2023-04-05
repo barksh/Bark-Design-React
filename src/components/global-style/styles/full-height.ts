@@ -11,4 +11,11 @@ export const GlobalStyleFullHeight = createGlobalStyle`
     html, body, #root {
         ${parseLogicalCSSProperty("min-height")}: 100%;
     }
+    html {
+        display: flex;
+    }
+    body {
+        flex: 1;
+        align-self: center;
+    }
 `;
