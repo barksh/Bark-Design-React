@@ -9,10 +9,10 @@ import { BarkThemeProfile } from "../declare";
 export const defaultDartThemeProfile: BarkThemeProfile = {
 
     foreColor: {
-        primary: '#ffffff',
+        primary: '#efefef',
     },
     backColor: {
-        primary: '#000000',
+        primary: '#1d1d12',
         active: '#a9c0de',
         emphasize: '#222222',
         disabled: '#333333',
