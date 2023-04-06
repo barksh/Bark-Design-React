@@ -7,6 +7,7 @@
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
 import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
+import { fixSizeProps, limitSizeProps } from "../../../util/size";
 import { CardProps } from "../declare";
 
 export const CardStyledHeader: StyledComponent<"div", BarkThemeProps, any> =
@@ -22,5 +23,17 @@ export const CardStyledHeader: StyledComponent<"div", BarkThemeProps, any> =
             return '1px';
         }} solid ${(props: BarkThemeProps) => {
             return props.theme.borderColor.primary;
+        }};
+        ${parseLogicalCSSProperty("min-height")}: ${(props: BarkThemeProps<CardProps>) => {
+            const fixedSize = limitSizeProps(
+                fixSizeProps(props.size),
+                ['small', 'regular'],
+                'regular',
+            );
+            switch (fixedSize) {
+                case 'small': return "32px";
+                case 'regular': return "48px";
+                case 'large': return "48px";
+            }
         }};
 `;
