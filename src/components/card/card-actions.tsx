@@ -19,6 +19,7 @@ export const CardActions: React.FC<CardProps> = (props: CardProps) => {
                 value={{
                     noBorder: true,
                     maximize: true,
+                    fitContent: true,
                     size: limitSizeProps(
                         fixSizeProps(props.size),
                         ['small', 'regular'],
@@ -29,6 +30,7 @@ export const CardActions: React.FC<CardProps> = (props: CardProps) => {
                 <ButtonContext.Provider
                     value={{
                         noBorder: true,
+                        fitContent: true,
                         size: limitSizeProps(
                             fixSizeProps(props.size),
                             ['small', 'regular'],

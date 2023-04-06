@@ -8,6 +8,8 @@ import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, Prop
 
 export type ButtonGroupProps =
     & {
+        readonly fitContent?: boolean;
+
         readonly keepVisible?: boolean;
 
         readonly noBorderTop?: boolean;

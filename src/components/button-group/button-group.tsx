@@ -31,6 +31,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps)
             value={{
                 noBorder: true,
                 size: enrichedProps.size,
+                fitContent: enrichedProps.fitContent,
                 keepVisible: enrichedProps.keepVisible,
                 flex: 1,
             }}
