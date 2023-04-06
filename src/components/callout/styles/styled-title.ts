@@ -6,12 +6,15 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { CalloutProps } from "../declare";
-import { fixSizeProps } from "../../../util/size";
 import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
+import { fixSizeProps, limitSizeProps } from "../../../util/size";
+import { CalloutProps } from "../declare";
 
 export const CalloutStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         font-weight: bold;
         font-size: ${(props: BarkThemeProps<CalloutProps>) => {
             const fixedSize = fixSizeProps(props.size);
@@ -46,6 +49,18 @@ export const CalloutStyledTitle: StyledComponent<"div", BarkThemeProps, any> =
                 case 'small': return "4px";
                 case 'regular': return "6px";
                 case 'large': return "8px";
+            }
+        }};
+        ${parseLogicalCSSProperty("min-height")}: ${(props: BarkThemeProps<CalloutProps>) => {
+            const fixedSize = limitSizeProps(
+                fixSizeProps(props.size),
+                ['small', 'regular'],
+                'regular',
+            );
+            switch (fixedSize) {
+                case 'small': return "32px";
+                case 'regular': return "48px";
+                case 'large': return "48px";
             }
         }};
 `;

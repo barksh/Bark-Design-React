@@ -13,9 +13,9 @@ import { CardProps } from "../declare";
 export const CardStyledHeader: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
         display: flex;
-        ${parseLogicalCSSProperty("width")}: 100%;
         justify-content: center;
         align-items: stretch;
+        ${parseLogicalCSSProperty("width")}: 100%;
         ${parseLogicalCSSProperty("border-bottom")}: ${(props: BarkThemeProps<CardProps>) => {
             if (props.noSeparator) {
                 return "0px";
