@@ -6,16 +6,19 @@
 
 import styled, { StyledComponent } from "styled-components";
 import { BarkThemeProps } from "../../../theme/declare";
-import { Button } from "../../button/button";
-import { TabsProps } from "../declare";
 import { parseLogicalCSSProperty } from "../../../theme/logical/parse-css";
 import { SizePropertyValue, fixSizeProps } from "../../../util/size";
+import { Button } from "../../button/button";
+import { TabsProps } from "../declare";
 
 export const TabsStyledHeaderButton: StyledComponent<typeof Button, BarkThemeProps, any> =
     styled(Button)`
         position: relative;
         overflow: visible;
         :after {
+            z-index: ${(props: BarkThemeProps<TabsProps, any>) => {
+            return props.afterButtonZIndex;
+        }};
             transition: all 0.2s;
             content: '';
             display: block;

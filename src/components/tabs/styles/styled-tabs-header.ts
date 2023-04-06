@@ -22,11 +22,14 @@ export const TabsStyledHeader: StyledComponent<"div", BarkThemeProps, any> =
             return props.theme.borderColor.primary;
         }};
         ${parseLogicalCSSProperty("margin-bottom")}: ${(props: BarkThemeProps<TabsProps>) => {
+            if (props.noHeaderBottomMargin) {
+                return '0px';
+            }
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "2px";
                 case 'regular': return "2px";
                 case 'large': return "4px";
             }
-        }}
+        }};
 `;
