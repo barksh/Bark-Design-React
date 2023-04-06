@@ -21,6 +21,7 @@ const CalloutPrefix: React.FC<CalloutProps> = (props: CalloutProps) => {
         return (<CalloutStyledPrefix
             size={props.size}
             noPadding={props.noPadding}
+            verticalPrefix={props.verticalPrefix}
         >
             {props.prefix}
         </CalloutStyledPrefix>);
@@ -34,6 +35,7 @@ const CalloutSuffix: React.FC<CalloutProps> = (props: CalloutProps) => {
         return (<CalloutStyledSuffix
             size={props.size}
             noPadding={props.noPadding}
+            verticalSuffix={props.verticalSuffix}
         >
             {props.suffix}
         </CalloutStyledSuffix>);

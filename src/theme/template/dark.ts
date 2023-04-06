@@ -15,7 +15,7 @@ export const defaultDartThemeProfile: BarkThemeProfile = {
         primary: '#1d1d12',
         active: '#a9c0de',
         emphasize: '#222222',
-        disabled: '#333333',
+        disabled: '#434343',
         palette: [
             '#4d455d',
             '#e96479',

@@ -12,7 +12,19 @@ import { CalloutProps } from "../declare";
 
 export const CalloutStyledSuffix: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        ${parseLogicalCSSProperty("border-left")}: ${(props: BarkThemeProps<CalloutProps>) => {
+        writing-mode: ${(props: BarkThemeProps<CalloutProps>) => {
+            if (props.verticalSuffix) {
+                return "vertical-lr";
+            }
+            return "initial";
+        }};
+        text-orientation: mixed;
+        ${(props: BarkThemeProps<CalloutProps>) => {
+            if (props.verticalSuffix) {
+                return parseLogicalCSSProperty("border-top");
+            }
+            return parseLogicalCSSProperty("border-left");
+        }}: ${(props: BarkThemeProps<CalloutProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "1px";

@@ -12,7 +12,19 @@ import { fixSizeProps } from "../../../util/size";
 
 export const CalloutStyledPrefix: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        ${parseLogicalCSSProperty("border-right")}: ${(props: BarkThemeProps<CalloutProps>) => {
+        writing-mode: ${(props: BarkThemeProps<CalloutProps>) => {
+            if (props.verticalPrefix) {
+                return "vertical-lr";
+            }
+            return "initial";
+        }};
+        text-orientation: mixed;
+        ${(props: BarkThemeProps<CalloutProps>) => {
+            if (props.verticalPrefix) {
+                return parseLogicalCSSProperty("border-bottom");
+            }
+            return parseLogicalCSSProperty("border-right");
+        }}: ${(props: BarkThemeProps<CalloutProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
                 case 'small': return "1px";
