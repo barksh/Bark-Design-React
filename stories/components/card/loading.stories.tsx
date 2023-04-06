@@ -48,7 +48,7 @@ const Template: StoryFn<typeof Card> = (args: any) => {
         <Card
             {...args}
             width={350}
-            height={350}
+            minHeight={350}
             loadingProvider={LoadingContainerRectangle}
             bodyPrefix={<FaBoxOpen
                 size={40}
