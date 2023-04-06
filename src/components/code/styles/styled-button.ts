@@ -19,14 +19,6 @@ export const CodeStyledButton: StyledComponent<typeof Button, BarkThemeProps, an
     }>) => {
             return props.zIndex;
         }};
-        padding: ${(props: BarkThemeProps<CodeProps>) => {
-            const fixedSize = fixSizeProps(props.size);
-            switch (fixedSize) {
-                case 'small': return "0px 6px";
-                case 'regular': return "0px 8px";
-                case 'large': return "0px 12px";
-            }
-        }};
         ${parseLogicalCSSProperty("top")}: ${(props: BarkThemeProps<CodeProps>) => {
             const fixedSize = fixSizeProps(props.size);
             switch (fixedSize) {
