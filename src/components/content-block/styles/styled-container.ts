@@ -13,24 +13,34 @@ import { ContentBlockProps } from "../declare";
 
 export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
-        display: grid;
+        display: ${(props: BarkThemeProps<ContentBlockProps>) => {
+            if (typeof props.minWidth !== 'undefined'
+                || props.minHeight !== 'undefined') {
+                return "grid";
+            }
+            return "block";
+        }};
         overflow: auto;
         white-space: pre-wrap;
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
         }};
-        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
-            if (typeof props.width !== 'undefined') {
-                return fixWidthHeight(props.width);
+        ${parseLogicalCSSProperty("width")}: ${(props: BarkThemeProps<ContentBlockProps, {
+            readonly logicWidth?: string | number;
+        }>) => {
+            if (typeof props.logicWidth !== 'undefined') {
+                return fixWidthHeight(props.logicWidth);
             }
             if (props.maximize || props.maximizeWidth) {
                 return "100%";
             }
             return "fit-content";
         }};
-        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
-            if (typeof props.height !== 'undefined') {
-                return fixWidthHeight(props.height);
+        ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ContentBlockProps, {
+            readonly logicHeight?: string | number;
+        }>) => {
+            if (typeof props.logicHeight !== 'undefined') {
+                return fixWidthHeight(props.logicHeight);
             }
             if (props.maximize || props.maximizeHeight) {
                 return "100%";
