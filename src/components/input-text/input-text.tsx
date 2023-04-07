@@ -23,6 +23,8 @@ export const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
         title={enrichedProps.title}
         size={enrichedProps.size}
         maximize={enrichedProps.maximize}
+        maximizeWidth={enrichedProps.maximizeWidth}
+        maximizeHeight={enrichedProps.maximizeHeight}
         information={enrichedProps.information}
         warning={enrichedProps.warning}
         error={enrichedProps.error}

@@ -48,7 +48,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props: ContentBlockPro
         noBorder={props.noBorder}
     >
         <LoadingContainer
-            size={props.size}
+            size={props.loadingSize ?? props.size}
             loading={props.loading}
             loadingPlaceholder={props.loadingPlaceholder}
             width={props.width}

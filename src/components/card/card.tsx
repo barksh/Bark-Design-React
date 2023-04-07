@@ -77,6 +77,7 @@ export const Card: React.FC<CardProps> = (props: CardProps) => {
         loading={enrichedProps.loading}
         loadingPlaceholder={enrichedProps.loadingPlaceholder}
         loadingProvider={enrichedProps.loadingProvider}
+        loadingSize={enrichedProps.loadingSize}
         size={enrichedProps.size}
         noBorder={enrichedProps.noBorder}
         maximize={enrichedProps.maximize}

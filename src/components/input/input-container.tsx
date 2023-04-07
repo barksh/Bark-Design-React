@@ -47,6 +47,8 @@ export const InputContainer: React.FC<InputContainerProps> = (props: InputContai
     return (<InputStyledInputContainer
         size={props.size}
         maximize={props.maximize}
+        maximizeWidth={props.maximizeWidth}
+        maximizeHeight={props.maximizeHeight}
     >
         {typeof props.title === 'string'
             ? <InputStyledTitle
