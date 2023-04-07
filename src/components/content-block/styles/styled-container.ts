@@ -20,7 +20,6 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             }
             return "block";
         }};
-        overflow: auto;
         white-space: pre-wrap;
         background-color: ${(props: BarkThemeProps) => {
             return props.theme.backColor.primary;
@@ -34,7 +33,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             if (props.maximize || props.maximizeWidth) {
                 return "100%";
             }
-            return "fit-content";
+            return "auto";
         }};
         ${parseLogicalCSSProperty("height")}: ${(props: BarkThemeProps<ContentBlockProps, {
             readonly logicHeight?: string | number;
@@ -45,7 +44,7 @@ export const ContentBlockStyledContainer: StyledComponent<"div", BarkThemeProps,
             if (props.maximize || props.maximizeHeight) {
                 return "100%";
             }
-            return "fit-content";
+            return "auto";
         }};
         ${parseLogicalCSSProperty("min-width")}: ${(props: BarkThemeProps<ContentBlockProps>) => {
             if (typeof props.minWidth !== 'undefined') {
