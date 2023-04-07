@@ -10,7 +10,9 @@ import { CenteredLayoutStyledContainer } from "./styles/styled-container";
 
 export const CenteredLayout: React.FC<CenteredLayoutProps> = (props: CenteredLayoutProps) => {
 
-    return (<CenteredLayoutStyledContainer>
+    return (<CenteredLayoutStyledContainer
+        className={props.className}
+    >
         {props.children}
     </CenteredLayoutStyledContainer>);
 };
