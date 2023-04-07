@@ -55,6 +55,7 @@ export type PropsLoadingAddOn = {
     readonly loadingProvider?: React.FC<LoadingContainerProps>;
 
     readonly loading?: boolean;
+    readonly loadingSize?: SizePropertyValue;
     readonly loadingPlaceholder?: ReactNode;
 } & PropsWidthHeightAddOn;
 
