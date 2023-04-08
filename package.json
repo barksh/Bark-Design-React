@@ -3,7 +3,7 @@
   "version": "1.8.3",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build"
+    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=6144--openssl-legacy-provider\" storybook build"
   },
   "dependencies": {
     "@sudoo/random": "^2.2.0",
