@@ -30,20 +30,25 @@ export type TableBodyProps =
     & PropsChildrenAddOn
     & PropsClassNameAddOn;
 
-export type TableColumnProps =
+export type TableDataProps =
     & {
+        readonly noInnerBorder?: boolean;
     }
     & PropsChildrenAddOn
-    & PropsClassNameAddOn;
+    & PropsClassNameAddOn
+    & PropsNoBorderAddOn
+    & PropsSizeAddon;
 
 export type TableHeaderProps =
     & {
     }
     & PropsChildrenAddOn
-    & PropsClassNameAddOn;
+    & PropsClassNameAddOn
+    & PropsSizeAddon;
 
 export type TableRowProps =
     & {
     }
     & PropsChildrenAddOn
-    & PropsClassNameAddOn;
+    & PropsClassNameAddOn
+    & PropsSizeAddon;
