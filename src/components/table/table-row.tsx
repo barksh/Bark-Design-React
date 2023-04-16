@@ -5,18 +5,14 @@
  */
 
 import * as React from "react";
-import { TableProps } from "./declare";
-import { TableStyledTable } from "./styles/styled-table";
+import { TableRowProps } from "./declare";
+import { TableStyledTableRow } from "./styles/styled-table-row";
 
-export const TableRow: React.FC<TableProps> = (props: TableProps) => {
+export const TableRow: React.FC<TableRowProps> = (props: TableRowProps) => {
 
-    return (<TableStyledTable
-        size={props.size}
-        noBorder={props.noBorder}
-        noInnerBorder={props.noInnerBorder}
-        noOuterBorder={props.noOuterBorder}
-        fixedLayout={props.fixedLayout}
+    return (<TableStyledTableRow
+        className={props.className}
     >
         {props.children}
-    </TableStyledTable>);
+    </TableStyledTableRow>);
 };
