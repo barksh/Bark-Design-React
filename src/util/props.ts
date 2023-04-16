@@ -25,6 +25,10 @@ export type PropsClassNameAddOn = {
     readonly className?: string | undefined;
 };
 
+export type PropsNoBackgroundAddon = {
+    readonly noBackground?: boolean;
+};
+
 export type PropsBalancedBorderAddOn = {
     readonly balancedBorder?: boolean;
 };

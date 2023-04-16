@@ -41,6 +41,7 @@ const Template: StoryFn<typeof AppBar> = (args: any) => {
             {...args}
             prefix={<Button
                 noBorder
+                noBackground
             >
                 <FaBaseballBall
                     size={24}

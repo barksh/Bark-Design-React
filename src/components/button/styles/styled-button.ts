@@ -64,6 +64,9 @@ export const ButtonStyledButton: StyledComponent<"button", BarkThemeProps, Butto
             return props.theme.borderColor.primary;
         }};
         background-color: ${(props: BarkThemeProps<ButtonProps>) => {
+            if (props.noBackground) {
+                return "transparent";
+            }
             if (props.disabled) {
                 return props.theme.backColor.disabled;
             }

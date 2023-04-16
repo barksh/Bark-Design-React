@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsNoPaddingAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
+import { PropsChildrenAddOn, PropsClassNameAddOn, PropsDisabledAddOn, PropsMaximizeAddOn, PropsNoBackgroundAddon, PropsNoBorderAddOn, PropsNoPaddingAddOn, PropsPrefixAddOn, PropsSizeAddon, PropsSuffixAddOn } from "../../util/props";
 
 export type ButtonProps =
     & {
@@ -23,6 +23,7 @@ export type ButtonProps =
         readonly noPrefixPadding?: boolean;
         readonly noSuffixPadding?: boolean;
     }
+    & PropsNoBackgroundAddon
     & PropsNoBorderAddOn
     & PropsNoPaddingAddOn
     & PropsMaximizeAddOn

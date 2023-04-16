@@ -59,6 +59,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         noBorder={enrichedProps.noBorder}
         noPadding={enrichedProps.noPadding}
         keepVisible={enrichedProps.keepVisible}
+        noBackground={enrichedProps.noBackground}
     >
         <ButtonStyledContainer
             size={enrichedProps.size}
