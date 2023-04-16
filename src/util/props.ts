@@ -89,3 +89,7 @@ export type PropsSizeAddon = {
 export type PropsPlaceholderAddOn = {
     readonly placeholder?: string;
 };
+
+export type PropsHoverActionsAddOn = {
+    readonly hoverActions?: ReactNode;
+};
