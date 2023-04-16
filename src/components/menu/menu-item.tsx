@@ -10,6 +10,7 @@ import { ButtonProps } from "../button/declare";
 import { MenuItemContext, useMenuItemContext } from "./context/menu-item";
 import { MenuItemProps } from "./declare";
 import { MenuStyledMenuItemChildren } from "./styles/styled-menu-item-children";
+import { MenuStyledMenuItemChildrenContainer } from "./styles/styled-menu-item-children-container";
 import { MenuStyledMenuItemContainer } from "./styles/styled-menu-item-container";
 import { MenuStyledMenuItemContentContainer } from "./styles/styled-menu-item-content-container";
 import { MenuStyledMenuItemContentDescription } from "./styles/styled-menu-item-content-description";
@@ -57,16 +58,18 @@ const MenuItemChildren: React.FC<MenuItemProps> = (props: MenuItemProps) => {
     const nextLevel: number = typeof props.level === 'number' ? props.level + 1 : 1;
 
     if (props.children) {
-        return (<MenuItemContext.Provider
-            value={{
-                size: props.size,
-                level: nextLevel,
-            }}
-        >
-            <MenuStyledMenuItemChildren>
-                {props.children}
-            </MenuStyledMenuItemChildren>
-        </MenuItemContext.Provider>);
+        return (<MenuStyledMenuItemChildrenContainer>
+            <MenuItemContext.Provider
+                value={{
+                    size: props.size,
+                    level: nextLevel,
+                }}
+            >
+                <MenuStyledMenuItemChildren>
+                    {props.children}
+                </MenuStyledMenuItemChildren>
+            </MenuItemContext.Provider>
+        </MenuStyledMenuItemChildrenContainer>);
     }
     return null;
 };
