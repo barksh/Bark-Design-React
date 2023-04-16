@@ -5,14 +5,20 @@
  */
 
 import * as React from "react";
+import { useTableDataContext } from "./context";
 import { TableDataProps } from "./declare";
 import { TableStyledTableData } from "./styles/styled-table-data";
 
 export const TableData: React.FC<TableDataProps> = (props: TableDataProps) => {
 
+    const enrichedProps: TableDataProps = useTableDataContext(props);
+
     return (<TableStyledTableData
-        className={props.className}
+        size={enrichedProps.size}
+        noBorder={enrichedProps.noBorder}
+        noInnerBorder={enrichedProps.noInnerBorder}
+        className={enrichedProps.className}
     >
-        {props.children}
+        {enrichedProps.children}
     </TableStyledTableData>);
 };

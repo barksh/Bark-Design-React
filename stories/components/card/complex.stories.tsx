@@ -7,7 +7,7 @@
 
 import { Meta, StoryFn } from "@storybook/react";
 import { FaBoxOpen } from "react-icons/fa";
-import { Card, Code, LoadingContainerBorder, Table, Tabs, Theme, useTabs } from "../../../src";
+import { Card, Code, LoadingContainerBorder, Tab, Table, TableBody, TableData, TableRow, Tabs, Theme, useTabs } from "../../../src";
 
 export default {
     title: "Card",
@@ -25,31 +25,66 @@ const Template: StoryFn<typeof Card> = (args: any) => {
             bodyPrefix={<FaBoxOpen
                 size={40}
             />}
+            headerTitle="Card"
             bodySuffix={<div>Suffix</div>}
         >
             <Tabs
                 controller={controller}
-                noBorder
+                noHeaderBottomMargin
+                balancedBorder
             >
-                <Code
-                    language="javascript"
+                <Tab
+                    title="Tab 1"
                 >
-                    Code 1
-                </Code>
-                <Table
-                    fixedLayout
+                    <Code
+                        language="javascript"
+                        noBorder
+                        noMargin
+                    >
+                        Code 1
+                    </Code>
+                    <Table
+                        fixedLayout
+                        noOuterBorder
+                    >
+                        <TableBody>
+                            <TableRow>
+                                <TableData>1</TableData>
+                                <TableData>2</TableData>
+                            </TableRow>
+                            <TableRow>
+                                <TableData>3</TableData>
+                                <TableData>4</TableData>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </Tab>
+                <Tab
+                    title="Tab 2"
                 >
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>4</td>
-                        </tr>
-                    </tbody>
-                </Table>
+                    <Code
+                        language="javascript"
+                        noBorder
+                        noMargin
+                    >
+                        Code 2
+                    </Code>
+                    <Table
+                        fixedLayout
+                        noOuterBorder
+                    >
+                        <TableBody>
+                            <TableRow>
+                                <TableData>2</TableData>
+                                <TableData>3</TableData>
+                            </TableRow>
+                            <TableRow>
+                                <TableData>4</TableData>
+                                <TableData>5</TableData>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </Tab>
             </Tabs>
         </Card>
     </Theme>);

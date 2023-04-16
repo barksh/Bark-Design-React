@@ -6,7 +6,7 @@
  */
 
 import { Meta, StoryFn } from "@storybook/react";
-import { Table, Theme } from "../../../src";
+import { Table, TableBody, TableData, TableHead, TableHeader, TableRow, Theme } from "../../../src";
 
 export default {
     title: "Table",
@@ -19,30 +19,30 @@ const Template: StoryFn<typeof Table> = (args: any) => {
         <Table
             {...args}
         >
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>94</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>72</td>
-                </tr>
-            </tbody>
+            <TableHead>
+                <TableRow>
+                    <TableHeader>First Name</TableHeader>
+                    <TableHeader>Last Name</TableHeader>
+                    <TableHeader>Age</TableHeader>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableData>John</TableData>
+                    <TableData>Doe</TableData>
+                    <TableData>50</TableData>
+                </TableRow>
+                <TableRow>
+                    <TableData>Mary</TableData>
+                    <TableData>Moe</TableData>
+                    <TableData>94</TableData>
+                </TableRow>
+                <TableRow>
+                    <TableData>July</TableData>
+                    <TableData>Dooley</TableData>
+                    <TableData>72</TableData>
+                </TableRow>
+            </TableBody>
         </Table>
     </Theme>);
 };

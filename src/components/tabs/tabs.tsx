@@ -31,6 +31,7 @@ export const Tabs: React.FC<TabsProps> = (props: TabsProps) => {
         maximize={props.maximize}
         maximizeWidth={props.maximizeWidth}
         maximizeHeight={props.maximizeHeight}
+        balancedBorder={props.balancedBorder}
     >
         <TabsStyledContainer
             size={props.size}

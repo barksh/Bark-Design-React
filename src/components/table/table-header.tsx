@@ -5,14 +5,18 @@
  */
 
 import * as React from "react";
+import { useTableHeaderContext } from "./context";
 import { TableHeaderProps } from "./declare";
 import { TableStyledTableHeader } from "./styles/styled-table-header";
 
 export const TableHeader: React.FC<TableHeaderProps> = (props: TableHeaderProps) => {
 
+    const enrichedProps: TableHeaderProps = useTableHeaderContext(props);
+
     return (<TableStyledTableHeader
-        className={props.className}
+        size={enrichedProps.size}
+        className={enrichedProps.className}
     >
-        {props.children}
+        {enrichedProps.children}
     </TableStyledTableHeader>);
 };

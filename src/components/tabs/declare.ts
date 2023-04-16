@@ -4,7 +4,7 @@
  * @description Declare
  */
 
-import { PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
+import { PropsBalancedBorderAddOn, PropsChildrenAddOn, PropsClassNameAddOn, PropsMaximizeAddOn, PropsNoBorderAddOn, PropsSizeAddon, PropsWidthHeightAddOn } from "../../util/props";
 import { TabsController } from "./controller";
 
 export type TabsProps =
@@ -20,6 +20,7 @@ export type TabsProps =
     & PropsMaximizeAddOn
     & PropsWidthHeightAddOn
     & PropsNoBorderAddOn
+    & PropsBalancedBorderAddOn
     & PropsChildrenAddOn
     & PropsClassNameAddOn
     & PropsSizeAddon;
