@@ -6,7 +6,7 @@
  */
 
 import { Meta, StoryFn } from "@storybook/react";
-import { Menu, MenuItem, NavigationLayout, Theme } from "../../../src";
+import { Menu, MenuItem, MenuSeparator, NavigationLayout, Theme } from "../../../src";
 
 export default {
     title: "Navigation Layout",
@@ -41,6 +41,7 @@ const Template: StoryFn<typeof NavigationLayout> = (args: any) => {
                         // Nothing
                     }}
                 />
+                <MenuSeparator />
                 <MenuItem
                     title="Login"
                 />

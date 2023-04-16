@@ -33,3 +33,9 @@ export type MenuItemProps =
     & PropsSuffixAddOn
     & PropsClassNameAddOn
     & PropsChildrenAddOn;
+
+export type MenuSeparatorProps =
+    & {
+    }
+    & PropsSizeAddon
+    & PropsClassNameAddOn;

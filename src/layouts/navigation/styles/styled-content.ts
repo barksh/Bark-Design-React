@@ -9,4 +9,5 @@ import { BarkThemeProps } from "../../../theme/declare";
 
 export const NavigationLayoutStyledContent: StyledComponent<"div", BarkThemeProps, any> =
     styled.div`
+        flex: 1;
 `;
