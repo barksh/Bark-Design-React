@@ -53,6 +53,7 @@ export * from "./menu/declare";
 export * from "./menu/menu";
 export * from "./menu/menu-item";
 export * from "./menu/menu-separator";
+export * from "./menu/menu-spacing";
 export * from "./modal/declare";
 export * from "./modal/modal";
 export * from "./pagination/declare";

@@ -39,3 +39,9 @@ export type MenuSeparatorProps =
     }
     & PropsSizeAddon
     & PropsClassNameAddOn;
+
+export type MenuSpacingProps =
+    & {
+    }
+    & PropsSizeAddon
+    & PropsClassNameAddOn;
