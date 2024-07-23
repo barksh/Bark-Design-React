@@ -28,7 +28,7 @@
     "react-icons": "^5.2.1",
     "storybook": "^8.1.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "vite": "^5.3.4"
   },
   "nyc": {
