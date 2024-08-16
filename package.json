@@ -29,7 +29,7 @@
     "storybook": "^8.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5"
+    "vite": "^5.4.1"
   },
   "nyc": {
     "extension": [
