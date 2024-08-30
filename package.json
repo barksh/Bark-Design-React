@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@sudoo/random": "^2.2.0",
-    "styled-components": "^6.1.12"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
